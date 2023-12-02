@@ -1,3 +1,1 @@
-# merch-mogul
-# cf7-validate-wp-email
-# php-1000-tips
+# 1000 PHP Tips
