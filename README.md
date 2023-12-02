@@ -307,8 +307,3 @@
 <details><summary>77. Use strict typing with `declare(strict_types=1);`</summary>
 **Use strict typing with `declare(strict_types=1);`** - Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.
 </details>
-
-
-**Use strict typing with `declare(strict_types=1);`** - Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.
-</details>
-
