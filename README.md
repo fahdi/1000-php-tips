@@ -230,3 +230,12 @@
 
 <details><summary>77. Use strict typing with `declare(strict_types=1);`</summary> Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.
 </details>
+
+<details><summary>78. Utilize Composer for Dependency Management</summary> Composer is a tool for dependency management in PHP. It allows developers to declare the libraries their project depends on and it manages (installs/updates) them for you. Composer is essential for modern PHP development, simplifying the process of importing and managing third-party libraries, ensuring version control, and maintaining a consistent environment across different development setups.
+</details>
+
+<details><summary>79. Implement PSR Standards for Coding Style and Structure</summary> The PHP-FIG (PHP Framework Interop Group) has established PSR (PHP Standard Recommendations) standards to promote consistency across PHP applications. Adhering to these standards, such as PSR-12 for coding style and PSR-4 for autoloading, can greatly enhance code readability, maintainability, and interoperability. Following PSR standards is a best practice that leads to more structured and reliable code in PHP projects.
+</details>
+
+<details><summary>80. Use Namespaces to Organize Code and Avoid Name Conflicts</summary> Namespaces in PHP provide a way to group related classes, interfaces, functions, and constants. This organization helps in avoiding name conflicts and makes the code more readable and manageable. Namespaces are especially crucial in larger applications or when integrating third-party libraries, ensuring a clear and conflict-free code structure.
+</details>
