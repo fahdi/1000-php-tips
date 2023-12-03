@@ -239,3 +239,24 @@
 
 <details><summary>80. Use Namespaces to Organize Code and Avoid Name Conflicts</summary> Namespaces in PHP provide a way to group related classes, interfaces, functions, and constants. This organization helps in avoiding name conflicts and makes the code more readable and manageable. Namespaces are especially crucial in larger applications or when integrating third-party libraries, ensuring a clear and conflict-free code structure.
 </details>
+
+<details><summary>81. Prefer Ternary Operators for Simple Conditional Assignments</summary> Use ternary operators for straightforward conditional assignments to make your code more concise and readable. The ternary operator is a one-liner replacement for a simple if-else statement and is best used when you want to assign a value to a variable based on a condition.
+</details>
+
+<details><summary>82. Avoid Nested Ternary Operators for Better Readability</summary> While ternary operators are useful, nesting them can make your code hard to read and understand. Prefer using separate statements or if-else constructs when dealing with complex conditions to maintain code clarity.
+</details>
+
+<details><summary>83. Use Null Coalescing Operator as a Shortcut for Ternary with `isset()`</summary> The null coalescing operator (`??`) is a more concise alternative to the ternary operator when checking if a variable is set. It returns the first operand if it exists and is not null; otherwise, it returns the second operand.
+</details>
+
+<details><summary>84. Leverage Switch Statements for Multiple Conditional Branches</summary> Use switch statements when you have multiple possible conditions for a variable. It's more readable and efficient than using multiple if-else statements, especially when comparing the same variable against various values.
+</details>
+
+<details><summary>85. Use Match Expressions for Value-Based Conditional Logic in PHP 8</summary> From PHP 8, consider using match expressions as a more concise and readable alternative to switch statements. Match expressions combine the benefits of switch statements and ternary operators, offering a more modern approach to handling multiple conditionals.
+</details>
+
+<details><summary>86. Avoid Overusing Else-If Ladders for Better Code Clarity</summary> While else-if ladders are useful for multiple conditions, they can make code less readable when overused. Consider refactoring complex else-if structures into switch statements or using polymorphism for better clarity and maintainability.
+</details>
+
+<details><summary>87. Use Early Returns to Simplify if-else Structures</summary> Utilize early returns in your functions to avoid deep nesting of if-else statements. Early returns can simplify the logic and improve the readability of your code by reducing indentation and making the main code path clearer.
+</details>
