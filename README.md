@@ -329,3 +329,33 @@
 
 <details><summary>110. Use `yield` for Lazy Evaluation</summary> Use `yield` to create generators that can be used in `foreach` loops. `yield` is a memory-efficient alternative to arrays, as it only generates values when needed, unlike arrays, which are stored in memory.
 </details>
+
+<details><summary>111. Implement Advanced Exception Handling Techniques</summary> Beyond basic try-catch blocks, explore advanced exception handling in PHP. This includes creating custom exception classes, handling exceptions at different layers of your application, and using finally blocks for cleanup operations.
+</details>
+
+<details><summary>112. Utilize Object-Oriented Callbacks and Closures</summary> Leverage the power of callbacks and closures in an object-oriented context. Understand how to pass methods as callbacks and use closures to maintain state in a functional programming style while utilizing OOP concepts.
+</details>
+
+<details><summary>113. Explore the Use of Decorators for Dynamic Functionality</summary> Understand the decorator pattern in PHP for dynamically adding functionality to objects. This pattern allows for the extension of an object's behavior without modifying its structure.
+</details>
+
+<details><summary>114. Master Object Serialization and Deserialization</summary> Grasp the nuances of serializing and deserializing objects in PHP, including the use of the Serializable interface and magic methods like `__sleep` and `__wakeup`. This is crucial for storing objects or sending them over a network.
+</details>
+
+<details><summary>115. Implement Advanced Type Hinting and Return Types</summary> Make use of advanced type hinting and return type declarations in PHP 7 and newer. This includes nullable types, void return types, and strict type checking, which can significantly improve code robustness and readability.
+</details>
+
+<details><summary>116. Use Object-Oriented Approaches in Database Interactions</summary> Employ OOP methodologies in database interactions, such as using Data Mapper or Active Record patterns. This approach encapsulates database interactions, making the code more reusable and maintainable.
+</details>
+
+<details><summary>117. Integrate Design Patterns for State Management</summary> Utilize design patterns such as State, Strategy, or Observer for effective state management in PHP applications. These patterns provide structured approaches for managing complex state changes and interactions within your objects.
+</details>
+
+<details><summary>118. Advanced Object Inheritance with Traits</summary> Dive deeper into the use of traits for solving complex inheritance scenarios. Explore trait precedence, conflict resolution, and combining multiple traits to create flexible and reusable code components.
+</details>
+
+<details><summary>119. Optimize Object Creation with Lazy Loading</summary> Implement lazy loading in PHP to optimize performance, particularly in resource-intensive object creation. Lazy loading defers the creation of an object until it's actually needed, which can lead to more efficient memory and resource usage.
+</details>
+
+<details><summary>120. Leverage Advanced Reflection for Meta-programming</summary> Use PHP's advanced reflection capabilities for meta-programming. This includes analyzing and modifying the behavior of classes, methods, and objects at runtime, offering powerful tools for framework development and complex application architectures.
+</details>
