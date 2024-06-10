@@ -357,5 +357,95 @@
 <details><summary>119. Optimize Object Creation with Lazy Loading</summary> Implement lazy loading in PHP to optimize performance, particularly in resource-intensive object creation. Lazy loading defers the creation of an object until it's actually needed, which can lead to more efficient memory and resource usage.
 </details>
 
-<details><summary>120. Leverage Advanced Reflection for Meta-programming</summary> Use PHP's advanced reflection capabilities for meta-programming. This includes analyzing and modifying the behavior of classes, methods, and objects at runtime, offering powerful tools for framework development and complex application architectures.
+<details><summary>120. Leverage Advanced Reflection for Meta-programming</summary> Use PHP's advanced reflection capabilities for meta-programming. This includes analyzing and modifying the behaviour of classes, methods, and objects at runtime, offering powerful tools for framework development and complex application architectures.
+</details>
+
+<details><summary>121. Use Anonymous Classes for Lightweight Objects</summary> PHP supports anonymous classes, which can be useful for creating lightweight, one-off objects without needing to define a named class. These are particularly useful for simple tasks or as quick mocks in unit tests.
+</details>
+
+<details><summary>122. Understand PHP's Garbage Collection Mechanism</summary> PHP's garbage collection mechanism helps manage memory by automatically freeing up memory that's no longer in use. Understanding how it works can help you write more efficient code and debug memory leaks.
+</details>
+
+<details><summary>123. Implement Proper Exception Hierarchies</summary> Create custom exception hierarchies to handle different types of errors in your application more effectively. This allows for more granular and specific error handling, making your code more robust.
+</details>
+
+<details><summary>124. Use PHP's Built-in Functions for File Handling</summary> PHP offers numerous built-in functions for handling files, such as `fopen()`, `fread()`, `fwrite()`, and `fclose()`. Understanding these functions can help you efficiently read, write, and manage files in your application.
+</details>
+
+<details><summary>125. Utilize PHP's Session Management Functions</summary> PHP provides built-in functions for session management, such as `session_start()`, `session_destroy()`, and `$_SESSION`. Properly managing sessions is crucial for maintaining user state and security in web applications.
+</details>
+
+<details><summary>126. Use `password_hash()` for Secure Password Storage</summary> Always store passwords securely using `password_hash()` to create a hashed password, and `password_verify()` to verify a password against the stored hash. This helps protect user data by ensuring passwords are stored in a secure, hashed format.
+</details>
+
+<details><summary>127. Optimize Database Queries with Indexing</summary> When working with databases, use indexing to optimize query performance. Indexing can significantly speed up data retrieval, making your application more efficient and responsive.
+</details>
+
+<details><summary>128. Leverage PHP's Built-in JSON Functions</summary> Use PHP's built-in functions like `json_encode()` and `json_decode()` for working with JSON data. These functions provide a straightforward way to handle JSON encoding and decoding, making it easy to exchange data with JavaScript or other systems.
+</details>
+
+<details><summary>129. Understand and Use Regular Expressions</summary> Regular expressions (regex) are powerful tools for pattern matching and data validation. PHP's `preg_match()`, `preg_replace()`, and other regex functions allow you to perform complex string operations efficiently.
+</details>
+
+<details><summary>130. Use `filter_var()` for Email Validation</summary> Validate email addresses using `filter_var()` with the `FILTER_VALIDATE_EMAIL` filter. This ensures that the email addresses are properly formatted and valid, reducing the chances of invalid data in your application.
+</details>
+
+<details><summary>131. Avoid Using `var_dump()` in Production</summary> While `var_dump()` is useful for debugging, avoid using it in production code. Instead, use proper logging mechanisms to capture and analyze application data without exposing sensitive information to users.
+</details>
+
+<details><summary>132. Use PHP's Built-in Logging Functions</summary> PHP provides built-in logging functions such as `error_log()` to log errors and messages to specified files or destinations. Proper logging helps in monitoring application performance and diagnosing issues.
+</details>
+
+<details><summary>133. Utilize Output Buffering for Improved Performance</summary> Output buffering can enhance performance by reducing the number of flushes sent to the client. Use functions like `ob_start()`, `ob_get_contents()`, and `ob_end_flush()` to control when output is sent to the browser.
+</details>
+
+<details><summary>134. Use Composer Autoloading for Class Loading</summary> Composer provides an autoloading feature that automatically loads PHP classes without requiring manual `include` or `require` statements. This makes your code cleaner and easier to manage.
+</details>
+
+<details><summary>135. Apply Dependency Injection to Reduce Coupling</summary> Use dependency injection to reduce coupling between classes and improve testability. This design pattern involves passing dependencies to a class rather than creating them internally, making your code more modular and maintainable.
+</details>
+
+<details><summary>136. Use PHP's `intl` Extension for Internationalization</summary> The `intl` extension provides tools for internationalization, such as locale-aware formatting and message translation. This extension is essential for developing applications that support multiple languages and regions.
+</details>
+
+<details><summary>137. Implement Rate Limiting to Prevent Abuse</summary> Rate limiting helps prevent abuse by limiting the number of requests a user can make to your application within a specified period. Implementing rate limiting can protect your application from brute force attacks and resource exhaustion.
+</details>
+
+<details><summary>138. Use PHP's Built-in XML Parsing Functions</summary> PHP provides several functions for parsing and manipulating XML data, such as `simplexml_load_string()`, `simplexml_load_file()`, and the DOM extension. Understanding these functions can help you efficiently work with XML data.
+</details>
+
+<details><summary>139. Optimize Array Operations for Performance</summary> Arrays are fundamental in PHP, and optimizing array operations can improve performance. Use built-in functions like `array_map()`, `array_filter()`, and `array_reduce()` for efficient array processing.
+</details>
+
+<details><summary>140. Use `SplFixedArray` for Memory-Efficient Arrays</summary> `SplFixedArray` is a fixed-size array that can be more memory-efficient than standard PHP arrays. Use it when you know the array size in advance to save memory and improve performance.
+</details>
+
+<details><summary>141. Implement Pagination for Large Data Sets</summary> When dealing with large data sets, implement pagination to break the data into manageable chunks. This improves performance and usability by reducing the amount of data loaded and displayed at once.
+</details>
+
+<details><summary>142. Use Transactions for Database Integrity</summary> Use database transactions to ensure data integrity during complex operations. Transactions allow you to execute multiple queries as a single unit of work, rolling back changes if any part of the operation fails.
+</details>
+
+<details><summary>143. Understand and Implement Caching Strategies</summary> Implement caching strategies to improve application performance by reducing database load and speeding up response times. Use tools like Memcached, Redis, or file-based caching for effective caching solutions.
+</details>
+
+<details><summary>144. Use PHP's Built-in Session Management Functions</summary> PHP provides built-in functions for session management, such as `session_start()`, `session_destroy()`, and `$_SESSION`. Properly managing sessions is crucial for maintaining user state and security in web applications.
+</details>
+
+<details><summary>145. Sanitize User Input to Prevent SQL Injection</summary> Always sanitize user input to prevent SQL injection attacks. Use prepared statements with parameterized queries to ensure that user input is treated as data and not executable code.
+</details>
+
+<details><summary>146. Validate User Input to Ensure Data Integrity</summary> Validate all user input to ensure it meets expected criteria before processing it. Use PHP's `filter_var()` function and regular expressions to perform thorough input validation.
+</details>
+
+<details><summary>147. Use HTTPS to Secure Data Transmission</summary> Always use HTTPS to encrypt data transmitted between the client and server. HTTPS protects sensitive data, such as login credentials and personal information, from being intercepted by attackers.
+</details>
+
+<details><summary>148. Implement Proper Error Handling and Logging</summary> Use proper error handling and logging mechanisms to capture and diagnose issues in your application. Avoid displaying detailed error messages to users; instead, log errors to a file or monitoring system.
+</details>
+
+<details><summary>149. Use Environment Variables for Configuration</summary> Store configuration settings, such as database credentials and API keys, in environment variables. This keeps sensitive information out of your codebase and makes it easier to manage configurations across different environments.
+</details>
+
+<details><summary>150. Optimize Database Queries for Performance</summary> Write efficient database queries to improve performance. Use indexing, avoid unnecessary joins, and select only the required columns to minimize the load on your database server.
 </details>
