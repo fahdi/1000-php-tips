@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random PHP Tip</title>
+    <script>
+      // Function to fetch the tips and display a random one
+      async function displayRandomTip() {
+        try {
+          const response = await fetch('tips.json');
+          const tips = await response.json();
+          const randomTip = tips[Math.floor(Math.random() * tips.length)];
+          document.getElementById('tip-summary').innerText = randomTip.summary;
+          document.getElementById('tip-content').innerText = randomTip.content;
+        } catch (error) {
+          console.error('Error fetching tips:', error);
+        }
+      }
+
+      // Fetch and display a random tip when the page loads
+      window.onload = displayRandomTip;
+    </script>
+</head>
+<body>
+<h1>PHP Tip of the Day</h1>
+<h2 id="tip-summary"></h2>
+<p id="tip-content"></p>
+</body>
+</html>
