@@ -1,7 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Random PHP Tip</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tip of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 20px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
     <script>
       // Function to fetch the tips and display a random one
       async function displayRandomTip() {
@@ -21,8 +64,11 @@
     </script>
 </head>
 <body>
-<h1>PHP Tip of the Day</h1>
-<h2 id="tip-summary"></h2>
-<p id="tip-content"></p>
+<div class="container">
+    <h1>PHP Tip of the Day</h1>
+    <h2 id="tip-summary"></h2>
+    <p id="tip-content"></p>
+    <footer>&copy; 2024 PHP Tips. All rights reserved.</footer>
+</div>
 </body>
 </html>
