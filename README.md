@@ -716,9 +716,7 @@
 <details><summary>238. Use `wordwrap()` to Wrap Long Lines</summary> The `wordwrap()` function wraps a string to a given number of characters using a string break character. This is useful for formatting text output.
 </details>
 
-<details><summary>239. Use `parse_str()` to Parse Query Strings</
-
-summary> The `parse_str()` function parses a query string into variables. This is useful for handling URL parameters and form data.
+<details><summary>239. Use `parse_str()` to Parse Query Strings</summary> The `parse_str()` function parses a query string into variables. This is useful for handling URL parameters and form data.
 </details>
 
 <details><summary>240. Use `http_response_code()` to Set HTTP Response Codes</summary> The `http_response_code()` function sets or gets the HTTP response code. This is useful for sending the correct status code in HTTP responses.
@@ -841,9 +839,7 @@ summary> The `parse_str()` function parses a query string into variables. This i
 <details><summary>279. Use `fwrite()` to Write to a File</summary> The `fwrite()` function writes to an open file pointer. This is useful for writing data to files.
 </details>
 
-<details><summary>280. Use `feof()` to Check for End-of
-
--File</summary> The `feof()` function checks if the end of a file has been reached. This is useful for reading files in a loop.
+<details><summary>280. Use `feof()` to Check for End-of-File</summary> The `feof()` function checks if the end of a file has been reached. This is useful for reading files in a loop.
 </details>
 
 <details><summary>281. Use `fgets()` to Read a Line from a File</summary> The `fgets()` function reads a line from an open file pointer. This is useful for reading files line-by-line.
@@ -969,9 +965,7 @@ summary> The `parse_str()` function parses a query string into variables. This i
 <details><summary>321. Use `filter_var()` for Input Validation</summary> The `filter_var()` function validates and sanitizes a single variable with a specified filter. This is useful for ensuring that input data is safe and correct.
 </details>
 
-<details><summary>322. Use `filter
-
-_input()` for Input Filtering</summary> The `filter_input()` function gets a specific external variable by name and optionally filters it. This is useful for validating and sanitizing input data.
+<details><summary>322. Use `filter_input()` for Input Filtering</summary> The `filter_input()` function gets a specific external variable by name and optionally filters it. This is useful for validating and sanitizing input data.
 </details>
 
 <details><summary>323. Use `filter_input_array()` for Multiple Input Filtering</summary> The `filter_input_array()` function gets multiple inputs and optionally filters them. This is useful for validating and sanitizing multiple input data.
