@@ -601,3 +601,611 @@
 
 <details><summary>200. Use `htmlentities()` to Convert Characters to HTML Entities</summary> The `htmlentities()` function converts all applicable characters to HTML entities. This is useful for displaying user input in a web page without executing any embedded HTML or JavaScript code.
 </details>
+
+<details><summary>201. Use `ucfirst()` to Capitalize the First Letter of a String</summary> The `ucfirst()` function capitalizes the first letter of a string. This is useful for formatting titles or names.
+</details>
+
+<details><summary>202. Use `lcfirst()` to Make the First Letter of a String Lowercase</summary> The `lcfirst()` function makes the first letter of a string lowercase. This can be useful for formatting strings in certain cases.
+</details>
+
+<details><summary>203. Use `ucwords()` to Capitalize the First Letter of Each Word</summary> The `ucwords()` function capitalizes the first letter of each word in a string. This is useful for formatting titles and names.
+</details>
+
+<details><summary>204. Use `strtotime()` to Convert Strings to Timestamps</summary> The `strtotime()` function converts date/time strings into Unix timestamps. This is useful for parsing and manipulating dates and times.
+</details>
+
+<details><summary>205. Use `getdate()` to Retrieve Date/Time Information</summary> The `getdate()` function returns an associative array with detailed date and time information. This is useful for breaking down timestamps into their components.
+</details>
+
+<details><summary>206. Use `date_default_timezone_set()` to Set the Default Timezone</summary> The `date_default_timezone_set()` function sets the default timezone used by all date/time functions. This ensures consistent date/time operations across your application.
+</details>
+
+<details><summary>207. Use `checkdate()` to Validate a Date</summary> The `checkdate()` function validates a date by checking if the day, month, and year are valid. This is useful for ensuring date input is correct.
+</details>
+
+<details><summary>208. Use `list()` to Assign Variables from an Array</summary> The `list()` function allows you to assign variables from an array. This is useful for breaking an array into individual variables.
+</details>
+
+<details><summary>209. Use `compact()` to Create an Array from Variables</summary> The `compact()` function creates an array from a set of variables. This is useful for packaging related variables together.
+</details>
+
+<details><summary>210. Use `extract()` to Import Variables from an Array</summary> The `extract()` function imports variables from an associative array into the current symbol table. This is useful for breaking down arrays into individual variables.
+</details>
+
+<details><summary>211. Use `is_array()` to Check if a Variable is an Array</summary> The `is_array()` function checks if a variable is an array. This is useful for validating input or ensuring that a variable is an array before performing array operations.
+</details>
+
+<details><summary>212. Use `is_string()` to Check if a Variable is a String</summary> The `is_string()` function checks if a variable is a string. This is useful for validating input or ensuring that a variable is a string before performing string operations.
+</details>
+
+<details><summary>213. Use `is_int()` to Check if a Variable is an Integer</summary> The `is_int()` function checks if a variable is an integer. This is useful for validating input or ensuring that a variable is an integer before performing integer operations.
+</details>
+
+<details><summary>214. Use `is_float()` to Check if a Variable is a Float</summary> The `is_float()` function checks if a variable is a float. This is useful for validating input or ensuring that a variable is a float before performing float operations.
+</details>
+
+<details><summary>215. Use `is_null()` to Check if a Variable is Null</summary> The `is_null()` function checks if a variable is null. This is useful for validating input or ensuring that a variable is null before performing operations that depend on null values.
+</details>
+
+<details><summary>216. Use `is_resource()` to Check if a Variable is a Resource</summary> The `is_resource()` function checks if a variable is a resource. This is useful for validating input or ensuring that a variable is a resource before performing operations that depend on resources.
+</details>
+
+<details><summary>217. Use `is_callable()` to Check if a Variable is Callable</summary> The `is_callable()` function checks if a variable is a valid callback function. This is useful for validating input or ensuring that a variable is callable before invoking it as a function.
+</details>
+
+<details><summary>218. Use `is_countable()` to Check if a Variable is Countable</summary> The `is_countable()` function checks if a variable is countable. This is useful for validating input or ensuring that a variable is countable before using the `count()` function.
+</details>
+
+<details><summary>219. Use `debug_backtrace()` for Debugging</summary> The `debug_backtrace()` function generates a backtrace, which is useful for debugging and understanding the flow of execution in your code.
+</details>
+
+<details><summary>220. Use `debug_print_backtrace()` to Print a Backtrace</summary> The `debug_print_backtrace()` function prints a backtrace, which is useful for debugging and understanding the flow of execution in your code.
+</details>
+
+<details><summary>221. Use `memory_get_usage()` to Check Memory Usage</summary> The `memory_get_usage()` function returns the amount of memory allocated to your PHP script. This is useful for monitoring and optimizing memory usage.
+</details>
+
+<details><summary>222. Use `memory_get_peak_usage()` to Check Peak Memory Usage</summary> The `memory_get_peak_usage()` function returns the peak memory usage of your PHP script. This is useful for monitoring and optimizing memory usage.
+</details>
+
+<details><summary>223. Use `version_compare()` to Compare PHP Versions</summary> The `version_compare()` function compares two PHP version numbers. This is useful for checking if your script is running on a compatible version of PHP.
+</details>
+
+<details><summary>224. Use `php_uname()` to Get System Information</summary> The `php_uname()` function returns information about the operating system PHP is running on. This is useful for system diagnostics and environment checks.
+</details>
+
+<details><summary>225. Use `phpinfo()` to Get PHP Configuration Information</summary> The `phpinfo()` function outputs information about PHP's configuration. This is useful for debugging and ensuring that your PHP environment is configured correctly.
+</details>
+
+<details><summary>226. Use `str_contains()` to Check if a String Contains a Substring</summary> The `str_contains()` function checks if a string contains a given substring. This is useful for string validation and searching.
+</details>
+
+<details><summary>227. Use `str_starts_with()` to Check if a String Starts with a Substring</summary> The `str_starts_with()` function checks if a string starts with a given substring. This is useful for string validation and searching.
+</details>
+
+<details><summary>228. Use `str_ends_with()` to Check if a String Ends with a Substring</summary> The `str_ends_with()` function checks if a string ends with a given substring. This is useful for string validation and searching.
+</details>
+
+<details><summary>229. Use `ini_get()` to Retrieve Configuration Options</summary> The `ini_get()` function retrieves the value of a configuration option. This is useful for checking and debugging PHP settings.
+</details>
+
+<details><summary>230. Use `ini_set()` to Set Configuration Options</summary> The `ini_set()` function sets the value of a configuration option. This is useful for modifying PHP settings at runtime.
+</details>
+
+<details><summary>231. Use `defined()` to Check if a Constant is Defined</summary> The `defined()` function checks if a constant is defined. This is useful for validating input and ensuring that constants are defined before using them.
+</details>
+
+<details><summary>232. Use `define()` to Create Constants</summary> The `define()` function creates a constant. This is useful for defining configuration values and other constants that should not change.
+</details>
+
+<details><summary>233. Use `constant()` to Retrieve Constant Values</summary> The `constant()` function retrieves the value of a constant. This is useful for accessing constants dynamically.
+</details>
+
+<details><summary>234. Use `get_defined_constants()` to List All Defined Constants</summary> The `get_defined_constants()` function returns an array of all defined constants. This is useful for debugging and understanding the constants available in your script.
+</details>
+
+<details><summary>235. Use `highlight_string()` to Highlight PHP Code</summary> The `highlight_string()` function outputs or returns a syntax-highlighted version of a PHP code string. This is useful for displaying PHP code in a readable format.
+</details>
+
+<details><summary>236. Use `highlight_file()` to Highlight PHP Files</summary> The `highlight_file()` function outputs or returns a syntax-highlighted version of a PHP file. This is useful for displaying PHP code in a readable format.
+</details>
+
+<details><summary>237. Use `nl2br()` to Convert Newlines to HTML Line Breaks</summary> The `nl2br()` function inserts HTML line breaks before all newlines in a string. This is useful for displaying user-generated content in HTML.
+</details>
+
+<details><summary>238. Use `wordwrap()` to Wrap Long Lines</summary> The `wordwrap()` function wraps a string to a given number of characters using a string break character. This is useful for formatting text output.
+</details>
+
+<details><summary>239. Use `parse_str()` to Parse Query Strings</
+
+summary> The `parse_str()` function parses a query string into variables. This is useful for handling URL parameters and form data.
+</details>
+
+<details><summary>240. Use `http_response_code()` to Set HTTP Response Codes</summary> The `http_response_code()` function sets or gets the HTTP response code. This is useful for sending the correct status code in HTTP responses.
+</details>
+
+<details><summary>241. Use `get_headers()` to Retrieve HTTP Headers</summary> The `get_headers()` function retrieves the HTTP headers sent by a server in response to an HTTP request. This is useful for debugging and inspecting HTTP responses.
+</details>
+
+<details><summary>242. Use `header()` to Send HTTP Headers</summary> The `header()` function sends a raw HTTP header to the client. This is useful for setting content types, redirections, and other HTTP headers.
+</details>
+
+<details><summary>243. Use `header_remove()` to Remove HTTP Headers</summary> The `header_remove()` function removes an HTTP header previously set by `header()`. This is useful for modifying headers before sending the response.
+</details>
+
+<details><summary>244. Use `setcookie()` to Set Cookies</summary> The `setcookie()` function sends a cookie to the client. This is useful for managing user sessions and storing small amounts of data.
+</details>
+
+<details><summary>245. Use `filter_input()` to Retrieve and Filter External Variables</summary> The `filter_input()` function retrieves a specific external variable by name and optionally filters it. This is useful for sanitizing and validating input.
+</details>
+
+<details><summary>246. Use `filter_var_array()` for Multiple Input Filtering</summary> The `filter_var_array()` function gets multiple inputs and optionally filters them. This is useful for validating and sanitizing an array of input data.
+</details>
+
+<details><summary>247. Use `parse_ini_string()` to Parse Configuration from a String</summary> The `parse_ini_string()` function parses a string in the INI format and returns an associative array. This is useful for loading configuration settings from a string.
+</details>
+
+<details><summary>248. Use `parse_ini_file()` to Parse Configuration Files</summary> The `parse_ini_file()` function parses a file in the INI format and returns an associative array. This is useful for loading configuration settings from a file.
+</details>
+
+<details><summary>249. Use `get_magic_quotes_gpc()` to Check Magic Quotes Status</summary> The `get_magic_quotes_gpc()` function checks if magic quotes are enabled. This is useful for ensuring compatibility with older PHP versions.
+</details>
+
+<details><summary>250. Use `get_magic_quotes_runtime()` to Check Magic Quotes Runtime Status</summary> The `get_magic_quotes_runtime()` function checks if magic quotes runtime is enabled. This is useful for ensuring compatibility with older PHP versions.
+</details>
+
+<details><summary>251. Use `set_magic_quotes_runtime()` to Set Magic Quotes Runtime</summary> The `set_magic_quotes_runtime()` function sets the current active configuration setting of magic quotes runtime. This is useful for ensuring compatibility with older PHP versions.
+</details>
+
+<details><summary>252. Use `html_entity_decode()` to Convert HTML Entities Back to Characters</summary> The `html_entity_decode()` function converts all HTML entities to their applicable characters. This is useful for decoding encoded HTML content.
+</details>
+
+<details><summary>253. Use `get_html_translation_table()` to Retrieve HTML Translation Table</summary> The `get_html_translation_table()` function returns the translation table used by `htmlspecialchars()` and `htmlentities()`. This is useful for understanding how characters are encoded.
+</details>
+
+<details><summary>254. Use `chr()` to Convert ASCII Value to Character</summary> The `chr()` function returns a character from the specified ASCII value. This is useful for generating characters from ASCII values.
+</details>
+
+<details><summary>255. Use `ord()` to Convert Character to ASCII Value</summary> The `ord()` function returns the ASCII value of the first character of a string. This is useful for converting characters to their ASCII values.
+</details>
+
+<details><summary>256. Use `bin2hex()` to Convert Binary Data to Hexadecimal</summary> The `bin2hex()` function converts binary data into hexadecimal representation. This is useful for encoding binary data.
+</details>
+
+<details><summary>257. Use `hex2bin()` to Convert Hexadecimal to Binary Data</summary> The `hex2bin()` function converts a hexadecimal string to binary data. This is useful for decoding hexadecimal data.
+</details>
+
+<details><summary>258. Use `strrev()` to Reverse a String</summary> The `strrev()` function reverses a string. This is useful for palindrome checks and text manipulation.
+</details>
+
+<details><summary>259. Use `soundex()` to Generate Soundex Key</summary> The `soundex()` function calculates the soundex key of a string. This is useful for comparing words that sound similar.
+</details>
+
+<details><summary>260. Use `levenshtein()` to Calculate Levenshtein Distance</summary> The `levenshtein()` function calculates the Levenshtein distance between two strings. This is useful for measuring the similarity between strings.
+</details>
+
+<details><summary>261. Use `similar_text()` to Calculate Similarity Between Strings</summary> The `similar_text()` function calculates the similarity between two strings and returns the number of matching characters. This is useful for comparing text content.
+</details>
+
+<details><summary>262. Use `parse_url()` to Parse a URL</summary> The `parse_url()` function parses a URL and returns its components. This is useful for breaking down URLs into their individual parts.
+</details>
+
+<details><summary>263. Use `parse_str()` to Parse a Query String</summary> The `parse_str()` function parses a query string into variables. This is useful for extracting parameters from a URL query string.
+</details>
+
+<details><summary>264. Use `basename()` to Get the Filename from a Path</summary> The `basename()` function returns the filename from a given path. This is useful for extracting the file name from a file path.
+</details>
+
+<details><summary>265. Use `dirname()` to Get the Directory Name from a Path</summary> The `dirname()` function returns the directory name from a given path. This is useful for extracting the directory path from a file path.
+</details>
+
+<details><summary>266. Use `pathinfo()` to Get Information About a Path</summary> The `pathinfo()` function returns information about a file path. This is useful for breaking down a file path into its components.
+</details>
+
+<details><summary>267. Use `realpath()` to Get the Absolute Path</summary> The `realpath()` function returns the absolute path of a file or directory. This is useful for resolving relative paths.
+</details>
+
+<details><summary>268. Use `glob()` to Find Pathnames Matching a Pattern</summary> The `glob()` function finds pathnames matching a specified pattern. This is useful for searching files and directories.
+</details>
+
+<details><summary>269. Use `is_file()` to Check if a Path is a File</summary> The `is_file()` function checks if a given path is a file. This is useful for validating file paths.
+</details>
+
+<details><summary>270. Use `is_dir()` to Check if a Path is a Directory</summary> The `is_dir()` function checks if a given path is a directory. This is useful for validating directory paths.
+</details>
+
+<details><summary>271. Use `is_readable()` to Check if a Path is Readable</summary> The `is_readable()` function checks if a file or directory is readable. This is useful for validating file and directory permissions.
+</details>
+
+<details><summary>272. Use `is_writable()` to Check if a Path is Writable</summary> The `is_writable()` function checks if a file or directory is writable. This is useful for validating file and directory permissions.
+</details>
+
+<details><summary>273. Use `is_executable()` to Check if a Path is Executable</summary> The `is_executable()` function checks if a file is executable. This is useful for validating file permissions.
+</details>
+
+<details><summary>274. Use `file_get_contents()` to Read a File into a String</summary> The `file_get_contents()` function reads an entire file into a string. This is useful for reading file contents.
+</details>
+
+<details><summary>275. Use `file_put_contents()` to Write a String to a File</summary> The `file_put_contents()` function writes a string to a file. This is useful for writing data to files.
+</details>
+
+<details><summary>276. Use `fopen()` to Open a File</summary> The `fopen()` function opens a file or URL. This is useful for reading from and writing to files.
+</details>
+
+<details><summary>277. Use `fclose()` to Close a File</summary> The `fclose()` function closes an open file pointer. This is useful for freeing up resources.
+</details>
+
+<details><summary>278. Use `fread()` to Read from a File</summary> The `fread()` function reads from an open file pointer. This is useful for reading file contents.
+</details>
+
+<details><summary>279. Use `fwrite()` to Write to a File</summary> The `fwrite()` function writes to an open file pointer. This is useful for writing data to files.
+</details>
+
+<details><summary>280. Use `feof()` to Check for End-of
+
+-File</summary> The `feof()` function checks if the end of a file has been reached. This is useful for reading files in a loop.
+</details>
+
+<details><summary>281. Use `fgets()` to Read a Line from a File</summary> The `fgets()` function reads a line from an open file pointer. This is useful for reading files line-by-line.
+</details>
+
+<details><summary>282. Use `fputs()` to Write a Line to a File</summary> The `fputs()` function writes a line to an open file pointer. This is useful for writing data to files.
+</details>
+
+<details><summary>283. Use `fflush()` to Flush Output to a File</summary> The `fflush()` function flushes the output buffer of a file pointer. This is useful for ensuring that all data is written to the file.
+</details>
+
+<details><summary>284. Use `fseek()` to Set the File Position</summary> The `fseek()` function sets the file pointer to a specified position. This is useful for navigating within a file.
+</details>
+
+<details><summary>285. Use `ftell()` to Get the Current File Position</summary> The `ftell()` function returns the current file position. This is useful for determining the position of the file pointer.
+</details>
+
+<details><summary>286. Use `rewind()` to Rewind the File Pointer</summary> The `rewind()` function sets the file pointer to the beginning of the file. This is useful for restarting file reading or writing.
+</details>
+
+<details><summary>287. Use `flock()` to Manage File Locks</summary> The `flock()` function locks or unlocks a file. This is useful for managing access to files in a concurrent environment.
+</details>
+
+<details><summary>288. Use `readfile()` to Output a File</summary> The `readfile()` function reads a file and writes it to the output buffer. This is useful for serving files for download or display.
+</details>
+
+<details><summary>289. Use `fpassthru()` to Output Remaining Data from a File Pointer</summary> The `fpassthru()` function outputs all remaining data from a file pointer. This is useful for streaming file contents.
+</details>
+
+<details><summary>290. Use `file_exists()` to Check if a File or Directory Exists</summary> The `file_exists()` function checks if a file or directory exists. This is useful for validating file and directory paths.
+</details>
+
+<details><summary>291. Use `unlink()` to Delete a File</summary> The `unlink()` function deletes a file. This is useful for removing files.
+</details>
+
+<details><summary>292. Use `copy()` to Copy a File</summary> The `copy()` function copies a file. This is useful for duplicating files.
+</details>
+
+<details><summary>293. Use `rename()` to Rename a File or Directory</summary> The `rename()` function renames a file or directory. This is useful for changing file and directory names.
+</details>
+
+<details><summary>294. Use `mkdir()` to Create a Directory</summary> The `mkdir()` function creates a new directory. This is useful for creating directories.
+</details>
+
+<details><summary>295. Use `rmdir()` to Remove a Directory</summary> The `rmdir()` function removes a directory. This is useful for deleting directories.
+</details>
+
+<details><summary>296. Use `scandir()` to List Files in a Directory</summary> The `scandir()` function returns an array of files and directories in a specified directory. This is useful for listing directory contents.
+</details>
+
+<details><summary>297. Use `glob()` for Pattern Matching in File Names</summary> The `glob()` function finds pathnames matching a pattern. This is useful for searching files and directories.
+</details>
+
+<details><summary>298. Use `disk_free_space()` to Get Free Disk Space</summary> The `disk_free_space()` function returns the number of free bytes on a filesystem or disk partition. This is useful for monitoring disk usage.
+</details>
+
+<details><summary>299. Use `disk_total_space()` to Get Total Disk Space</summary> The `disk_total_space()` function returns the total number of bytes on a filesystem or disk partition. This is useful for monitoring disk capacity.
+</details>
+
+<details><summary>300. Use `clearstatcache()` to Clear File Status Cache</summary> The `clearstatcache()` function clears the file status cache. This is useful for ensuring that file information is up-to-date.
+</details>
+
+<details><summary>301. Use `realpath()` to Resolve Relative Paths</summary> The `realpath()` function returns the canonicalized absolute pathname. This is useful for resolving relative paths.
+</details>
+
+<details><summary>302. Use `base64_encode()` to Encode Data</summary> The `base64_encode()` function encodes data with base64 encoding. This is useful for encoding binary data for transmission over text-based protocols.
+</details>
+
+<details><summary>303. Use `base64_decode()` to Decode Data</summary> The `base64_decode()` function decodes data encoded with base64 encoding. This is useful for decoding data that was encoded for transmission over text-based protocols.
+</details>
+
+<details><summary>304. Use `quoted_printable_encode()` for Email Text</summary> The `quoted_printable_encode()` function converts a string to quoted-printable encoding, which is used in email headers and bodies. This is useful for ensuring that email content is transmitted correctly.
+</details>
+
+<details><summary>305. Use `quoted_printable_decode()` to Decode Email Text</summary> The `quoted_printable_decode()` function converts a quoted-printable encoded string back to its original form. This is useful for decoding email content.
+</details>
+
+<details><summary>306. Use `get_meta_tags()` to Extract Meta Tags from HTML</summary> The `get_meta_tags()` function extracts all meta tag content attributes from a file and returns an array. This is useful for parsing and analyzing HTML meta tags.
+</details>
+
+<details><summary>307. Use `parse_url()` to Break Down URLs</summary> The `parse_url()` function parses a URL and returns its components. This is useful for extracting and manipulating parts of a URL.
+</details>
+
+<details><summary>308. Use `http_build_query()` to Build Query Strings</summary> The `http_build_query()` function generates URL-encoded query strings from associative arrays. This is useful for creating query strings for URLs or HTTP requests.
+</details>
+
+<details><summary>309. Use `parse_str()` to Parse Query Strings</summary> The `parse_str()` function parses a query string into variables. This is useful for handling URL parameters and form data.
+</details>
+
+<details><summary>310. Use `get_headers()` to Retrieve HTTP Headers</summary> The `get_headers()` function retrieves the HTTP headers sent by a server in response to an HTTP request. This is useful for debugging and inspecting HTTP responses.
+</details>
+
+<details><summary>311. Use `headers_list()` to List Headers Sent to the Client</summary> The `headers_list()` function returns a list of headers to be sent to the client. This is useful for debugging and inspecting HTTP headers.
+</details>
+
+<details><summary>312. Use `headers_sent()` to Check if Headers Have Been Sent</summary> The `headers_sent()` function checks if HTTP headers have already been sent. This is useful for ensuring that headers are sent before output.
+</details>
+
+<details><summary>313. Use `session_start()` to Start a Session</summary> The `session_start()` function starts a new session or resumes an existing session. This is useful for managing user sessions.
+</details>
+
+<details><summary>314. Use `session_destroy()` to Destroy a Session</summary> The `session_destroy()` function destroys all data associated with the current session. This is useful for logging out users and clearing session data.
+</details>
+
+<details><summary>315. Use `session_regenerate_id()` to Prevent Session Fixation</summary> The `session_regenerate_id()` function updates the current session ID with a newly generated one. This is useful for preventing session fixation attacks.
+</details>
+
+<details><summary>316. Use `setcookie()` to Send Cookies</summary> The `setcookie()` function sends a cookie to the client. This is useful for storing small amounts of data on the client side.
+</details>
+
+<details><summary>317. Use `preg_match()` for Pattern Matching</summary> The `preg_match()` function performs a regular expression match. This is useful for searching and validating strings.
+</details>
+
+<details><summary>318. Use `preg_replace()` for Search and Replace</summary> The `preg_replace()` function performs a search and replace using regular expressions. This is useful for modifying strings based on patterns.
+</details>
+
+<details><summary>319. Use `preg_split()` to Split Strings</summary> The `preg_split()` function splits a string by a regular expression. This is useful for breaking down strings based on patterns.
+</details>
+
+<details><summary>320. Use `preg_grep()` to Filter Arrays</summary> The `preg_grep()` function returns the elements of an array that match a pattern. This is useful for filtering arrays based on regular expressions.
+</details>
+
+<details><summary>321. Use `filter_var()` for Input Validation</summary> The `filter_var()` function validates and sanitizes a single variable with a specified filter. This is useful for ensuring that input data is safe and correct.
+</details>
+
+<details><summary>322. Use `filter
+
+_input()` for Input Filtering</summary> The `filter_input()` function gets a specific external variable by name and optionally filters it. This is useful for validating and sanitizing input data.
+</details>
+
+<details><summary>323. Use `filter_input_array()` for Multiple Input Filtering</summary> The `filter_input_array()` function gets multiple inputs and optionally filters them. This is useful for validating and sanitizing multiple input data.
+</details>
+
+<details><summary>324. Use `filter_list()` to Get a List of All Supported Filters</summary> The `filter_list()` function returns a list of all supported filters. This is useful for understanding the available input validation and sanitization options.
+</details>
+
+<details><summary>325. Use `filter_has_var()` to Check for Input Presence</summary> The `filter_has_var()` function checks if a variable with a specified type exists. This is useful for validating the presence of input data.
+</details>
+
+<details><summary>326. Use `filter_var_array()` to Filter Multiple Variables</summary> The `filter_var_array()` function gets multiple variables and optionally filters them. This is useful for validating and sanitizing an array of input data.
+</details>
+
+<details><summary>327. Use `hash()` for Cryptographic Hashing</summary> The `hash()` function generates a hash value using a specified algorithm. This is useful for creating secure hashes of data.
+</details>
+
+<details><summary>328. Use `hash_hmac()` for HMAC Generation</summary> The `hash_hmac()` function generates a keyed hash value using the HMAC method. This is useful for creating secure HMACs for data integrity and authentication.
+</details>
+
+<details><summary>329. Use `hash_algos()` to List Available Hash Algorithms</summary> The `hash_algos()` function returns a list of all supported hashing algorithms. This is useful for understanding the available hashing options.
+</details>
+
+<details><summary>330. Use `password_hash()` for Secure Password Storage</summary> The `password_hash()` function creates a new password hash using a strong one-way hashing algorithm. This is useful for securely storing passwords.
+</details>
+
+<details><summary>331. Use `password_verify()` to Verify Passwords</summary> The `password_verify()` function verifies that a password matches a hash. This is useful for authenticating users securely.
+</details>
+
+<details><summary>332. Use `password_needs_rehash()` to Check if a Hash Needs Rehashing</summary> The `password_needs_rehash()` function checks if a hash needs to be rehashed to match a given algorithm and options. This is useful for maintaining the security of stored passwords.
+</details>
+
+<details><summary>333. Use `mcrypt_encrypt()` for Encryption</summary> The `mcrypt_encrypt()` function encrypts data with a specified cipher and key. This is useful for securely encrypting sensitive data.
+</details>
+
+<details><summary>334. Use `mcrypt_decrypt()` for Decryption</summary> The `mcrypt_decrypt()` function decrypts data that was encrypted with `mcrypt_encrypt()`. This is useful for securely decrypting sensitive data.
+</details>
+
+<details><summary>335. Use `openssl_encrypt()` for Encryption</summary> The `openssl_encrypt()` function encrypts data with a specified cipher and key. This is useful for securely encrypting sensitive data.
+</details>
+
+<details><summary>336. Use `openssl_decrypt()` for Decryption</summary> The `openssl_decrypt()` function decrypts data that was encrypted with `openssl_encrypt()`. This is useful for securely decrypting sensitive data.
+</details>
+
+<details><summary>337. Use `openssl_sign()` for Digital Signatures</summary> The `openssl_sign()` function signs data using a private key. This is useful for creating digital signatures for data integrity and authentication.
+</details>
+
+<details><summary>338. Use `openssl_verify()` to Verify Digital Signatures</summary> The `openssl_verify()` function verifies that a signature is correct for the given data and public key. This is useful for verifying digital signatures.
+</details>
+
+<details><summary>339. Use `openssl_pkey_new()` to Generate a New Private Key</summary> The `openssl_pkey_new()` function generates a new private key. This is useful for creating key pairs for encryption and digital signatures.
+</details>
+
+<details><summary>340. Use `openssl_pkey_export()` to Export a Private Key</summary> The `openssl_pkey_export()` function exports a private key to a string or file. This is useful for storing and sharing private keys.
+</details>
+
+<details><summary>341. Use `openssl_pkey_get_public()` to Get a Public Key</summary> The `openssl_pkey_get_public()` function gets a public key from a certificate or public key string. This is useful for retrieving public keys for encryption and digital signatures.
+</details>
+
+<details><summary>342. Use `openssl_seal()` to Encrypt Data with Multiple Public Keys</summary> The `openssl_seal()` function encrypts data and seals it with a list of public keys. This is useful for securely sending data to multiple recipients.
+</details>
+
+<details><summary>343. Use `openssl_open()` to Decrypt Sealed Data</summary> The `openssl_open()` function decrypts data that was sealed with `openssl_seal()`. This is useful for securely receiving data encrypted for multiple recipients.
+</details>
+
+<details><summary>344. Use `openssl_x509_parse()` to Parse a Certificate</summary> The `openssl_x509_parse()` function parses an X.509 certificate and returns an associative array of its information. This is useful for inspecting certificate details.
+</details>
+
+<details><summary>345. Use `openssl_x509_checkpurpose()` to Check Certificate Purpose</summary> The `openssl_x509_checkpurpose()` function checks if a certificate can be used for a specified purpose. This is useful for validating certificate usage.
+</details>
+
+<details><summary>346. Use `openssl_csr_new()` to Generate a Certificate Signing Request</summary> The `openssl_csr_new()` function generates a new certificate signing request (CSR). This is useful for creating CSRs to request new certificates.
+</details>
+
+<details><summary>347. Use `openssl_csr_sign()` to Sign a CSR</summary> The `openssl_csr_sign()` function signs a CSR with a CA certificate and private key. This is useful for issuing new certificates from a CSR.
+</details>
+
+<details><summary>348. Use `openssl_pkcs12_export()` to Export a PKCS#12 File</summary> The `openssl_pkcs12_export()` function exports a PKCS#12 file with certificates and a private key. This is useful for creating PKCS#12 files for secure storage and transport.
+</details>
+
+<details><summary>349. Use `openssl_pkcs12_read()` to Read a PKCS#12 File</summary> The `openssl_pkcs12_read()` function reads a PKCS#12 file and extracts the certificates and private key. This is useful for importing PKCS#12 files.
+</details>
+
+<details><summary>350. Use `stream_context_create()` for Custom Stream Contexts</summary> The `stream_context_create()` function creates a stream context with specified options. This is useful for configuring stream behavior, such as HTTP headers and SSL settings.
+</details>
+
+<details><summary>351. Use `stream_context_set_option()` to Set Stream Context Options</summary> The `stream_context_set_option()` function sets options for an existing stream context. This is useful for modifying stream context settings dynamically.
+</details>
+
+<details><summary>352. Use `stream_context_get_options()` to Retrieve Stream Context Options</summary> The `stream_context_get_options()` function retrieves options from an existing stream context. This is useful for inspecting stream context settings.
+</details>
+
+<details><summary>353. Use `stream_filter_append()` to Add a Stream Filter</summary> The `stream_filter_append()` function attaches a filter to a stream. This is useful for processing data as it is read from or written to a stream.
+</details>
+
+<details><summary>354. Use `stream_filter_remove()` to Remove a Stream Filter</summary> The `stream_filter_remove()` function removes a filter from a stream. This is useful for modifying stream filtering behavior dynamically.
+</details>
+
+<details><summary>355. Use `stream_get_meta_data()` to Retrieve Stream Metadata</summary> The `stream_get_meta_data()` function retrieves metadata from a stream. This is useful for inspecting stream properties and status.
+</details>
+
+<details><summary>356. Use `stream_get_wrappers()` to List Registered Stream Wrappers</summary> The `stream_get_wrappers()` function returns an array of registered stream wrappers. This is useful for understanding the available stream wrappers.
+</details>
+
+<details><summary>357. Use `stream_register_wrapper()` to Register a Custom Stream Wrapper</summary> The `stream_register_wrapper()` function registers a custom stream wrapper. This is useful for extending PHP's stream handling capabilities with custom protocols.
+</details>
+
+<details><summary>358. Use `stream_wrapper_unregister()` to Unregister a Stream Wrapper</summary> The `stream_wrapper_unregister()` function unregisters a stream wrapper. This is useful for removing custom stream wrappers.
+</details>
+
+<details><summary>359. Use `stream_wrapper_restore()` to Restore a Stream Wrapper</summary> The `stream_wrapper_restore()` function restores a previously unregistered stream wrapper. This is useful for re-enabling default stream wrappers.
+</details>
+
+<details><summary>360. Use `stream_socket_client()` to Open a Network Connection</summary> The `stream_socket_client()` function opens a client-side socket connection to a specified address. This is useful for creating network clients.
+</details>
+
+<details><
+
+summary>361. Use `stream_socket_server()` to Create a Network Server</summary> The `stream_socket_server()` function creates a server-side socket bound to a specified address. This is useful for creating network servers.
+</details>
+
+<details><summary>362. Use `stream_socket_accept()` to Accept a Connection</summary> The `stream_socket_accept()` function accepts a connection on a listening socket. This is useful for handling incoming connections on a server.
+</details>
+
+<details><summary>363. Use `stream_socket_enable_crypto()` to Enable Encryption on a Stream</summary> The `stream_socket_enable_crypto()` function enables or disables encryption on a stream. This is useful for securing network connections with SSL/TLS.
+</details>
+
+<details><summary>364. Use `stream_socket_shutdown()` to Shutdown a Socket Connection</summary> The `stream_socket_shutdown()` function shuts down a socket connection for reading, writing, or both. This is useful for closing network connections cleanly.
+</details>
+
+<details><summary>365. Use `stream_get_transports()` to List Available Socket Transports</summary> The `stream_get_transports()` function returns an array of available socket transports. This is useful for understanding the available options for network communication.
+</details>
+
+<details><summary>366. Use `stream_set_blocking()` to Set Blocking Mode</summary> The `stream_set_blocking()` function sets the blocking mode on a stream. This is useful for controlling how a stream handles read and write operations.
+</details>
+
+<details><summary>367. Use `stream_set_timeout()` to Set Stream Timeout</summary> The `stream_set_timeout()` function sets the timeout period on a stream. This is useful for controlling how long a stream will wait for data.
+</details>
+
+<details><summary>368. Use `stream_socket_pair()` to Create a Pair of Connected Sockets</summary> The `stream_socket_pair()` function creates a pair of connected, indistinguishable socket streams. This is useful for inter-process communication.
+</details>
+
+<details><summary>369. Use `proc_open()` to Execute a Command in a Subprocess</summary> The `proc_open()` function executes a command in a subprocess and returns a handle to manage the process. This is useful for executing external commands and handling their input and output.
+</details>
+
+<details><summary>370. Use `proc_terminate()` to Terminate a Process</summary> The `proc_terminate()` function terminates a process opened by `proc_open()`. This is useful for stopping subprocesses.
+</details>
+
+<details><summary>371. Use `proc_get_status()` to Retrieve Process Status</summary> The `proc_get_status()` function retrieves information about a process opened by `proc_open()`. This is useful for monitoring subprocesses.
+</details>
+
+<details><summary>372. Use `proc_close()` to Close a Process Handle</summary> The `proc_close()` function closes a process handle opened by `proc_open()`. This is useful for cleaning up resources after a subprocess has finished.
+</details>
+
+<details><summary>373. Use `popen()` to Open a Pipe to a Process</summary> The `popen()` function opens a pipe to a process. This is useful for executing commands and reading their output.
+</details>
+
+<details><summary>374. Use `pclose()` to Close a Pipe</summary> The `pclose()` function closes a pipe opened by `popen()`. This is useful for cleaning up resources after executing a command.
+</details>
+
+<details><summary>375. Use `system()` to Execute a Command and Output the Result</summary> The `system()` function executes an external program and outputs the result. This is useful for executing shell commands from PHP.
+</details>
+
+<details><summary>376. Use `exec()` to Execute a Command and Return the Output</summary> The `exec()` function executes an external program and returns the output. This is useful for capturing the result of shell commands.
+</details>
+
+<details><summary>377. Use `shell_exec()` to Execute a Command via Shell and Return the Output</summary> The `shell_exec()` function executes a command via the shell and returns the complete output. This is useful for running shell commands from PHP.
+</details>
+
+<details><summary>378. Use `escapeshellarg()` to Escape a String for Shell</summary> The `escapeshellarg()` function escapes a string to be used as a shell argument. This is useful for preventing shell injection vulnerabilities.
+</details>
+
+<details><summary>379. Use `escapeshellcmd()` to Escape a Command for Shell</summary> The `escapeshellcmd()` function escapes a command to be executed in the shell. This is useful for preventing shell injection vulnerabilities.
+</details>
+
+<details><summary>380. Use `getenv()` to Retrieve Environment Variables</summary> The `getenv()` function retrieves the value of an environment variable. This is useful for accessing environment-specific configuration settings.
+</details>
+
+<details><summary>381. Use `putenv()` to Set Environment Variables</summary> The `putenv()` function sets the value of an environment variable. This is useful for modifying the environment for subprocesses.
+</details>
+
+<details><summary>382. Use `getopt()` to Parse Command-Line Arguments</summary> The `getopt()` function parses command-line arguments passed to a script. This is useful for handling options and arguments in CLI scripts.
+</details>
+
+<details><summary>383. Use `date_parse()` to Parse a Date String</summary> The `date_parse()` function parses a date string into an associative array. This is useful for analyzing and manipulating date strings.
+</details>
+
+<details><summary>384. Use `date_parse_from_format()` to Parse a Date with a Specific Format</summary> The `date_parse_from_format()` function parses a date string according to a specified format. This is useful for handling custom date formats.
+</details>
+
+<details><summary>385. Use `date_diff()` to Calculate the Difference Between Dates</summary> The `date_diff()` function calculates the difference between two date objects. This is useful for determining the interval between dates.
+</details>
+
+<details><summary>386. Use `date_add()` to Add an Interval to a Date</summary> The `date_add()` function adds an interval to a date object. This is useful for manipulating dates.
+</details>
+
+<details><summary>387. Use `date_sub()` to Subtract an Interval from a Date</summary> The `date_sub()` function subtracts an interval from a date object. This is useful for manipulating dates.
+</details>
+
+<details><summary>388. Use `date_modify()` to Modify a Date</summary> The `date_modify()` function modifies a date object according to a specified string. This is useful for complex date manipulations.
+</details>
+
+<details><summary>389. Use `date_time_set()` to Set the Time of a Date</summary> The `date_time_set()` function sets the time of a date object. This is useful for manipulating date and time together.
+</details>
+
+<details><summary>390. Use `date_date_set()` to Set the Date</summary> The `date_date_set()` function sets the date of a date object. This is useful for manipulating date and time together.
+</details>
+
+<details><summary>391. Use `date_isodate_set()` to Set the Date According to ISO 8601</summary> The `date_isodate_set()` function sets the date of a date object according to ISO 8601. This is useful for handling ISO 8601 dates.
+</details>
+
+<details><summary>392. Use `date_create_from_format()` to Create a Date from a Custom Format</summary> The `date_create_from_format()` function creates a new date object from a custom format. This is useful for parsing dates in non-standard formats.
+</details>
+
+<details><summary>393. Use `date_interval_create_from_date_string()` to Create an Interval from a String</summary> The `date_interval_create_from_date_string()` function creates a new date interval object from a string. This is useful for defining date intervals.
+</details>
+
+<details><summary>394. Use `date_interval_format()` to Format an Interval</summary> The `date_interval_format()` function formats a date interval according to a specified format. This is useful for displaying intervals in a human-readable form.
+</details>
+
+<details><summary>395. Use `date_sun_info()` to Get Sun Information</summary> The `date_sun_info()` function returns an array with information about sunset, sunrise, and twilight. This is useful for astronomical calculations.
+</details>
+
+<details><summary>396. Use `date_sunrise()` to Get Sunrise Time</summary> The `date_sunrise()` function returns the time of sunrise for a given day and location. This is useful for astronomical calculations.
+</details>
+
+<details><summary>397. Use `date_sunset()` to Get Sunset Time</summary> The `date_sunset()` function returns the time of sunset for a given day and location. This is useful for astronomical calculations.
+</details>
+
+<details><summary>398. Use `gmdate()` to Format a GMT Date</summary> The `gmdate()` function formats a GMT/UTC date and time according to a specified format. This is useful for handling dates in UTC.
+</details>
+
+<details><summary>399. Use `idate()` for Integer Date Formatting</summary> The `idate()` function formats a local time/date as an integer. This is useful for extracting parts of a date or time.
+</details>
+
+<details><summary>400. Use `strptime()` to Parse a Date/Time String</summary> The `strptime()` function parses a date/time string according to a specified format. This is useful for converting date strings to timestamps.
+</details>
