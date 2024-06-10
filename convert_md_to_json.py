@@ -11,7 +11,9 @@ def parse_markdown(file_path):
 
     tips = []
     for match in matches:
-        summary = match[0].strip()
+        # remove leading number with . and space from summary we should have used a better regex
+
+        summary = match[0].strip().split('. ', 1)[1]
         content = match[1].strip()
         tips.append({"summary": summary, "content": content})
 
