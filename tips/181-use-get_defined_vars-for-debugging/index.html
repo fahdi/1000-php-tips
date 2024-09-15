@@ -7,28 +7,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
     <style>
+        :root {
+            --php-light-blue: #8892be;
+            --php-dark-blue: #4f5b93;
+            --php-green: #99cc99;
+            --text-color: #333;
+            --background-color: #f4f7f9;
+            --card-background: #ffffff;
+        }
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container {
-            background: #fff;
+            background: var(--card-background);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
+            flex-grow: 1;
         }
-        h1 { color: #007BFF; }
+        header {
+            background-color: var(--php-dark-blue);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            color: white;
+            margin-top: 0;
+        }
+        h1 {
+            color: var(--php-dark-blue);
+            margin-top: 0;
+        }
         pre {
             background-color: #f4f4f4;
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
+            border-left: 5px solid var(--php-light-blue);
         }
         code {
             font-family: 'Courier New', Courier, monospace;
@@ -44,20 +70,37 @@
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            color: #007BFF;
+            color: var(--php-dark-blue);
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
-        .back-link:hover { text-decoration: underline; }
+        .back-link:hover {
+            color: var(--php-green);
+        }
+        footer {
+            background-color: var(--php-dark-blue);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
 </head>
 <body>
-<div class="container">
+<header>
     <h1>Use `get_defined_vars()` for Debugging</h1>
+</header>
+<div class="container">
+    <h2>Use `get_defined_vars()` for Debugging</h2>
     <div id="tipContent">The <code>get_defined_vars()</code> function returns an array of all defined variables in the current scope. This is useful for debugging and inspecting the state of your application.</div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
+<footer>
+    <p>&copy; 2024 PHP Tips. All rights reserved.</p>
+</footer>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
     Prism.highlightAll();
