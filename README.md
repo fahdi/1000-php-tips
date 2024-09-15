@@ -1221,3 +1221,334 @@ summary>361. Use `stream_socket_server()` to Create a Network Server</summary> T
 
 <details><summary>400. Use `strptime()` to Parse a Date/Time String</summary> The `strptime()` function parses a date/time string according to a specified format. This is useful for converting date strings to timestamps.
 </details>
+
+<details><summary>401. Use Dependency Injection Containers</summary>
+Implement a Dependency Injection Container (DIC) to manage object creation and lifecycle. DICs help in decoupling components, improving testability, and managing complex dependency graphs in large applications.
+
+```php
+use Psr\Container\ContainerInterface;
+
+class UserService
+{
+    private $db;
+
+    public function __construct(ContainerInterface $container)
+    {
+        $this->db = $container->get('database');
+    }
+}
+```
+</details>
+
+<details><summary>402. Implement Value Objects for Domain Modeling</summary>
+Use Value Objects to represent domain concepts that are defined by their attributes rather than an identity. This enhances code readability and ensures data integrity.
+
+```php
+final class Email
+{
+    private $email;
+
+    public function __construct(string $email)
+    {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new InvalidArgumentException('Invalid email');
+        }
+        $this->email = $email;
+    }
+
+    public function __toString(): string
+    {
+        return $this->email;
+    }
+}
+```
+</details>
+
+<details><summary>403. Use PHP-CS-Fixer for Consistent Code Styling</summary>
+Integrate PHP-CS-Fixer into your development workflow to automatically fix coding standards issues. This ensures consistent code style across your project and team.
+
+```bash
+php-cs-fixer fix /path/to/project
+```
+</details>
+
+<details><summary>404. Implement Circuit Breakers for Resilient External Service Calls</summary>
+Use the Circuit Breaker pattern to handle failures in external service calls gracefully. This prevents cascading failures and improves system resilience.
+
+```php
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
+class CircuitBreaker
+{
+    private $failureThreshold = 3;
+    private $resetTimeout = 30;
+    private $lastFailureTime;
+    private $failureCount = 0;
+
+    public function call(callable $function)
+    {
+        if ($this->isOpen()) {
+            throw new Exception('Circuit is open');
+        }
+
+        try {
+            $result = $function();
+            $this->reset();
+            return $result;
+        } catch (Exception $e) {
+            $this->recordFailure();
+            throw $e;
+        }
+    }
+
+    private function isOpen()
+    {
+        if ($this->failureCount >= $this->failureThreshold) {
+            $timeSinceLastFailure = time() - $this->lastFailureTime;
+            if ($timeSinceLastFailure <= $this->resetTimeout) {
+                return true;
+            }
+            $this->reset();
+        }
+        return false;
+    }
+
+    private function recordFailure()
+    {
+        $this->failureCount++;
+        $this->lastFailureTime = time();
+    }
+
+    private function reset()
+    {
+        $this->failureCount = 0;
+        $this->lastFailureTime = null;
+    }
+}
+
+// Usage
+$circuitBreaker = new CircuitBreaker();
+try {
+    $result = $circuitBreaker->call(function() {
+        $client = new Client();
+        return $client->get('http://api.example.com');
+    });
+} catch (Exception $e) {
+    // Handle the exception
+}
+```
+</details>
+
+<details><summary>405. Use PHP's Built-in Web Server for Development</summary>
+Leverage PHP's built-in web server for quick development and testing, especially for small projects or APIs.
+
+```bash
+php -S localhost:8000 -t public/
+```
+</details>
+
+<details><summary>406. Implement Fluent Interfaces for Expressive Code</summary>
+Create fluent interfaces to make your code more readable and expressive, especially for configuration or query building.
+
+```php
+class QueryBuilder
+{
+    private $table;
+    private $conditions = [];
+
+    public function from($table)
+    {
+        $this->table = $table;
+        return $this;
+    }
+
+    public function where($condition)
+    {
+        $this->conditions[] = $condition;
+        return $this;
+    }
+
+    public function build()
+    {
+        $query = "SELECT * FROM {$this->table}";
+        if (!empty($this->conditions)) {
+            $query .= " WHERE " . implode(' AND ', $this->conditions);
+        }
+        return $query;
+    }
+}
+
+// Usage
+$query = (new QueryBuilder())
+    ->from('users')
+    ->where('age > 18')
+    ->where('status = "active"')
+    ->build();
+```
+</details>
+
+<details><summary>407. Use PHP's Built-in FastCGI Process Manager (FPM)</summary>
+For production environments, use PHP-FPM to handle PHP requests more efficiently, especially under high load.
+
+```nginx
+# Nginx configuration example
+location ~ \.php$ {
+    fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+    fastcgi_index index.php;
+    include fastcgi_params;
+}
+```
+</details>
+
+<details><summary>408. Implement Command Pattern for Complex Operations</summary>
+Use the Command pattern to encapsulate requests as objects, allowing for parameterization of clients with queues, requests, and operations.
+
+```php
+interface CommandInterface
+{
+    public function execute();
+}
+
+class SendEmailCommand implements CommandInterface
+{
+    private $recipient;
+    private $subject;
+    private $body;
+
+    public function __construct($recipient, $subject, $body)
+    {
+        $this->recipient = $recipient;
+        $this->subject = $subject;
+        $this->body = $body;
+    }
+
+    public function execute()
+    {
+        // Logic to send email
+        echo "Sending email to {$this->recipient} with subject '{$this->subject}'";
+    }
+}
+
+class CommandInvoker
+{
+    private $command;
+
+    public function setCommand(CommandInterface $command)
+    {
+        $this->command = $command;
+    }
+
+    public function executeCommand()
+    {
+        $this->command->execute();
+    }
+}
+
+// Usage
+$invoker = new CommandInvoker();
+$invoker->setCommand(new SendEmailCommand('user@example.com', 'Hello', 'This is a test email'));
+$invoker->executeCommand();
+```
+</details>
+
+<details><summary>409. Use PHP's Stream Wrappers for Custom Protocols</summary>
+Implement custom stream wrappers to handle special file systems or protocols in a transparent way to the rest of your application.
+
+```php
+class CustomWrapper
+{
+    private $position;
+    private $data;
+
+    public function stream_open($path, $mode, $options, &$opened_path)
+    {
+        $url = parse_url($path);
+        $this->data = "This is data from {$url['host']}";
+        $this->position = 0;
+        return true;
+    }
+
+    public function stream_read($count)
+    {
+        $ret = substr($this->data, $this->position, $count);
+        $this->position += strlen($ret);
+        return $ret;
+    }
+
+    public function stream_eof()
+    {
+        return $this->position >= strlen($this->data);
+    }
+}
+
+stream_wrapper_register("custom", CustomWrapper::class);
+
+// Usage
+$contents = file_get_contents("custom://example.com");
+echo $contents; // Outputs: This is data from example.com
+```
+</details>
+
+<details><summary>410. Implement the Specification Pattern for Complex Business Rules</summary>
+Use the Specification pattern to encapsulate business rules and make them composable.
+
+```php
+interface SpecificationInterface
+{
+    public function isSatisfiedBy($candidate): bool;
+}
+
+class UserIsAdultSpecification implements SpecificationInterface
+{
+    public function isSatisfiedBy($user): bool
+    {
+        return $user->age >= 18;
+    }
+}
+
+class UserHasValidEmailSpecification implements SpecificationInterface
+{
+    public function isSatisfiedBy($user): bool
+    {
+        return filter_var($user->email, FILTER_VALIDATE_EMAIL) !== false;
+    }
+}
+
+class AndSpecification implements SpecificationInterface
+{
+    private $specs;
+
+    public function __construct(SpecificationInterface ...$specs)
+    {
+        $this->specs = $specs;
+    }
+
+    public function isSatisfiedBy($candidate): bool
+    {
+        foreach ($this->specs as $spec) {
+            if (!$spec->isSatisfiedBy($candidate)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+// Usage
+$validUserSpec = new AndSpecification(
+    new UserIsAdultSpecification(),
+    new UserHasValidEmailSpecification()
+);
+
+$user = new stdClass();
+$user->age = 25;
+$user->email = 'user@example.com';
+
+if ($validUserSpec->isSatisfiedBy($user)) {
+    echo "User is valid";
+} else {
+    echo "User is not valid";
+}
+```
+</details>
