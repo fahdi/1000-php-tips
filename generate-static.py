@@ -1,8 +1,11 @@
 import json
 import os
+import math
 from jinja2 import Environment, FileSystemLoader
 import re
 import html
+
+TIPS_PER_PAGE = 15
 
 def slugify(text):
     slug = re.sub(r'[^\w\s-]', '', text.lower())
@@ -34,39 +37,43 @@ with open('tips.json', 'r') as f:
 
 # Set up Jinja2 environment
 env = Environment(loader=FileSystemLoader('templates'))
-template = env.get_template('tip_template.html')
+tip_template = env.get_template('tip_template.html')
+index_template = env.get_template('index_template.html')
 
-# Create a directory for the static pages if it doesn't exist
+# Create directories if they don't exist
 os.makedirs('tips', exist_ok=True)
+os.makedirs('pages', exist_ok=True)
 
-# Generate a static page for each tip
+# Generate individual tip pages
 for tip in tips:
     slug = slugify(tip['summary'])
     tip_dir = f'tips/{tip["id"]}-{slug}'
     os.makedirs(tip_dir, exist_ok=True)
 
-    # Format the content
-    tip['formatted_content'] = format_content(tip['content'])
+# Generate paginated index pages
+total_pages = math.ceil(len(tips) / TIPS_PER_PAGE)
 
-    # Generate the HTML content
-    output = template.render(tip=tip)
+for page in range(1, total_pages + 1):
+    start_index = (page - 1) * TIPS_PER_PAGE
+    end_index = start_index + TIPS_PER_PAGE
+    page_tips = tips[start_index:end_index]
 
-    # Write the HTML file
-    with open(f'{tip_dir}/index.html', 'w') as f:
+    output = index_template.render(
+        tips=page_tips,
+        current_page=page,
+        total_pages=total_pages,
+        has_prev=page > 1,
+        has_next=page < total_pages
+    )
+
+    if page == 1:
+        with open('index.html', 'w') as f:
+            f.write(output)
+
+    with open(f'pages/page_{page}.html', 'w') as f:
         f.write(output)
 
-    # Update the tip with its permalink
-    tip['permalink'] = f'/tips/{tip["id"]}-{slug}/'
-
-print(f"Generated {len(tips)} static tip pages.")
-
-# Generate the index page
-index_template = env.get_template('index_template.html')
-index_output = index_template.render(tips=tips)
-with open('index.html', 'w') as f:
-    f.write(index_output)
-
-print("Generated index page.")
+print(f"Generated {total_pages} paginated index pages.")
 
 # Update the tips.json file with permalinks
 with open('tips.json', 'w') as f:
