@@ -19,6 +19,7 @@
             text-align: center;
             overflow: hidden;
         }
+
         .container {
             background: #fff;
             padding: 30px;
@@ -28,27 +29,32 @@
             margin: 0 20px;
             animation: fadeIn 1.5s ease-in-out;
         }
+
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
             color: #007BFF;
         }
+
         h2 {
             font-size: 1.8em;
             margin-bottom: 15px;
             color: #555;
         }
+
         p {
             font-size: 1.2em;
             line-height: 1.6;
             margin-bottom: 20px;
             white-space: pre-wrap; /* To handle preformatted text like code snippets */
         }
+
         footer {
             margin-top: 30px;
             font-size: 0.9em;
             color: #888;
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -59,6 +65,7 @@
                 transform: translateY(0);
             }
         }
+
         .refresh-button {
             background-color: #007BFF;
             color: white;
@@ -69,29 +76,40 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .refresh-button:hover {
             background-color: #0056b3;
         }
     </style>
     <script>
       // Function to fetch the tips and display a random one
-      async function displayRandomTip() {
+      // Function to fetch the tips and display a random one
+      async function displayRandomTip(){
         try {
           const response = await fetch('tips.json');
           const tips = await response.json();
           const randomTip = tips[Math.floor(Math.random() * tips.length)];
-          document.getElementById('tip-summary').innerText = randomTip.summary;
-          document.getElementById('tip-content').innerHTML = randomTip.content.replace(/\n/g, '<br>');
+
+          // Use innerHTML instead of innerText for proper HTML rendering
+          document.getElementById('tip-summary').innerHTML = formatText(randomTip.summary);
+          document.getElementById('tip-content').innerHTML = formatText(randomTip.content);
         } catch (error) {
           console.error('Error fetching tips:', error);
         }
+      }
+
+      function formatText(textContent){
+        return textContent
+          .replace(/```php([\s\S]*?)```/g, '<pre><code class="language-php">$1</code></pre>')
+          .replace(/`([^`]+)`/g, '<code>$1</code>')
+          .replace(/\n/g, '<br>');
       }
 
       // Fetch and display a random tip when the page loads
       window.onload = displayRandomTip;
 
       // Function to refresh the tip
-      function refreshTip() {
+      function refreshTip(){
         displayRandomTip();
       }
     </script>
