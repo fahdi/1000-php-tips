@@ -1,7 +1,7 @@
 [
     {
         "summary": "Use strict typing with `declare(strict_types=1);`",
-        "content": "Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed."
+        "content": "Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.\n\n**Advantages:**\n- **Error Prevention:** Catches type-related errors early in development.\n- **Code Predictability:** Ensures functions receive and return the expected types.\n\n**Example:**\n```php\n<?php\ndeclare(strict_types=1);\n\nfunction addNumbers(int $a, int $b): int {\n    return $a + $b;\n}\n\necho addNumbers(5, 10); // Outputs: 15\n?>\n```"
     },
     {
         "summary": "Prevent SQL injection by using prepared statements with placeholders",

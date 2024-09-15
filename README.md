@@ -1,6 +1,24 @@
 # 1000 PHP Tips
 
-<details><summary>1. Use strict typing with `declare(strict_types=1);`</summary> Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.
+<details><summary>1. Use strict typing with `declare(strict_types=1);`</summary> 
+Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.
+
+**Advantages:**
+- **Error Prevention:** Catches type-related errors early in development.
+- **Code Predictability:** Ensures functions receive and return the expected types.
+
+**Example:**
+```php
+<?php
+declare(strict_types=1);
+
+function addNumbers(int $a, int $b): int {
+    return $a + $b;
+}
+
+echo addNumbers(5, 10); // Outputs: 15
+?>
+```
 </details>
 
 <details><summary>2. Prevent SQL injection by using prepared statements with placeholders</summary> When interacting with databases, it is crucial to protect against SQL injection attacks. Prepared statements with placeholders provide a secure way to handle user-supplied data by separating the SQL code from the user input. Prepared statements ensure that input values are treated as data and not executable code, minimizing the risk of SQL injection vulnerabilities.
