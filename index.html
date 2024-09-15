@@ -15,9 +15,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
-            overflow: hidden;
         }
 
         .container {
@@ -26,7 +25,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             max-width: 600px;
-            margin: 0 20px;
+            margin: 20px;
             animation: fadeIn 1.5s ease-in-out;
         }
 
@@ -46,7 +45,7 @@
             font-size: 1.2em;
             line-height: 1.6;
             margin-bottom: 20px;
-            white-space: pre-wrap; /* To handle preformatted text like code snippets */
+            white-space: pre-wrap;
         }
 
         footer {
@@ -56,17 +55,11 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .refresh-button {
+        .button {
             background-color: #007BFF;
             color: white;
             border: none;
@@ -75,22 +68,44 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
         }
 
-        .refresh-button:hover {
+        .button:hover {
             background-color: #0056b3;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
         }
     </style>
     <script>
-      // Function to fetch the tips and display a random one
-      // Function to fetch the tips and display a random one
-      async function displayRandomTip(){
+      async function displayRandomTip() {
         try {
           const response = await fetch('tips.json');
           const tips = await response.json();
           const randomTip = tips[Math.floor(Math.random() * tips.length)];
 
-          // Use innerHTML instead of innerText for proper HTML rendering
           document.getElementById('tip-summary').innerHTML = formatText(randomTip.summary);
           document.getElementById('tip-content').innerHTML = formatText(randomTip.content);
         } catch (error) {
@@ -98,18 +113,16 @@
         }
       }
 
-      function formatText(textContent){
+      function formatText(textContent) {
         return textContent
           .replace(/```php([\s\S]*?)```/g, '<pre><code class="language-php">$1</code></pre>')
           .replace(/`([^`]+)`/g, '<code>$1</code>')
           .replace(/\n/g, '<br>');
       }
 
-      // Fetch and display a random tip when the page loads
       window.onload = displayRandomTip;
 
-      // Function to refresh the tip
-      function refreshTip(){
+      function refreshTip() {
         displayRandomTip();
       }
     </script>
@@ -119,7 +132,8 @@
     <h1>PHP Tip of the Day</h1>
     <h2 id="tip-summary"></h2>
     <p id="tip-content"></p>
-    <button class="refresh-button" onclick="refreshTip()">Show Another Tip</button>
+    <button class="button" onclick="refreshTip()">Show Another Tip</button>
+    <a href="list/index.html" class="button">View All Tips</a>
     <footer>&copy; 2024 PHP Tips. All rights reserved.</footer>
 </div>
 </body>

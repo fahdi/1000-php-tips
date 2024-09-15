@@ -10,12 +10,15 @@ def parse_markdown(file_path):
     matches = pattern.findall(content)
 
     tips = []
-    for match in matches:
-        # remove leading number with . and space from summary we should have used a better regex
-
-        summary = match[0].strip().split('. ', 1)[1]
+    for index, match in enumerate(matches, start=1):
+        # Remove leading number with . and space from summary
+        summary = re.sub(r'^\d+\.\s*', '', match[0].strip())
         content = match[1].strip()
-        tips.append({"summary": summary, "content": content})
+        tips.append({
+            "id": index,
+            "summary": summary,
+            "content": content
+        })
 
     return tips
 
@@ -29,4 +32,4 @@ if __name__ == "__main__":
 
     tips = parse_markdown(markdown_file)
     save_to_json(tips, json_file)
-    print(f"Converted {len(tips)} tips to JSON and saved to {json_file}")
+    print(f"Converted {len(tips)} tips to JSON with IDs and saved to {json_file}")
