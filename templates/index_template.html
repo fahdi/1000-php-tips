@@ -54,19 +54,33 @@
     </ul>
     <div class="pagination">
         {% if has_prev %}
-        <a href="{% if current_page == 2 %}/index.html{% else %}/pages/page_{{ current_page - 1 }}.html{% endif %}">Previous</a>
+        <a href="{% if current_page == 2 %}/{% else %}/pages/{{ current_page - 1 }}/{% endif %}">Previous</a>
         {% endif %}
 
-        {% for page in range(1, total_pages + 1) %}
+        {% if pagination_range[0] > 1 %}
+        <a href="/">1</a>
+        {% if pagination_range[0] > 2 %}
+        <span>...</span>
+        {% endif %}
+        {% endif %}
+
+        {% for page in pagination_range %}
         {% if page == current_page %}
         <span class="current">{{ page }}</span>
         {% else %}
-        <a href="{% if page == 1 %}/index.html{% else %}/pages/page_{{ page }}.html{% endif %}">{{ page }}</a>
+        <a href="{% if page == 1 %}/{% else %}/pages/{{ page }}/{% endif %}">{{ page }}</a>
         {% endif %}
         {% endfor %}
 
+        {% if pagination_range[-1] < total_pages %}
+        {% if pagination_range[-1] < total_pages - 1 %}
+        <span>...</span>
+        {% endif %}
+        <a href="/pages/{{ total_pages }}/">{{ total_pages }}</a>
+        {% endif %}
+
         {% if has_next %}
-        <a href="/pages/page_{{ current_page + 1 }}.html">Next</a>
+        <a href="/pages/{{ current_page + 1 }}/">Next</a>
         {% endif %}
     </div>
 </div>

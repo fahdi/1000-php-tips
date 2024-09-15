@@ -6,6 +6,7 @@ import re
 import html
 
 TIPS_PER_PAGE = 15
+MAX_VISIBLE_PAGES = 5
 
 def slugify(text):
     slug = re.sub(r'[^\w\s-]', '', text.lower())
@@ -31,6 +32,18 @@ def format_content(content):
 
     return content
 
+def get_pagination_range(current_page, total_pages):
+    if total_pages <= MAX_VISIBLE_PAGES:
+        return range(1, total_pages + 1)
+
+    start = max(current_page - MAX_VISIBLE_PAGES // 2, 1)
+    end = min(start + MAX_VISIBLE_PAGES - 1, total_pages)
+
+    if end - start < MAX_VISIBLE_PAGES - 1:
+        start = max(end - MAX_VISIBLE_PAGES + 1, 1)
+
+    return range(start, end + 1)
+
 # Load the tips
 with open('tips.json', 'r') as f:
     tips = json.load(f)
@@ -50,6 +63,19 @@ for tip in tips:
     tip_dir = f'tips/{tip["id"]}-{slug}'
     os.makedirs(tip_dir, exist_ok=True)
 
+    # Format the content
+    tip['formatted_content'] = format_content(tip['content'])
+
+    # Generate the HTML content
+    output = tip_template.render(tip=tip)
+
+    # Write the HTML file
+    with open(f'{tip_dir}/index.html', 'w') as f:
+        f.write(output)
+
+    # Update the tip with its permalink
+    tip['permalink'] = f'/tips/{tip["id"]}-{slug}/'
+
 # Generate paginated index pages
 total_pages = math.ceil(len(tips) / TIPS_PER_PAGE)
 
@@ -63,15 +89,17 @@ for page in range(1, total_pages + 1):
         current_page=page,
         total_pages=total_pages,
         has_prev=page > 1,
-        has_next=page < total_pages
+        has_next=page < total_pages,
+        pagination_range=get_pagination_range(page, total_pages)
     )
 
     if page == 1:
         with open('index.html', 'w') as f:
             f.write(output)
-
-    with open(f'pages/page_{page}.html', 'w') as f:
-        f.write(output)
+    else:
+        os.makedirs(f'pages/{page}', exist_ok=True)
+        with open(f'pages/{page}/index.html', 'w') as f:
+            f.write(output)
 
 print(f"Generated {total_pages} paginated index pages.")
 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tips</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { color: #007BFF; text-align: center; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 5px; }
+        a { color: #007BFF; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a, .pagination span {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #007BFF;
+            border-radius: 3px;
+        }
+        .pagination .current {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>PHP Tips</h1>
+    <ul>
+        
+        <li><a href="/tips/301-use-realpath-to-resolve-relative-paths/">Use `realpath()` to Resolve Relative Paths</a></li>
+        
+        <li><a href="/tips/302-use-base64_encode-to-encode-data/">Use `base64_encode()` to Encode Data</a></li>
+        
+        <li><a href="/tips/303-use-base64_decode-to-decode-data/">Use `base64_decode()` to Decode Data</a></li>
+        
+        <li><a href="/tips/304-use-quoted_printable_encode-for-email-text/">Use `quoted_printable_encode()` for Email Text</a></li>
+        
+        <li><a href="/tips/305-use-quoted_printable_decode-to-decode-email-text/">Use `quoted_printable_decode()` to Decode Email Text</a></li>
+        
+        <li><a href="/tips/306-use-get_meta_tags-to-extract-meta-tags-from-html/">Use `get_meta_tags()` to Extract Meta Tags from HTML</a></li>
+        
+        <li><a href="/tips/307-use-parse_url-to-break-down-urls/">Use `parse_url()` to Break Down URLs</a></li>
+        
+        <li><a href="/tips/308-use-http_build_query-to-build-query-strings/">Use `http_build_query()` to Build Query Strings</a></li>
+        
+        <li><a href="/tips/309-use-parse_str-to-parse-query-strings/">Use `parse_str()` to Parse Query Strings</a></li>
+        
+        <li><a href="/tips/310-use-get_headers-to-retrieve-http-headers/">Use `get_headers()` to Retrieve HTTP Headers</a></li>
+        
+        <li><a href="/tips/311-use-headers_list-to-list-headers-sent-to-the-client/">Use `headers_list()` to List Headers Sent to the Client</a></li>
+        
+        <li><a href="/tips/312-use-headers_sent-to-check-if-headers-have-been-sent/">Use `headers_sent()` to Check if Headers Have Been Sent</a></li>
+        
+        <li><a href="/tips/313-use-session_start-to-start-a-session/">Use `session_start()` to Start a Session</a></li>
+        
+        <li><a href="/tips/314-use-session_destroy-to-destroy-a-session/">Use `session_destroy()` to Destroy a Session</a></li>
+        
+        <li><a href="/tips/315-use-session_regenerate_id-to-prevent-session-fixation/">Use `session_regenerate_id()` to Prevent Session Fixation</a></li>
+        
+    </ul>
+    <div class="pagination">
+        
+        <a href="/pages/20/">Previous</a>
+        
+
+        
+        <a href="/">1</a>
+        
+        <span>...</span>
+        
+        
+
+        
+        
+        <a href="/pages/19/">19</a>
+        
+        
+        
+        <a href="/pages/20/">20</a>
+        
+        
+        
+        <span class="current">21</span>
+        
+        
+        
+        <a href="/pages/22/">22</a>
+        
+        
+        
+        <a href="/pages/23/">23</a>
+        
+        
+
+        
+        
+        <span>...</span>
+        
+        <a href="/pages/28/">28</a>
+        
+
+        
+        <a href="/pages/22/">Next</a>
+        
+    </div>
+</div>
+</body>
+</html>
