@@ -6,80 +6,172 @@
     <title>PHP Tips</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --php-light-blue: #8892be;
+            --php-dark-blue: #4f5b93;
+            --php-green: #99cc99;
+            --text-color: #333;
+            --background-color: #f4f7f9;
+            --card-background: #ffffff;
+        }
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
         }
-        h1 { color: #007BFF; text-align: center; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 5px; }
-        a { color: #007BFF; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        header {
+            background-color: var(--php-dark-blue);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        .tip-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--php-light-blue);
+        }
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            border-left-color: var(--php-green);
+        }
+        .tip-card a {
+            color: var(--php-dark-blue);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .tip-card a:hover {
+            color: var(--php-green);
+        }
         .pagination {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         .pagination a, .pagination span {
             margin: 0 5px;
-            padding: 5px 10px;
-            border: 1px solid #007BFF;
-            border-radius: 3px;
+            padding: 8px 12px;
+            border: 1px solid var(--php-light-blue);
+            border-radius: 4px;
+            color: var(--php-dark-blue);
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .pagination a:hover {
+            background-color: var(--php-light-blue);
+            color: white;
         }
         .pagination .current {
-            background-color: #007BFF;
+            background-color: var(--php-dark-blue);
             color: white;
+            border-color: var(--php-dark-blue);
+        }
+        footer {
+            background-color: var(--php-dark-blue);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
-<div class="container">
+<header>
     <h1>PHP Tips</h1>
-    <ul>
+    <p class="subtitle">Enhance your PHP skills with daily tips</p>
+</header>
+<div class="container">
+    <div class="tips-grid">
         
-        <li><a href="/tips/1-use-strict-typing-with-declarestrict_types1/">Use strict typing with `declare(strict_types=1);`</a></li>
+        <div class="tip-card">
+            <a href="/tips/1-use-strict-typing-with-declarestrict_types1/">Use strict typing with `declare(strict_types=1);`</a>
+        </div>
         
-        <li><a href="/tips/2-prevent-sql-injection-by-using-prepared-statements-with-placeholders/">Prevent SQL injection by using prepared statements with placeholders</a></li>
+        <div class="tip-card">
+            <a href="/tips/2-prevent-sql-injection-by-using-prepared-statements-with-placeholders/">Prevent SQL injection by using prepared statements with placeholders</a>
+        </div>
         
-        <li><a href="/tips/3-avoid-using-eval-as-it-can-be-a-security-risk/">Avoid using `eval()` as it can be a security risk</a></li>
+        <div class="tip-card">
+            <a href="/tips/3-avoid-using-eval-as-it-can-be-a-security-risk/">Avoid using `eval()` as it can be a security risk</a>
+        </div>
         
-        <li><a href="/tips/4-use-foreach-instead-of-for-loop-when-iterating-over-an-array/">Use `foreach` instead of `for` loop when iterating over an array</a></li>
+        <div class="tip-card">
+            <a href="/tips/4-use-foreach-instead-of-for-loop-when-iterating-over-an-array/">Use `foreach` instead of `for` loop when iterating over an array</a>
+        </div>
         
-        <li><a href="/tips/5-escape-output-using-htmlspecialchars-to-prevent-cross-site-scripting-xss-attacks/">Escape output using `htmlspecialchars()` to prevent cross-site scripting (XSS) attacks</a></li>
+        <div class="tip-card">
+            <a href="/tips/5-escape-output-using-htmlspecialchars-to-prevent-cross-site-scripting-xss-attacks/">Escape output using `htmlspecialchars()` to prevent cross-site scripting (XSS) attacks</a>
+        </div>
         
-        <li><a href="/tips/6-use-trim-to-remove-leading-and-trailing-whitespace-from-a-string/">Use `trim()` to remove leading and trailing whitespace from a string</a></li>
+        <div class="tip-card">
+            <a href="/tips/6-use-trim-to-remove-leading-and-trailing-whitespace-from-a-string/">Use `trim()` to remove leading and trailing whitespace from a string</a>
+        </div>
         
-        <li><a href="/tips/7-use-filter_var-to-validate-and-sanitize-user-input/">Use `filter_var()` to validate and sanitize user input</a></li>
+        <div class="tip-card">
+            <a href="/tips/7-use-filter_var-to-validate-and-sanitize-user-input/">Use `filter_var()` to validate and sanitize user input</a>
+        </div>
         
-        <li><a href="/tips/8-use-array_map-to-apply-a-callback-function-to-every-element-of-an-array/">Use `array_map()` to apply a callback function to every element of an array</a></li>
+        <div class="tip-card">
+            <a href="/tips/8-use-array_map-to-apply-a-callback-function-to-every-element-of-an-array/">Use `array_map()` to apply a callback function to every element of an array</a>
+        </div>
         
-        <li><a href="/tips/9-utilize-array_key_exists-to-check-if-a-key-exists-in-an-array/">Utilize `array_key_exists()` to check if a key exists in an array</a></li>
+        <div class="tip-card">
+            <a href="/tips/9-utilize-array_key_exists-to-check-if-a-key-exists-in-an-array/">Utilize `array_key_exists()` to check if a key exists in an array</a>
+        </div>
         
-        <li><a href="/tips/10-use-str_replace-to-replace-occurrences-of-a-substring-in-a-string/">Use `str_replace()` to replace occurrences of a substring in a string</a></li>
+        <div class="tip-card">
+            <a href="/tips/10-use-str_replace-to-replace-occurrences-of-a-substring-in-a-string/">Use `str_replace()` to replace occurrences of a substring in a string</a>
+        </div>
         
-        <li><a href="/tips/11-use-sprintf-for-string-formatting-and-interpolation/">Use `sprintf()` for string formatting and interpolation</a></li>
+        <div class="tip-card">
+            <a href="/tips/11-use-sprintf-for-string-formatting-and-interpolation/">Use `sprintf()` for string formatting and interpolation</a>
+        </div>
         
-        <li><a href="/tips/12-avoid-using-the-global-keyword-prefer-dependency-injection/">Avoid using the `global` keyword; prefer dependency injection</a></li>
+        <div class="tip-card">
+            <a href="/tips/12-avoid-using-the-global-keyword-prefer-dependency-injection/">Avoid using the `global` keyword; prefer dependency injection</a>
+        </div>
         
-        <li><a href="/tips/13-use-date-or-datetime-for-handling-dates-and-times/">Use `date()` or `DateTime` for handling dates and times</a></li>
+        <div class="tip-card">
+            <a href="/tips/13-use-date-or-datetime-for-handling-dates-and-times/">Use `date()` or `DateTime` for handling dates and times</a>
+        </div>
         
-        <li><a href="/tips/14-use-array_merge-to-merge-multiple-arrays-into-one/">Use `array_merge()` to merge multiple arrays into one</a></li>
+        <div class="tip-card">
+            <a href="/tips/14-use-array_merge-to-merge-multiple-arrays-into-one/">Use `array_merge()` to merge multiple arrays into one</a>
+        </div>
         
-        <li><a href="/tips/15-use-array_filter-to-filter-an-array-based-on-a-callback-function/">Use `array_filter()` to filter an array based on a callback function</a></li>
-        
-    </ul>
+    </div>
     <div class="pagination">
         
 
@@ -98,20 +190,12 @@
         <a href="/pages/3/">3</a>
         
         
-        
-        <a href="/pages/4/">4</a>
-        
-        
-        
-        <a href="/pages/5/">5</a>
-        
-        
 
         
         
         <span>...</span>
         
-        <a href="/pages/28/">28</a>
+        <a href="/pages/30/">30</a>
         
 
         
@@ -119,5 +203,8 @@
         
     </div>
 </div>
+<footer>
+    <p>&copy; 2024 PHP Tips. All rights reserved.</p>
+</footer>
 </body>
 </html>

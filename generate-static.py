@@ -5,8 +5,8 @@ from jinja2 import Environment, FileSystemLoader
 import re
 import html
 
-TIPS_PER_PAGE = 15
-MAX_VISIBLE_PAGES = 5
+TIPS_PER_PAGE = 14
+MAX_VISIBLE_PAGES = 3
 
 def slugify(text):
     slug = re.sub(r'[^\w\s-]', '', text.lower())
