@@ -1552,3 +1552,255 @@ if ($validUserSpec->isSatisfiedBy($user)) {
 }
 ```
 </details>
+
+<details><summary>411. Use PHP 8's Named Arguments for Clearer Function Calls</summary>
+
+PHP 8 introduced named arguments, allowing you to specify which parameter you're passing a value to. This improves code readability, especially for functions with many parameters.
+
+```php
+function createUser($name, $email, $age, $country = 'USA') {
+    // User creation logic
+}
+
+// Using named arguments
+createUser(
+    name: 'John Doe',
+    email: 'john@example.com',
+    age: 30,
+    country: 'Canada'
+);
+
+// You can even skip optional parameters or reorder them
+createUser(
+    age: 25,
+    name: 'Jane Doe',
+    email: 'jane@example.com'
+);
+```
+
+Named arguments make your code more self-documenting and less prone to errors when dealing with functions that have many parameters.
+</details>
+
+<details><summary>412. Leverage PHP 8's Match Expression for Cleaner Conditionals</summary>
+
+The `match` expression in PHP 8 provides a more powerful and expressive alternative to `switch` statements. It's especially useful for simple conditional returns.
+
+```php
+$statusCode = 404;
+
+$message = match ($statusCode) {
+    200, 300 => 'Success',
+    400 => 'Bad request',
+    404 => 'Not found',
+    500 => 'Server error',
+    default => 'Unknown status code',
+};
+
+echo $message; // Outputs: Not found
+```
+
+`match` expressions are more concise than `switch` statements, don't fall through, and return a value directly.
+</details>
+
+<details><summary>413. Use PHP's Built-in Web Server for Quick Development</summary>
+
+PHP comes with a built-in web server that's perfect for local development and testing. It's especially useful for small projects or when you need to quickly test something.
+
+To start the server, navigate to your project directory in the terminal and run:
+
+```bash
+php -S localhost:8000
+```
+
+If you want to serve a specific directory (e.g., 'public'), use:
+
+```bash
+php -S localhost:8000 -t public/
+```
+
+This starts a web server at `http://localhost:8000`. It's not meant for production use but is excellent for development and testing purposes.
+</details>
+
+<details><summary>414. Implement Content Security Policy (CSP) Headers</summary>
+
+Content Security Policy is an added layer of security that helps detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks.
+
+```php
+header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';");
+```
+
+This example CSP header restricts resources to be loaded only from the same origin, with some exceptions for inline scripts and styles. Adjust the policy based on your specific needs and security requirements.
+</details>
+
+<details><summary>415. Use PHP's Null Coalescing Assignment Operator (??=)</summary>
+
+PHP 7.4 introduced the null coalescing assignment operator (??=). It's a shorthand way to assign a value to a variable if it's null.
+
+```php
+$config = [
+    'debug' => true,
+];
+
+// Old way
+if (!isset($config['environment'])) {
+    $config['environment'] = 'production';
+}
+
+// New way with ??=
+$config['environment'] ??= 'production';
+
+var_dump($config);
+// Outputs: ['debug' => true, 'environment' => 'production']
+```
+
+This operator simplifies code and makes it more readable, especially when dealing with configuration arrays or setting default values.
+</details>
+
+<details><summary>416. Implement Rate Limiting for API Endpoints</summary>
+
+Rate limiting is crucial for protecting your API from abuse and ensuring fair usage. Here's a simple example using Redis:
+
+```php
+function checkRateLimit($userId, $limit = 100, $period = 3600) {
+    $redis = new Redis();
+    $redis->connect('127.0.0.1', 6379);
+    
+    $key = "rate_limit:$userId";
+    $current = $redis->get($key);
+    
+    if (!$current) {
+        $redis->setex($key, $period, 1);
+        return true;
+    }
+    
+    if ($current > $limit) {
+        return false;
+    }
+    
+    $redis->incr($key);
+    return true;
+}
+
+// Usage
+if (!checkRateLimit('user123')) {
+    header('HTTP/1.1 429 Too Many Requests');
+    exit('Rate limit exceeded. Please try again later.');
+}
+```
+
+This function checks if a user has exceeded their rate limit. Adjust the limit and period as needed for your application.
+</details>
+
+<details><summary>417. Use PHP's Generators for Memory-Efficient Data Processing</summary>
+
+Generators are excellent for working with large datasets or infinite sequences without loading everything into memory at once.
+
+```php
+function getLines($file) {
+    $f = fopen($file, 'r');
+    try {
+        while ($line = fgets($f)) {
+            yield $line;
+        }
+    } finally {
+        fclose($f);
+    }
+}
+
+// Usage
+foreach (getLines('large_file.txt') as $line) {
+    echo $line;
+}
+```
+
+This generator function reads a file line by line, yielding each line. It's memory-efficient for processing large files that wouldn't fit into memory all at once.
+</details>
+
+<details><summary>418. Implement Attribute Routing in Modern PHP Frameworks</summary>
+
+Many modern PHP frameworks support attribute routing, which allows you to define routes directly in your controller methods using PHP 8 attributes.
+
+```php
+use App\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class ProductController extends AbstractController
+{
+    #[Route('/products', name: 'product_list', methods: ['GET'])]
+    public function list(): Response
+    {
+        // Logic to list products
+    }
+
+    #[Route('/products/{id}', name: 'product_show', methods: ['GET'])]
+    public function show(int $id): Response
+    {
+        // Logic to show a specific product
+    }
+}
+```
+
+This example uses Symfony's routing attributes, but similar concepts exist in other frameworks. Attribute routing can make your code more readable and maintainable by keeping route definitions close to the controller actions they correspond to.
+</details>
+
+<details><summary>419. Use PHP's Array Spread Operator for Merging Arrays</summary>
+
+PHP 7.4 introduced the array spread operator (...), which provides a concise way to unpack arrays.
+
+```php
+$fruits = ['apple', 'banana'];
+$vegetables = ['carrot', 'tomato'];
+
+$combined = [...$fruits, ...$vegetables, 'kiwi'];
+
+print_r($combined);
+// Outputs: Array ( [0] => apple [1] => banana [2] => carrot [3] => tomato [4] => kiwi )
+
+// It's also useful for merging associative arrays
+$defaults = ['color' => 'red', 'size' => 'medium'];
+$userPreferences = ['size' => 'large'];
+
+$finalPreferences = [...$defaults, ...$userPreferences];
+
+print_r($finalPreferences);
+// Outputs: Array ( [color] => red [size] => large )
+```
+
+The spread operator provides a more readable alternative to `array_merge()` in many cases, especially when working with a mix of indexed and associative arrays.
+</details>
+
+<details><summary>420. Implement Lazy Loading for Performance Optimization</summary>
+
+Lazy loading is a design pattern that defers the initialization of an object until it's needed. This can significantly improve performance, especially in applications with complex object graphs.
+
+```php
+class ExpensiveResource
+{
+    private $data;
+
+    public function getData()
+    {
+        if ($this->data === null) {
+            $this->data = $this->loadExpensiveData();
+        }
+        return $this->data;
+    }
+
+    private function loadExpensiveData()
+    {
+        // Simulate expensive operation
+        sleep(2);
+        return "Expensive data loaded";
+    }
+}
+
+$resource = new ExpensiveResource();
+// Data is not loaded yet
+
+echo $resource->getData(); // Now the data is loaded
+
+echo $resource->getData(); // Data is returned from cache, no expensive operation
+```
+
+This pattern is especially useful in scenarios where you have expensive-to-create objects that might not always be used in a given request cycle.
+</details>

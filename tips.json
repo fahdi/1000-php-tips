@@ -2043,5 +2043,55 @@
         "id": 409,
         "summary": "Implement the Specification Pattern for Complex Business Rules",
         "content": "Use the Specification pattern to encapsulate business rules and make them composable.\n\n```php\ninterface SpecificationInterface\n{\n    public function isSatisfiedBy($candidate): bool;\n}\n\nclass UserIsAdultSpecification implements SpecificationInterface\n{\n    public function isSatisfiedBy($user): bool\n    {\n        return $user->age >= 18;\n    }\n}\n\nclass UserHasValidEmailSpecification implements SpecificationInterface\n{\n    public function isSatisfiedBy($user): bool\n    {\n        return filter_var($user->email, FILTER_VALIDATE_EMAIL) !== false;\n    }\n}\n\nclass AndSpecification implements SpecificationInterface\n{\n    private $specs;\n\n    public function __construct(SpecificationInterface ...$specs)\n    {\n        $this->specs = $specs;\n    }\n\n    public function isSatisfiedBy($candidate): bool\n    {\n        foreach ($this->specs as $spec) {\n            if (!$spec->isSatisfiedBy($candidate)) {\n                return false;\n            }\n        }\n        return true;\n    }\n}\n\n// Usage\n$validUserSpec = new AndSpecification(\n    new UserIsAdultSpecification(),\n    new UserHasValidEmailSpecification()\n);\n\n$user = new stdClass();\n$user->age = 25;\n$user->email = 'user@example.com';\n\nif ($validUserSpec->isSatisfiedBy($user)) {\n    echo \"User is valid\";\n} else {\n    echo \"User is not valid\";\n}\n```"
+    },
+    {
+        "id": 410,
+        "summary": "Use PHP 8's Named Arguments for Clearer Function Calls",
+        "content": "PHP 8 introduced named arguments, allowing you to specify which parameter you're passing a value to. This improves code readability, especially for functions with many parameters.\n\n```php\nfunction createUser($name, $email, $age, $country = 'USA') {\n    // User creation logic\n}\n\n// Using named arguments\ncreateUser(\n    name: 'John Doe',\n    email: 'john@example.com',\n    age: 30,\n    country: 'Canada'\n);\n\n// You can even skip optional parameters or reorder them\ncreateUser(\n    age: 25,\n    name: 'Jane Doe',\n    email: 'jane@example.com'\n);\n```\n\nNamed arguments make your code more self-documenting and less prone to errors when dealing with functions that have many parameters."
+    },
+    {
+        "id": 411,
+        "summary": "Leverage PHP 8's Match Expression for Cleaner Conditionals",
+        "content": "The `match` expression in PHP 8 provides a more powerful and expressive alternative to `switch` statements. It's especially useful for simple conditional returns.\n\n```php\n$statusCode = 404;\n\n$message = match ($statusCode) {\n    200, 300 => 'Success',\n    400 => 'Bad request',\n    404 => 'Not found',\n    500 => 'Server error',\n    default => 'Unknown status code',\n};\n\necho $message; // Outputs: Not found\n```\n\n`match` expressions are more concise than `switch` statements, don't fall through, and return a value directly."
+    },
+    {
+        "id": 412,
+        "summary": "Use PHP's Built-in Web Server for Quick Development",
+        "content": "PHP comes with a built-in web server that's perfect for local development and testing. It's especially useful for small projects or when you need to quickly test something.\n\nTo start the server, navigate to your project directory in the terminal and run:\n\n```bash\nphp -S localhost:8000\n```\n\nIf you want to serve a specific directory (e.g., 'public'), use:\n\n```bash\nphp -S localhost:8000 -t public/\n```\n\nThis starts a web server at `http://localhost:8000`. It's not meant for production use but is excellent for development and testing purposes."
+    },
+    {
+        "id": 413,
+        "summary": "Implement Content Security Policy (CSP) Headers",
+        "content": "Content Security Policy is an added layer of security that helps detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks.\n\n```php\nheader(\"Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';\");\n```\n\nThis example CSP header restricts resources to be loaded only from the same origin, with some exceptions for inline scripts and styles. Adjust the policy based on your specific needs and security requirements."
+    },
+    {
+        "id": 414,
+        "summary": "Use PHP's Null Coalescing Assignment Operator (??=)",
+        "content": "PHP 7.4 introduced the null coalescing assignment operator (??=). It's a shorthand way to assign a value to a variable if it's null.\n\n```php\n$config = [\n    'debug' => true,\n];\n\n// Old way\nif (!isset($config['environment'])) {\n    $config['environment'] = 'production';\n}\n\n// New way with ??=\n$config['environment'] ??= 'production';\n\nvar_dump($config);\n// Outputs: ['debug' => true, 'environment' => 'production']\n```\n\nThis operator simplifies code and makes it more readable, especially when dealing with configuration arrays or setting default values."
+    },
+    {
+        "id": 415,
+        "summary": "Implement Rate Limiting for API Endpoints",
+        "content": "Rate limiting is crucial for protecting your API from abuse and ensuring fair usage. Here's a simple example using Redis:\n\n```php\nfunction checkRateLimit($userId, $limit = 100, $period = 3600) {\n    $redis = new Redis();\n    $redis->connect('127.0.0.1', 6379);\n    \n    $key = \"rate_limit:$userId\";\n    $current = $redis->get($key);\n    \n    if (!$current) {\n        $redis->setex($key, $period, 1);\n        return true;\n    }\n    \n    if ($current > $limit) {\n        return false;\n    }\n    \n    $redis->incr($key);\n    return true;\n}\n\n// Usage\nif (!checkRateLimit('user123')) {\n    header('HTTP/1.1 429 Too Many Requests');\n    exit('Rate limit exceeded. Please try again later.');\n}\n```\n\nThis function checks if a user has exceeded their rate limit. Adjust the limit and period as needed for your application."
+    },
+    {
+        "id": 416,
+        "summary": "Use PHP's Generators for Memory-Efficient Data Processing",
+        "content": "Generators are excellent for working with large datasets or infinite sequences without loading everything into memory at once.\n\n```php\nfunction getLines($file) {\n    $f = fopen($file, 'r');\n    try {\n        while ($line = fgets($f)) {\n            yield $line;\n        }\n    } finally {\n        fclose($f);\n    }\n}\n\n// Usage\nforeach (getLines('large_file.txt') as $line) {\n    echo $line;\n}\n```\n\nThis generator function reads a file line by line, yielding each line. It's memory-efficient for processing large files that wouldn't fit into memory all at once."
+    },
+    {
+        "id": 417,
+        "summary": "Implement Attribute Routing in Modern PHP Frameworks",
+        "content": "Many modern PHP frameworks support attribute routing, which allows you to define routes directly in your controller methods using PHP 8 attributes.\n\n```php\nuse App\\Controller\\AbstractController;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\n\nclass ProductController extends AbstractController\n{\n    #[Route('/products', name: 'product_list', methods: ['GET'])]\n    public function list(): Response\n    {\n        // Logic to list products\n    }\n\n    #[Route('/products/{id}', name: 'product_show', methods: ['GET'])]\n    public function show(int $id): Response\n    {\n        // Logic to show a specific product\n    }\n}\n```\n\nThis example uses Symfony's routing attributes, but similar concepts exist in other frameworks. Attribute routing can make your code more readable and maintainable by keeping route definitions close to the controller actions they correspond to."
+    },
+    {
+        "id": 418,
+        "summary": "Use PHP's Array Spread Operator for Merging Arrays",
+        "content": "PHP 7.4 introduced the array spread operator (...), which provides a concise way to unpack arrays.\n\n```php\n$fruits = ['apple', 'banana'];\n$vegetables = ['carrot', 'tomato'];\n\n$combined = [...$fruits, ...$vegetables, 'kiwi'];\n\nprint_r($combined);\n// Outputs: Array ( [0] => apple [1] => banana [2] => carrot [3] => tomato [4] => kiwi )\n\n// It's also useful for merging associative arrays\n$defaults = ['color' => 'red', 'size' => 'medium'];\n$userPreferences = ['size' => 'large'];\n\n$finalPreferences = [...$defaults, ...$userPreferences];\n\nprint_r($finalPreferences);\n// Outputs: Array ( [color] => red [size] => large )\n```\n\nThe spread operator provides a more readable alternative to `array_merge()` in many cases, especially when working with a mix of indexed and associative arrays."
+    },
+    {
+        "id": 419,
+        "summary": "Implement Lazy Loading for Performance Optimization",
+        "content": "Lazy loading is a design pattern that defers the initialization of an object until it's needed. This can significantly improve performance, especially in applications with complex object graphs.\n\n```php\nclass ExpensiveResource\n{\n    private $data;\n\n    public function getData()\n    {\n        if ($this->data === null) {\n            $this->data = $this->loadExpensiveData();\n        }\n        return $this->data;\n    }\n\n    private function loadExpensiveData()\n    {\n        // Simulate expensive operation\n        sleep(2);\n        return \"Expensive data loaded\";\n    }\n}\n\n$resource = new ExpensiveResource();\n// Data is not loaded yet\n\necho $resource->getData(); // Now the data is loaded\n\necho $resource->getData(); // Data is returned from cache, no expensive operation\n```\n\nThis pattern is especially useful in scenarios where you have expensive-to-create objects that might not always be used in a given request cycle."
     }
 ]
