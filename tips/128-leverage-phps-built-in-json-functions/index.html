@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Leverage PHP's Built-in JSON Functions</h1>
-    <div id="tipContent">Use PHP's built-in functions like `json_encode()` and `json_decode()` for working with JSON data. These functions provide a straightforward way to handle JSON encoding and decoding, making it easy to exchange data with JavaScript or other systems.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Use PHP's built-in functions like <code>json_encode()</code> and <code>json_decode()</code> for working with JSON data. These functions provide a straightforward way to handle JSON encoding and decoding, making it easy to exchange data with JavaScript or other systems.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

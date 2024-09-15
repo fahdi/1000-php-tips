@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -41,7 +56,7 @@
 <div class="container">
     <h1>Leverage Switch Statements for Multiple Conditional Branches</h1>
     <div id="tipContent">Use switch statements when you have multiple possible conditions for a variable. It's more readable and efficient than using multiple if-else statements, especially when comparing the same variable against various values.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

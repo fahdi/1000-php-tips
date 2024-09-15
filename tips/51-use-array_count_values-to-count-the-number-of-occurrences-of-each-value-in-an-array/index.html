@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `array_count_values()` to count the number of occurrences of each value in an array</h1>
-    <div id="tipContent">`array_count_values()` provides a convenient way to count the number of occurrences of each distinct value in an array. It returns an associative array where the keys are the unique values from the input array, and the values are the corresponding counts. This function can be useful for tasks like finding the frequency of elements or identifying the most common values.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent"><code>array_count_values()</code> provides a convenient way to count the number of occurrences of each distinct value in an array. It returns an associative array where the keys are the unique values from the input array, and the values are the corresponding counts. This function can be useful for tasks like finding the frequency of elements or identifying the most common values.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

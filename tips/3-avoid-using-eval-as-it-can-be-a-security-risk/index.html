@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Avoid using `eval()` as it can be a security risk</h1>
-    <div id="tipContent">The `eval()` function in PHP allows the execution of arbitrary PHP code stored in a string. However, using `eval()` can introduce significant security risks if not used carefully. It can potentially execute malicious code and compromise the application's integrity. It is generally recommended to find alternative solutions instead of relying on `eval()`.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">The <code>eval()</code> function in PHP allows the execution of arbitrary PHP code stored in a string. However, using <code>eval()</code> can introduce significant security risks if not used carefully. It can potentially execute malicious code and compromise the application's integrity. It is generally recommended to find alternative solutions instead of relying on <code>eval()</code>.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

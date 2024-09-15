@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `ftell()` to Get the Current File Position</h1>
-    <div id="tipContent">The `ftell()` function returns the current file position. This is useful for determining the position of the file pointer.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">The <code>ftell()</code> function returns the current file position. This is useful for determining the position of the file pointer.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

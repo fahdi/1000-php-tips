@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use strict typing with `declare(strict_types=1);`</h1>
-    <div id="tipContent">Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring `strict_types=1`, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring <code>strict_types=1</code>, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `array_intersect()` to find the common values between two or more arrays</h1>
-    <div id="tipContent">`array_intersect()` allows you to find the values that are present in multiple arrays. It returns an array containing the common values, effectively performing an intersection operation. This function can be handy when you need to extract elements that exist in all the input arrays.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent"><code>array_intersect()</code> allows you to find the values that are present in multiple arrays. It returns an array containing the common values, effectively performing an intersection operation. This function can be handy when you need to extract elements that exist in all the input arrays.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

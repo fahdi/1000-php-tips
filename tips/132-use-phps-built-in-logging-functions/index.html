@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use PHP's Built-in Logging Functions</h1>
-    <div id="tipContent">PHP provides built-in logging functions such as `error_log()` to log errors and messages to specified files or destinations. Proper logging helps in monitoring application performance and diagnosing issues.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP provides built-in logging functions such as <code>error_log()</code> to log errors and messages to specified files or destinations. Proper logging helps in monitoring application performance and diagnosing issues.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Escape output using `htmlspecialchars()` to prevent cross-site scripting (XSS) attacks</h1>
-    <div id="tipContent">Cross-site scripting (XSS) attacks occur when untrusted data is displayed on a web page without proper sanitization. By using the `htmlspecialchars()` function, special characters in the output are converted to their HTML entities, preventing the browser from interpreting them as code. This helps protect against XSS vulnerabilities and ensures that user-supplied data is displayed safely.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Cross-site scripting (XSS) attacks occur when untrusted data is displayed on a web page without proper sanitization. By using the <code>htmlspecialchars()</code> function, special characters in the output are converted to their HTML entities, preventing the browser from interpreting them as code. This helps protect against XSS vulnerabilities and ensures that user-supplied data is displayed safely.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

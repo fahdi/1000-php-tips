@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,38 +55,34 @@
 <body>
 <div class="container">
     <h1>Implement Rate Limiting for API Endpoints</h1>
-    <div id="tipContent">Rate limiting is crucial for protecting your API from abuse and ensuring fair usage. Here's a simple example using Redis:
-
-```php
-function checkRateLimit($userId, $limit = 100, $period = 3600) {
-    $redis = new Redis();
-    $redis->connect('127.0.0.1', 6379);
-    
-    $key = "rate_limit:$userId";
-    $current = $redis->get($key);
-    
-    if (!$current) {
-        $redis->setex($key, $period, 1);
-        return true;
-    }
-    
-    if ($current > $limit) {
-        return false;
-    }
-    
-    $redis->incr($key);
-    return true;
-}
-
-// Usage
-if (!checkRateLimit('user123')) {
-    header('HTTP/1.1 429 Too Many Requests');
-    exit('Rate limit exceeded. Please try again later.');
-}
-```
-
-This function checks if a user has exceeded their rate limit. Adjust the limit and period as needed for your application.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Rate limiting is crucial for protecting your API from abuse and ensuring fair usage. Here's a simple example using Redis:<br>
+<pre><code class="language-php"><span class="line">function checkRateLimit($userId, $limit = 100, $period = 3600) {</span>
+<span class="line">    $redis = new Redis();</span>
+<span class="line">    $redis-&gt;connect(&#x27;127.0.0.1&#x27;, 6379);</span>
+<span class="line">    </span>
+<span class="line">    $key = &quot;rate_limit:$userId&quot;;</span>
+<span class="line">    $current = $redis-&gt;get($key);</span>
+<span class="line">    </span>
+<span class="line">    if (!$current) {</span>
+<span class="line">        $redis-&gt;setex($key, $period, 1);</span>
+<span class="line">        return true;</span>
+<span class="line">    }</span>
+<span class="line">    </span>
+<span class="line">    if ($current &gt; $limit) {</span>
+<span class="line">        return false;</span>
+<span class="line">    }</span>
+<span class="line">    </span>
+<span class="line">    $redis-&gt;incr($key);</span>
+<span class="line">    return true;</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">// Usage</span>
+<span class="line">if (!checkRateLimit(&#x27;user123&#x27;)) {</span>
+<span class="line">    header(&#x27;HTTP/1.1 429 Too Many Requests&#x27;);</span>
+<span class="line">    exit(&#x27;Rate limit exceeded. Please try again later.&#x27;);</span>
+<span class="line">}</span></code></pre>
+<br>This function checks if a user has exceeded their rate limit. Adjust the limit and period as needed for your application.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

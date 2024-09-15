@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,27 +55,23 @@
 <body>
 <div class="container">
     <h1>Use PHP's Null Coalescing Assignment Operator (??=)</h1>
-    <div id="tipContent">PHP 7.4 introduced the null coalescing assignment operator (??=). It's a shorthand way to assign a value to a variable if it's null.
-
-```php
-$config = [
-    'debug' => true,
-];
-
-// Old way
-if (!isset($config['environment'])) {
-    $config['environment'] = 'production';
-}
-
-// New way with ??=
-$config['environment'] ??= 'production';
-
-var_dump($config);
-// Outputs: ['debug' => true, 'environment' => 'production']
-```
-
-This operator simplifies code and makes it more readable, especially when dealing with configuration arrays or setting default values.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP 7.4 introduced the null coalescing assignment operator (??=). It's a shorthand way to assign a value to a variable if it's null.<br>
+<pre><code class="language-php"><span class="line">$config = [</span>
+<span class="line">    &#x27;debug&#x27; =&gt; true,</span>
+<span class="line">];</span>
+<span class="line"></span>
+<span class="line">// Old way</span>
+<span class="line">if (!isset($config[&#x27;environment&#x27;])) {</span>
+<span class="line">    $config[&#x27;environment&#x27;] = &#x27;production&#x27;;</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">// New way with ??=</span>
+<span class="line">$config[&#x27;environment&#x27;] ??= &#x27;production&#x27;;</span>
+<span class="line"></span>
+<span class="line">var_dump($config);</span>
+<span class="line">// Outputs: [&#x27;debug&#x27; =&gt; true, &#x27;environment&#x27; =&gt; &#x27;production&#x27;]</span></code></pre>
+<br>This operator simplifies code and makes it more readable, especially when dealing with configuration arrays or setting default values.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

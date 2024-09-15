@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,31 +55,27 @@
 <body>
 <div class="container">
     <h1>Use PHP 8's Named Arguments for Clearer Function Calls</h1>
-    <div id="tipContent">PHP 8 introduced named arguments, allowing you to specify which parameter you're passing a value to. This improves code readability, especially for functions with many parameters.
-
-```php
-function createUser($name, $email, $age, $country = 'USA') {
-    // User creation logic
-}
-
-// Using named arguments
-createUser(
-    name: 'John Doe',
-    email: 'john@example.com',
-    age: 30,
-    country: 'Canada'
-);
-
-// You can even skip optional parameters or reorder them
-createUser(
-    age: 25,
-    name: 'Jane Doe',
-    email: 'jane@example.com'
-);
-```
-
-Named arguments make your code more self-documenting and less prone to errors when dealing with functions that have many parameters.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP 8 introduced named arguments, allowing you to specify which parameter you're passing a value to. This improves code readability, especially for functions with many parameters.<br>
+<pre><code class="language-php"><span class="line">function createUser($name, $email, $age, $country = &#x27;USA&#x27;) {</span>
+<span class="line">    // User creation logic</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">// Using named arguments</span>
+<span class="line">createUser(</span>
+<span class="line">    name: &#x27;John Doe&#x27;,</span>
+<span class="line">    email: &#x27;john@example.com&#x27;,</span>
+<span class="line">    age: 30,</span>
+<span class="line">    country: &#x27;Canada&#x27;</span>
+<span class="line">);</span>
+<span class="line"></span>
+<span class="line">// You can even skip optional parameters or reorder them</span>
+<span class="line">createUser(</span>
+<span class="line">    age: 25,</span>
+<span class="line">    name: &#x27;Jane Doe&#x27;,</span>
+<span class="line">    email: &#x27;jane@example.com&#x27;</span>
+<span class="line">);</span></code></pre>
+<br>Named arguments make your code more self-documenting and less prone to errors when dealing with functions that have many parameters.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

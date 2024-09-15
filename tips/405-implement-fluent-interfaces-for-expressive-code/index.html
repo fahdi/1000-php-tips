@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,44 +55,41 @@
 <body>
 <div class="container">
     <h1>Implement Fluent Interfaces for Expressive Code</h1>
-    <div id="tipContent">Create fluent interfaces to make your code more readable and expressive, especially for configuration or query building.
-
-```php
-class QueryBuilder
-{
-    private $table;
-    private $conditions = [];
-
-    public function from($table)
-    {
-        $this->table = $table;
-        return $this;
-    }
-
-    public function where($condition)
-    {
-        $this->conditions[] = $condition;
-        return $this;
-    }
-
-    public function build()
-    {
-        $query = "SELECT * FROM {$this->table}";
-        if (!empty($this->conditions)) {
-            $query .= " WHERE " . implode(' AND ', $this->conditions);
-        }
-        return $query;
-    }
-}
-
-// Usage
-$query = (new QueryBuilder())
-    ->from('users')
-    ->where('age > 18')
-    ->where('status = "active"')
-    ->build();
-```</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Create fluent interfaces to make your code more readable and expressive, especially for configuration or query building.<br>
+<pre><code class="language-php"><span class="line">class QueryBuilder</span>
+<span class="line">{</span>
+<span class="line">    private $table;</span>
+<span class="line">    private $conditions = [];</span>
+<span class="line"></span>
+<span class="line">    public function from($table)</span>
+<span class="line">    {</span>
+<span class="line">        $this-&gt;table = $table;</span>
+<span class="line">        return $this;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    public function where($condition)</span>
+<span class="line">    {</span>
+<span class="line">        $this-&gt;conditions[] = $condition;</span>
+<span class="line">        return $this;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    public function build()</span>
+<span class="line">    {</span>
+<span class="line">        $query = &quot;SELECT * FROM {$this-&gt;table}&quot;;</span>
+<span class="line">        if (!empty($this-&gt;conditions)) {</span>
+<span class="line">            $query .= &quot; WHERE &quot; . implode(&#x27; AND &#x27;, $this-&gt;conditions);</span>
+<span class="line">        }</span>
+<span class="line">        return $query;</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">// Usage</span>
+<span class="line">$query = (new QueryBuilder())</span>
+<span class="line">    -&gt;from(&#x27;users&#x27;)</span>
+<span class="line">    -&gt;where(&#x27;age &gt; 18&#x27;)</span>
+<span class="line">    -&gt;where(&#x27;status = &quot;active&quot;&#x27;)</span>
+<span class="line">    -&gt;build();</span></code></pre></div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

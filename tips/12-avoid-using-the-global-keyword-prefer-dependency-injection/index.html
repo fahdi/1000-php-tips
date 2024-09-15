@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Avoid using the `global` keyword; prefer dependency injection</h1>
-    <div id="tipContent">The `global` keyword allows access to global variables within the local scope of a function or method. However, using global variables can make code harder to understand, test, and maintain. Prefer dependency injection, where dependencies are explicitly passed into functions or classes, making the code more modular, reusable, and easier to manage.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">The <code>global</code> keyword allows access to global variables within the local scope of a function or method. However, using global variables can make code harder to understand, test, and maintain. Prefer dependency injection, where dependencies are explicitly passed into functions or classes, making the code more modular, reusable, and easier to manage.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

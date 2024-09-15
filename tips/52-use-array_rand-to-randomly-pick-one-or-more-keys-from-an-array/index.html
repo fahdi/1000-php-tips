@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `array_rand()` to randomly pick one or more keys from an array</h1>
-    <div id="tipContent">`array_rand()` allows you to select one or more random keys from an array. It returns the selected key(s) from the array, which can be useful for tasks like randomizing the order of elements or selecting random items.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent"><code>array_rand()</code> allows you to select one or more random keys from an array. It returns the selected key(s) from the array, which can be useful for tasks like randomizing the order of elements or selecting random items.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

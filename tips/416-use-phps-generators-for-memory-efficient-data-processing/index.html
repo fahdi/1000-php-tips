@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,28 +55,24 @@
 <body>
 <div class="container">
     <h1>Use PHP's Generators for Memory-Efficient Data Processing</h1>
-    <div id="tipContent">Generators are excellent for working with large datasets or infinite sequences without loading everything into memory at once.
-
-```php
-function getLines($file) {
-    $f = fopen($file, 'r');
-    try {
-        while ($line = fgets($f)) {
-            yield $line;
-        }
-    } finally {
-        fclose($f);
-    }
-}
-
-// Usage
-foreach (getLines('large_file.txt') as $line) {
-    echo $line;
-}
-```
-
-This generator function reads a file line by line, yielding each line. It's memory-efficient for processing large files that wouldn't fit into memory all at once.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Generators are excellent for working with large datasets or infinite sequences without loading everything into memory at once.<br>
+<pre><code class="language-php"><span class="line">function getLines($file) {</span>
+<span class="line">    $f = fopen($file, &#x27;r&#x27;);</span>
+<span class="line">    try {</span>
+<span class="line">        while ($line = fgets($f)) {</span>
+<span class="line">            yield $line;</span>
+<span class="line">        }</span>
+<span class="line">    } finally {</span>
+<span class="line">        fclose($f);</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">// Usage</span>
+<span class="line">foreach (getLines(&#x27;large_file.txt&#x27;) as $line) {</span>
+<span class="line">    echo $line;</span>
+<span class="line">}</span></code></pre>
+<br>This generator function reads a file line by line, yielding each line. It's memory-efficient for processing large files that wouldn't fit into memory all at once.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

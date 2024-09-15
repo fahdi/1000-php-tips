@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `array_filter()` to filter an array based on a callback function</h1>
-    <div id="tipContent">`array_filter()` allows you to selectively filter elements from an array based on a provided callback function. The callback function determines the criteria for including or excluding elements from the resulting array. This can be useful for tasks such as removing empty values, filtering by a specific condition, or extracting elements that satisfy certain requirements.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent"><code>array_filter()</code> allows you to selectively filter elements from an array based on a provided callback function. The callback function determines the criteria for including or excluding elements from the resulting array. This can be useful for tasks such as removing empty values, filtering by a specific condition, or extracting elements that satisfy certain requirements.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

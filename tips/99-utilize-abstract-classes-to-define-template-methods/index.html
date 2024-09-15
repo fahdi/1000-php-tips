@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -41,7 +56,7 @@
 <div class="container">
     <h1>Utilize Abstract Classes to Define Template Methods</h1>
     <div id="tipContent">Employ abstract classes to create template methods that define a blueprint for subclasses. Abstract classes can declare methods that must be implemented by subclasses, ensuring a consistent structure while providing flexibility in specific implementations.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

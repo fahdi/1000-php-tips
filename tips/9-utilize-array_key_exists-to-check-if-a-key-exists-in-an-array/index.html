@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Utilize `array_key_exists()` to check if a key exists in an array</h1>
-    <div id="tipContent">When working with arrays, it is often necessary to check if a specific key exists. The `array_key_exists()` function provides a straightforward way to perform this check. It returns `true` if the key exists in the array and `false` otherwise. This can be useful for conditional logic or preventing errors when accessing array elements.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">When working with arrays, it is often necessary to check if a specific key exists. The <code>array_key_exists()</code> function provides a straightforward way to perform this check. It returns <code>true</code> if the key exists in the array and <code>false</code> otherwise. This can be useful for conditional logic or preventing errors when accessing array elements.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

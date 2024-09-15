@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,39 +55,35 @@
 <body>
 <div class="container">
     <h1>Implement Lazy Loading for Performance Optimization</h1>
-    <div id="tipContent">Lazy loading is a design pattern that defers the initialization of an object until it's needed. This can significantly improve performance, especially in applications with complex object graphs.
-
-```php
-class ExpensiveResource
-{
-    private $data;
-
-    public function getData()
-    {
-        if ($this->data === null) {
-            $this->data = $this->loadExpensiveData();
-        }
-        return $this->data;
-    }
-
-    private function loadExpensiveData()
-    {
-        // Simulate expensive operation
-        sleep(2);
-        return "Expensive data loaded";
-    }
-}
-
-$resource = new ExpensiveResource();
-// Data is not loaded yet
-
-echo $resource->getData(); // Now the data is loaded
-
-echo $resource->getData(); // Data is returned from cache, no expensive operation
-```
-
-This pattern is especially useful in scenarios where you have expensive-to-create objects that might not always be used in a given request cycle.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Lazy loading is a design pattern that defers the initialization of an object until it's needed. This can significantly improve performance, especially in applications with complex object graphs.<br>
+<pre><code class="language-php"><span class="line">class ExpensiveResource</span>
+<span class="line">{</span>
+<span class="line">    private $data;</span>
+<span class="line"></span>
+<span class="line">    public function getData()</span>
+<span class="line">    {</span>
+<span class="line">        if ($this-&gt;data === null) {</span>
+<span class="line">            $this-&gt;data = $this-&gt;loadExpensiveData();</span>
+<span class="line">        }</span>
+<span class="line">        return $this-&gt;data;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    private function loadExpensiveData()</span>
+<span class="line">    {</span>
+<span class="line">        // Simulate expensive operation</span>
+<span class="line">        sleep(2);</span>
+<span class="line">        return &quot;Expensive data loaded&quot;;</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">$resource = new ExpensiveResource();</span>
+<span class="line">// Data is not loaded yet</span>
+<span class="line"></span>
+<span class="line">echo $resource-&gt;getData(); // Now the data is loaded</span>
+<span class="line"></span>
+<span class="line">echo $resource-&gt;getData(); // Data is returned from cache, no expensive operation</span></code></pre>
+<br>This pattern is especially useful in scenarios where you have expensive-to-create objects that might not always be used in a given request cycle.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

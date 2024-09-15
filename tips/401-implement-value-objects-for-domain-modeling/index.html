@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,28 +55,25 @@
 <body>
 <div class="container">
     <h1>Implement Value Objects for Domain Modeling</h1>
-    <div id="tipContent">Use Value Objects to represent domain concepts that are defined by their attributes rather than an identity. This enhances code readability and ensures data integrity.
-
-```php
-final class Email
-{
-    private $email;
-
-    public function __construct(string $email)
-    {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException('Invalid email');
-        }
-        $this->email = $email;
-    }
-
-    public function __toString(): string
-    {
-        return $this->email;
-    }
-}
-```</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Use Value Objects to represent domain concepts that are defined by their attributes rather than an identity. This enhances code readability and ensures data integrity.<br>
+<pre><code class="language-php"><span class="line">final class Email</span>
+<span class="line">{</span>
+<span class="line">    private $email;</span>
+<span class="line"></span>
+<span class="line">    public function __construct(string $email)</span>
+<span class="line">    {</span>
+<span class="line">        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {</span>
+<span class="line">            throw new InvalidArgumentException(&#x27;Invalid email&#x27;);</span>
+<span class="line">        }</span>
+<span class="line">        $this-&gt;email = $email;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    public function __toString(): string</span>
+<span class="line">    {</span>
+<span class="line">        return $this-&gt;email;</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre></div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

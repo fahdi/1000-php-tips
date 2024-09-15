@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `array_search()` to find the key associated with a specific value in an array</h1>
-    <div id="tipContent">`array_search()` allows you to search for a specific value within an array and returns the corresponding key if found. This function is useful when you need to locate an element's key without knowing its position in the array.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent"><code>array_search()</code> allows you to search for a specific value within an array and returns the corresponding key if found. This function is useful when you need to locate an element's key without knowing its position in the array.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

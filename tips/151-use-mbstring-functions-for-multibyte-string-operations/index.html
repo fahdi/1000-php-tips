@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `mbstring` Functions for Multibyte String Operations</h1>
-    <div id="tipContent">PHP's `mbstring` extension provides functions for handling multibyte strings, which are essential for working with non-ASCII characters. Use `mb_strlen()`, `mb_substr()`, and other `mb_*` functions to properly handle strings in various encodings.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP's <code>mbstring</code> extension provides functions for handling multibyte strings, which are essential for working with non-ASCII characters. Use <code>mb_strlen()</code>, <code>mb_substr()</code>, and other <code>mb_*</code> functions to properly handle strings in various encodings.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

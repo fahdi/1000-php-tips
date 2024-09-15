@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,17 +55,9 @@
 <body>
 <div class="container">
     <h1>Use PHP's Built-in FastCGI Process Manager (FPM)</h1>
-    <div id="tipContent">For production environments, use PHP-FPM to handle PHP requests more efficiently, especially under high load.
-
-```nginx
-# Nginx configuration example
-location ~ \.php$ {
-    fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-    fastcgi_index index.php;
-    include fastcgi_params;
-}
-```</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">For production environments, use PHP-FPM to handle PHP requests more efficiently, especially under high load.<br><br>``<code>nginx<br># Nginx configuration example<br>location ~ \.php$ {<br>    fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;<br>    fastcgi_index index.php;<br>    include fastcgi_params;<br>}
+</code>``</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

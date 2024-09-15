@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,22 +55,13 @@
 <body>
 <div class="container">
     <h1>Use PHP's Built-in Web Server for Quick Development</h1>
-    <div id="tipContent">PHP comes with a built-in web server that's perfect for local development and testing. It's especially useful for small projects or when you need to quickly test something.
-
-To start the server, navigate to your project directory in the terminal and run:
-
-```bash
-php -S localhost:8000
-```
-
-If you want to serve a specific directory (e.g., 'public'), use:
-
-```bash
-php -S localhost:8000 -t public/
-```
-
-This starts a web server at `http://localhost:8000`. It's not meant for production use but is excellent for development and testing purposes.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP comes with a built-in web server that's perfect for local development and testing. It's especially useful for small projects or when you need to quickly test something.<br><br>To start the server, navigate to your project directory in the terminal and run:<br><br>``<code>bash<br>php -S localhost:8000
+</code>`<code>
+<br>If you want to serve a specific directory (e.g., &#x27;public&#x27;), use:<br>
+</code>`<code>bash<br>php -S localhost:8000 -t public/
+</code>`<code>
+<br>This starts a web server at </code>http://localhost:8000`. It's not meant for production use but is excellent for development and testing purposes.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

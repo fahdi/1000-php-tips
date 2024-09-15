@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `str_replace()` to replace occurrences of a substring in a string</h1>
-    <div id="tipContent">The `str_replace()` function allows you to replace all occurrences of a substring with another substring within a string. This can be handy for tasks such as replacing placeholders or modifying specific parts of a text. By providing the target substring, the replacement substring, and the input string, you can obtain the modified result.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">The <code>str_replace()</code> function allows you to replace all occurrences of a substring with another substring within a string. This can be handy for tasks such as replacing placeholders or modifying specific parts of a text. By providing the target substring, the replacement substring, and the input string, you can obtain the modified result.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

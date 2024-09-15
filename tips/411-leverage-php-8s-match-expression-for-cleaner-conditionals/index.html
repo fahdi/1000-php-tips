@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,24 +55,21 @@
 <body>
 <div class="container">
     <h1>Leverage PHP 8's Match Expression for Cleaner Conditionals</h1>
-    <div id="tipContent">The `match` expression in PHP 8 provides a more powerful and expressive alternative to `switch` statements. It's especially useful for simple conditional returns.
+    <div id="tipContent">The <code>match</code> expression in PHP 8 provides a more powerful and expressive alternative to <code>switch</code> statements. It's especially useful for simple conditional returns.<br>
+<pre><code class="language-php"><span class="line">$statusCode = 404;</span>
+<span class="line"></span>
+<span class="line">$message = match ($statusCode) {</span>
+<span class="line">    200, 300 =&gt; &#x27;Success&#x27;,</span>
+<span class="line">    400 =&gt; &#x27;Bad request&#x27;,</span>
+<span class="line">    404 =&gt; &#x27;Not found&#x27;,</span>
+<span class="line">    500 =&gt; &#x27;Server error&#x27;,</span>
+<span class="line">    default =&gt; &#x27;Unknown status code&#x27;,</span>
+<span class="line">};</span>
+<span class="line"></span>
+<span class="line">echo $message; // Outputs: Not found</span></code></pre>
 
-```php
-$statusCode = 404;
-
-$message = match ($statusCode) {
-    200, 300 => 'Success',
-    400 => 'Bad request',
-    404 => 'Not found',
-    500 => 'Server error',
-    default => 'Unknown status code',
-};
-
-echo $message; // Outputs: Not found
-```
-
-`match` expressions are more concise than `switch` statements, don't fall through, and return a value directly.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+<code>match</code> expressions are more concise than <code>switch</code> statements, don't fall through, and return a value directly.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

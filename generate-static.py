@@ -2,13 +2,31 @@ import json
 import os
 from jinja2 import Environment, FileSystemLoader
 import re
+import html
 
 def slugify(text):
-    # Convert to lowercase and remove non-word characters
     slug = re.sub(r'[^\w\s-]', '', text.lower())
-    # Replace spaces with hyphens
     slug = re.sub(r'\s+', '-', slug)
     return slug
+
+def format_content(content):
+    def replace_code_block(match):
+        code = html.escape(match.group(1).strip())
+        lines = code.split('\n')
+        formatted_lines = [f'<span class="line">{line}</span>' for line in lines]
+        formatted_code = '\n'.join(formatted_lines)
+        return f'<pre><code class="language-php">{formatted_code}</code></pre>'
+
+    # Replace ```php...``` blocks
+    content = re.sub(r'```php(.*?)```', replace_code_block, content, flags=re.DOTALL)
+
+    # Replace inline `code`
+    content = re.sub(r'`([^`]+)`', lambda m: f'<code>{html.escape(m.group(1))}</code>', content)
+
+    # Replace newlines with <br> tags, but not within <pre> blocks
+    content = re.sub(r'(?<!>)\n(?!<)(?![^<]*</pre>)', '<br>', content)
+
+    return content
 
 # Load the tips
 with open('tips.json', 'r') as f:
@@ -23,12 +41,12 @@ os.makedirs('tips', exist_ok=True)
 
 # Generate a static page for each tip
 for tip in tips:
-    # Create a slug from the summary
     slug = slugify(tip['summary'])
-
-    # Create a directory for this tip
     tip_dir = f'tips/{tip["id"]}-{slug}'
     os.makedirs(tip_dir, exist_ok=True)
+
+    # Format the content
+    tip['formatted_content'] = format_content(tip['content'])
 
     # Generate the HTML content
     output = template.render(tip=tip)

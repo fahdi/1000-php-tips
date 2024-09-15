@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,22 +55,19 @@
 <body>
 <div class="container">
     <h1>Use Dependency Injection Containers</h1>
-    <div id="tipContent">Implement a Dependency Injection Container (DIC) to manage object creation and lifecycle. DICs help in decoupling components, improving testability, and managing complex dependency graphs in large applications.
-
-```php
-use Psr\Container\ContainerInterface;
-
-class UserService
-{
-    private $db;
-
-    public function __construct(ContainerInterface $container)
-    {
-        $this->db = $container->get('database');
-    }
-}
-```</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Implement a Dependency Injection Container (DIC) to manage object creation and lifecycle. DICs help in decoupling components, improving testability, and managing complex dependency graphs in large applications.<br>
+<pre><code class="language-php"><span class="line">use Psr\Container\ContainerInterface;</span>
+<span class="line"></span>
+<span class="line">class UserService</span>
+<span class="line">{</span>
+<span class="line">    private $db;</span>
+<span class="line"></span>
+<span class="line">    public function __construct(ContainerInterface $container)</span>
+<span class="line">    {</span>
+<span class="line">        $this-&gt;db = $container-&gt;get(&#x27;database&#x27;);</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre></div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

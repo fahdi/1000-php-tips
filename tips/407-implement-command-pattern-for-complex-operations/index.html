@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,55 +55,52 @@
 <body>
 <div class="container">
     <h1>Implement Command Pattern for Complex Operations</h1>
-    <div id="tipContent">Use the Command pattern to encapsulate requests as objects, allowing for parameterization of clients with queues, requests, and operations.
-
-```php
-interface CommandInterface
-{
-    public function execute();
-}
-
-class SendEmailCommand implements CommandInterface
-{
-    private $recipient;
-    private $subject;
-    private $body;
-
-    public function __construct($recipient, $subject, $body)
-    {
-        $this->recipient = $recipient;
-        $this->subject = $subject;
-        $this->body = $body;
-    }
-
-    public function execute()
-    {
-        // Logic to send email
-        echo "Sending email to {$this->recipient} with subject '{$this->subject}'";
-    }
-}
-
-class CommandInvoker
-{
-    private $command;
-
-    public function setCommand(CommandInterface $command)
-    {
-        $this->command = $command;
-    }
-
-    public function executeCommand()
-    {
-        $this->command->execute();
-    }
-}
-
-// Usage
-$invoker = new CommandInvoker();
-$invoker->setCommand(new SendEmailCommand('user@example.com', 'Hello', 'This is a test email'));
-$invoker->executeCommand();
-```</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Use the Command pattern to encapsulate requests as objects, allowing for parameterization of clients with queues, requests, and operations.<br>
+<pre><code class="language-php"><span class="line">interface CommandInterface</span>
+<span class="line">{</span>
+<span class="line">    public function execute();</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">class SendEmailCommand implements CommandInterface</span>
+<span class="line">{</span>
+<span class="line">    private $recipient;</span>
+<span class="line">    private $subject;</span>
+<span class="line">    private $body;</span>
+<span class="line"></span>
+<span class="line">    public function __construct($recipient, $subject, $body)</span>
+<span class="line">    {</span>
+<span class="line">        $this-&gt;recipient = $recipient;</span>
+<span class="line">        $this-&gt;subject = $subject;</span>
+<span class="line">        $this-&gt;body = $body;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    public function execute()</span>
+<span class="line">    {</span>
+<span class="line">        // Logic to send email</span>
+<span class="line">        echo &quot;Sending email to {$this-&gt;recipient} with subject &#x27;{$this-&gt;subject}&#x27;&quot;;</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">class CommandInvoker</span>
+<span class="line">{</span>
+<span class="line">    private $command;</span>
+<span class="line"></span>
+<span class="line">    public function setCommand(CommandInterface $command)</span>
+<span class="line">    {</span>
+<span class="line">        $this-&gt;command = $command;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    public function executeCommand()</span>
+<span class="line">    {</span>
+<span class="line">        $this-&gt;command-&gt;execute();</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">// Usage</span>
+<span class="line">$invoker = new CommandInvoker();</span>
+<span class="line">$invoker-&gt;setCommand(new SendEmailCommand(&#x27;user@example.com&#x27;, &#x27;Hello&#x27;, &#x27;This is a test email&#x27;));</span>
+<span class="line">$invoker-&gt;executeCommand();</span></code></pre></div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

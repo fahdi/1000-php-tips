@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,12 +55,9 @@
 <body>
 <div class="container">
     <h1>Use PHP-CS-Fixer for Consistent Code Styling</h1>
-    <div id="tipContent">Integrate PHP-CS-Fixer into your development workflow to automatically fix coding standards issues. This ensures consistent code style across your project and team.
-
-```bash
-php-cs-fixer fix /path/to/project
-```</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Integrate PHP-CS-Fixer into your development workflow to automatically fix coding standards issues. This ensures consistent code style across your project and team.<br><br>``<code>bash<br>php-cs-fixer fix /path/to/project
+</code>``</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

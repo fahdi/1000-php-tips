@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -41,7 +56,7 @@
 <div class="container">
     <h1>Optimize Object Creation with Lazy Loading</h1>
     <div id="tipContent">Implement lazy loading in PHP to optimize performance, particularly in resource-intensive object creation. Lazy loading defers the creation of an object until it's actually needed, which can lead to more efficient memory and resource usage.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

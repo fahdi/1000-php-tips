@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use Magic Methods with Caution</h1>
-    <div id="tipContent">PHP's magic methods (like `__construct`, `__destruct`, `__get`, `__set`, etc.) offer special behaviors that are automatically triggered. Use them judiciously to avoid unpredictable behavior and maintenance challenges.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP's magic methods (like <code>__construct</code>, <code>__destruct</code>, <code>__get</code>, <code>__set</code>, etc.) offer special behaviors that are automatically triggered. Use them judiciously to avoid unpredictable behavior and maintenance challenges.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

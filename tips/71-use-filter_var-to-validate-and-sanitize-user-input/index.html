@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `filter_var()` to validate and sanitize user input</h1>
-    <div id="tipContent">Validating and sanitizing user input is essential for maintaining data integrity and preventing security vulnerabilities. PHP's `filter_var()` function provides a simple and effective way to validate various types of input, such as email addresses, URLs, and integers. It also offers options for sanitizing input, removing potentially harmful or unwanted characters.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">Validating and sanitizing user input is essential for maintaining data integrity and preventing security vulnerabilities. PHP's <code>filter_var()</code> function provides a simple and effective way to validate various types of input, such as email addresses, URLs, and integers. It also offers options for sanitizing input, removing potentially harmful or unwanted characters.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {

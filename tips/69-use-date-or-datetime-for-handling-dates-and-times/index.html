@@ -24,8 +24,23 @@
             margin: 0 auto;
         }
         h1 { color: #007BFF; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            line-height: 1.5;
+        }
+        pre code .line {
+            display: block;
+        }
         .back-link {
             display: inline-block;
             margin-top: 20px;
@@ -40,8 +55,8 @@
 <body>
 <div class="container">
     <h1>Use `date()` or `DateTime` for handling dates and times</h1>
-    <div id="tipContent">PHP provides `date()` and `DateTime` for working with dates and times. `date()` allows you to format the current date or a specified timestamp, while `DateTime` provides an object-oriented approach for manipulating and formatting dates. These functions offer a wide range of options for customizing the display and calculation of dates and times.</div>
-    <a href="/index.html" class="back-link">← Back to Tips List</a>
+    <div id="tipContent">PHP provides <code>date()</code> and <code>DateTime</code> for working with dates and times. <code>date()</code> allows you to format the current date or a specified timestamp, while <code>DateTime</code> provides an object-oriented approach for manipulating and formatting dates. These functions offer a wide range of options for customizing the display and calculation of dates and times.</div>
+    <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
