@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/401-implement-value-objects-for-domain-modeling/">Implement Value Objects for Domain Modeling</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/251-use-set_magic_quotes_runtime-to-set-magic-quotes-runtime/" class="text">Use `set_magic_quotes_runtime()` to Set Magic Quotes Runtime</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/402-use-php-cs-fixer-for-consistent-code-styling/">Use PHP-CS-Fixer for Consistent Code Styling</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/252-use-html_entity_decode-to-convert-html-entities-back-to-characters/" class="text">Use `html_entity_decode()` to Convert HTML Entities Back to Characters</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/403-implement-circuit-breakers-for-resilient-external-service-calls/">Implement Circuit Breakers for Resilient External Service Calls</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/253-use-get_html_translation_table-to-retrieve-html-translation-table/" class="text">Use `get_html_translation_table()` to Retrieve HTML Translation Table</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/404-use-phps-built-in-web-server-for-development/">Use PHP's Built-in Web Server for Development</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/254-use-chr-to-convert-ascii-value-to-character/" class="text">Use `chr()` to Convert ASCII Value to Character</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/405-implement-fluent-interfaces-for-expressive-code/">Implement Fluent Interfaces for Expressive Code</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/255-use-ord-to-convert-character-to-ascii-value/" class="text">Use `ord()` to Convert Character to ASCII Value</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/406-use-phps-built-in-fastcgi-process-manager-fpm/">Use PHP's Built-in FastCGI Process Manager (FPM)</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/256-use-bin2hex-to-convert-binary-data-to-hexadecimal/" class="text">Use `bin2hex()` to Convert Binary Data to Hexadecimal</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/407-implement-command-pattern-for-complex-operations/">Implement Command Pattern for Complex Operations</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/257-use-hex2bin-to-convert-hexadecimal-to-binary-data/" class="text">Use `hex2bin()` to Convert Hexadecimal to Binary Data</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/408-use-phps-stream-wrappers-for-custom-protocols/">Use PHP's Stream Wrappers for Custom Protocols</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/258-use-strrev-to-reverse-a-string/" class="text">Use `strrev()` to Reverse a String</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/409-implement-the-specification-pattern-for-complex-business-rules/">Implement the Specification Pattern for Complex Business Rules</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/259-use-soundex-to-generate-soundex-key/" class="text">Use `soundex()` to Generate Soundex Key</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/410-use-php-8s-named-arguments-for-clearer-function-calls/">Use PHP 8's Named Arguments for Clearer Function Calls</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/411-leverage-php-8s-match-expression-for-cleaner-conditionals/">Leverage PHP 8's Match Expression for Cleaner Conditionals</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/412-use-phps-built-in-web-server-for-quick-development/">Use PHP's Built-in Web Server for Quick Development</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/413-implement-content-security-policy-csp-headers/">Implement Content Security Policy (CSP) Headers</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/414-use-phps-null-coalescing-assignment-operator-/">Use PHP's Null Coalescing Assignment Operator (??=)</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/415-implement-rate-limiting-for-api-endpoints/">Implement Rate Limiting for API Endpoints</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/416-use-phps-generators-for-memory-efficient-data-processing/">Use PHP's Generators for Memory-Efficient Data Processing</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/260-use-levenshtein-to-calculate-levenshtein-distance/" class="text">Use `levenshtein()` to Calculate Levenshtein Distance</a>
+            </div>
         </div>
         
     </div>
@@ -208,10 +224,6 @@
 
         
         
-        <a href="/pages/23/">23</a>
-        
-        
-        
         <a href="/pages/24/">24</a>
         
         
@@ -227,7 +239,16 @@
         <a href="/pages/27/">27</a>
         
         
+        
+        <a href="/pages/28/">28</a>
+        
+        
 
+        
+        
+        <span>...</span>
+        
+        <a href="/pages/42/">42</a>
         
 
         

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/289-use-fpassthru-to-output-remaining-data-from-a-file-pointer/">Use `fpassthru()` to Output Remaining Data from a File Pointer</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/181-use-get_defined_vars-for-debugging/" class="text">Use `get_defined_vars()` for Debugging</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/290-use-file_exists-to-check-if-a-file-or-directory-exists/">Use `file_exists()` to Check if a File or Directory Exists</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/182-use-pack-and-unpack-for-binary-data-handling/" class="text">Use `pack()` and `unpack()` for Binary Data Handling</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/291-use-unlink-to-delete-a-file/">Use `unlink()` to Delete a File</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/183-use-ini_set-for-runtime-configuration/" class="text">Use `ini_set()` for Runtime Configuration</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/292-use-copy-to-copy-a-file/">Use `copy()` to Copy a File</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/184-use-parse_ini_file-for-configuration-files/" class="text">Use `parse_ini_file()` for Configuration Files</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/293-use-rename-to-rename-a-file-or-directory/">Use `rename()` to Rename a File or Directory</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/185-use-realpath-for-canonical-file-paths/" class="text">Use `realpath()` for Canonical File Paths</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/294-use-mkdir-to-create-a-directory/">Use `mkdir()` to Create a Directory</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/186-use-register_shutdown_function-for-cleanup-tasks/" class="text">Use `register_shutdown_function()` for Cleanup Tasks</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/295-use-rmdir-to-remove-a-directory/">Use `rmdir()` to Remove a Directory</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/187-use-strtok-for-tokenizing-strings/" class="text">Use `strtok()` for Tokenizing Strings</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/296-use-scandir-to-list-files-in-a-directory/">Use `scandir()` to List Files in a Directory</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/188-use-str_repeat-for-repeating-strings/" class="text">Use `str_repeat()` for Repeating Strings</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/297-use-glob-for-pattern-matching-in-file-names/">Use `glob()` for Pattern Matching in File Names</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/189-use-strtr-for-character-translation/" class="text">Use `strtr()` for Character Translation</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/298-use-disk_free_space-to-get-free-disk-space/">Use `disk_free_space()` to Get Free Disk Space</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/299-use-disk_total_space-to-get-total-disk-space/">Use `disk_total_space()` to Get Total Disk Space</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/300-use-clearstatcache-to-clear-file-status-cache/">Use `clearstatcache()` to Clear File Status Cache</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/301-use-realpath-to-resolve-relative-paths/">Use `realpath()` to Resolve Relative Paths</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/302-use-base64_encode-to-encode-data/">Use `base64_encode()` to Encode Data</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/303-use-base64_decode-to-decode-data/">Use `base64_decode()` to Decode Data</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/304-use-quoted_printable_encode-for-email-text/">Use `quoted_printable_encode()` for Email Text</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/190-use-str_word_count-for-counting-words-in-a-string/" class="text">Use `str_word_count()` for Counting Words in a String</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

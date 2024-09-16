@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/225-use-phpinfo-to-get-php-configuration-information/">Use `phpinfo()` to Get PHP Configuration Information</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/141-implement-pagination-for-large-data-sets/" class="text">Implement Pagination for Large Data Sets</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/226-use-str_contains-to-check-if-a-string-contains-a-substring/">Use `str_contains()` to Check if a String Contains a Substring</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/142-use-transactions-for-database-integrity/" class="text">Use Transactions for Database Integrity</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/227-use-str_starts_with-to-check-if-a-string-starts-with-a-substring/">Use `str_starts_with()` to Check if a String Starts with a Substring</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/143-understand-and-implement-caching-strategies/" class="text">Understand and Implement Caching Strategies</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/228-use-str_ends_with-to-check-if-a-string-ends-with-a-substring/">Use `str_ends_with()` to Check if a String Ends with a Substring</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/144-use-phps-built-in-session-management-functions/" class="text">Use PHP's Built-in Session Management Functions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/229-use-ini_get-to-retrieve-configuration-options/">Use `ini_get()` to Retrieve Configuration Options</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/145-sanitize-user-input-to-prevent-sql-injection/" class="text">Sanitize User Input to Prevent SQL Injection</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/230-use-ini_set-to-set-configuration-options/">Use `ini_set()` to Set Configuration Options</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/146-validate-user-input-to-ensure-data-integrity/" class="text">Validate User Input to Ensure Data Integrity</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/231-use-defined-to-check-if-a-constant-is-defined/">Use `defined()` to Check if a Constant is Defined</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/147-use-https-to-secure-data-transmission/" class="text">Use HTTPS to Secure Data Transmission</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/232-use-define-to-create-constants/">Use `define()` to Create Constants</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/148-implement-proper-error-handling-and-logging/" class="text">Implement Proper Error Handling and Logging</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/233-use-constant-to-retrieve-constant-values/">Use `constant()` to Retrieve Constant Values</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/149-use-environment-variables-for-configuration/" class="text">Use Environment Variables for Configuration</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/234-use-get_defined_constants-to-list-all-defined-constants/">Use `get_defined_constants()` to List All Defined Constants</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/235-use-highlight_string-to-highlight-php-code/">Use `highlight_string()` to Highlight PHP Code</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/236-use-highlight_file-to-highlight-php-files/">Use `highlight_file()` to Highlight PHP Files</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/237-use-nl2br-to-convert-newlines-to-html-line-breaks/">Use `nl2br()` to Convert Newlines to HTML Line Breaks</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/238-use-wordwrap-to-wrap-long-lines/">Use `wordwrap()` to Wrap Long Lines</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/239-use-parse_str-to-parse-query-strings/">Use `parse_str()` to Parse Query Strings</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/240-use-http_response_code-to-set-http-response-codes/">Use `http_response_code()` to Set HTTP Response Codes</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/150-optimize-database-queries-for-performance/" class="text">Optimize Database Queries for Performance</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

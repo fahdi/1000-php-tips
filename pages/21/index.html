@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/321-use-filter_var-for-input-validation/">Use `filter_var()` for Input Validation</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/201-use-ucfirst-to-capitalize-the-first-letter-of-a-string/" class="text">Use `ucfirst()` to Capitalize the First Letter of a String</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/322-use-filter_input-for-input-filtering/">Use `filter_input()` for Input Filtering</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/202-use-lcfirst-to-make-the-first-letter-of-a-string-lowercase/" class="text">Use `lcfirst()` to Make the First Letter of a String Lowercase</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/323-use-filter_input_array-for-multiple-input-filtering/">Use `filter_input_array()` for Multiple Input Filtering</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/203-use-ucwords-to-capitalize-the-first-letter-of-each-word/" class="text">Use `ucwords()` to Capitalize the First Letter of Each Word</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/324-use-filter_list-to-get-a-list-of-all-supported-filters/">Use `filter_list()` to Get a List of All Supported Filters</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/204-use-strtotime-to-convert-strings-to-timestamps/" class="text">Use `strtotime()` to Convert Strings to Timestamps</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/325-use-filter_has_var-to-check-for-input-presence/">Use `filter_has_var()` to Check for Input Presence</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/205-use-getdate-to-retrieve-datetime-information/" class="text">Use `getdate()` to Retrieve Date/Time Information</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/326-use-filter_var_array-to-filter-multiple-variables/">Use `filter_var_array()` to Filter Multiple Variables</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/206-use-date_default_timezone_set-to-set-the-default-timezone/" class="text">Use `date_default_timezone_set()` to Set the Default Timezone</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/327-use-hash-for-cryptographic-hashing/">Use `hash()` for Cryptographic Hashing</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/207-use-checkdate-to-validate-a-date/" class="text">Use `checkdate()` to Validate a Date</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/328-use-hash_hmac-for-hmac-generation/">Use `hash_hmac()` for HMAC Generation</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/208-use-list-to-assign-variables-from-an-array/" class="text">Use `list()` to Assign Variables from an Array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/329-use-hash_algos-to-list-available-hash-algorithms/">Use `hash_algos()` to List Available Hash Algorithms</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/209-use-compact-to-create-an-array-from-variables/" class="text">Use `compact()` to Create an Array from Variables</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/330-use-password_hash-for-secure-password-storage/">Use `password_hash()` for Secure Password Storage</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/331-use-password_verify-to-verify-passwords/">Use `password_verify()` to Verify Passwords</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/332-use-password_needs_rehash-to-check-if-a-hash-needs-rehashing/">Use `password_needs_rehash()` to Check if a Hash Needs Rehashing</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/333-use-mcrypt_encrypt-for-encryption/">Use `mcrypt_encrypt()` for Encryption</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/334-use-mcrypt_decrypt-for-decryption/">Use `mcrypt_decrypt()` for Decryption</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/335-use-openssl_encrypt-for-encryption/">Use `openssl_encrypt()` for Encryption</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/336-use-openssl_decrypt-for-decryption/">Use `openssl_decrypt()` for Decryption</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/210-use-extract-to-import-variables-from-an-array/" class="text">Use `extract()` to Import Variables from an Array</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

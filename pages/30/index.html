@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tips</title>
+    <title>Page 30 - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
+    <meta name="description" content="Page 30 of 1000 PHP Tips - Discover essential PHP programming tips and best practices.">
+    <link rel="canonical" href="https://1000phptips.com/pages/30/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -18,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -54,33 +56,47 @@
             margin-top: 0.5rem;
             opacity: 0.8;
         }
+
         .tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 2rem;
         }
+
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -124,55 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/407-implement-command-pattern-for-complex-operations/">Implement Command Pattern for Complex Operations</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/291-use-unlink-to-delete-a-file/" class="text">Use `unlink()` to Delete a File</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/408-use-phps-stream-wrappers-for-custom-protocols/">Use PHP's Stream Wrappers for Custom Protocols</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/292-use-copy-to-copy-a-file/" class="text">Use `copy()` to Copy a File</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/409-implement-the-specification-pattern-for-complex-business-rules/">Implement the Specification Pattern for Complex Business Rules</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/293-use-rename-to-rename-a-file-or-directory/" class="text">Use `rename()` to Rename a File or Directory</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/410-use-php-8s-named-arguments-for-clearer-function-calls/">Use PHP 8's Named Arguments for Clearer Function Calls</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/294-use-mkdir-to-create-a-directory/" class="text">Use `mkdir()` to Create a Directory</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/411-leverage-php-8s-match-expression-for-cleaner-conditionals/">Leverage PHP 8's Match Expression for Cleaner Conditionals</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/295-use-rmdir-to-remove-a-directory/" class="text">Use `rmdir()` to Remove a Directory</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/412-use-phps-built-in-web-server-for-quick-development/">Use PHP's Built-in Web Server for Quick Development</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/296-use-scandir-to-list-files-in-a-directory/" class="text">Use `scandir()` to List Files in a Directory</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/413-implement-content-security-policy-csp-headers/">Implement Content Security Policy (CSP) Headers</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/297-use-glob-for-pattern-matching-in-file-names/" class="text">Use `glob()` for Pattern Matching in File Names</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/414-use-phps-null-coalescing-assignment-operator-/">Use PHP's Null Coalescing Assignment Operator (??=)</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/298-use-disk_free_space-to-get-free-disk-space/" class="text">Use `disk_free_space()` to Get Free Disk Space</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/415-implement-rate-limiting-for-api-endpoints/">Implement Rate Limiting for API Endpoints</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/299-use-disk_total_space-to-get-total-disk-space/" class="text">Use `disk_total_space()` to Get Total Disk Space</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/416-use-phps-generators-for-memory-efficient-data-processing/">Use PHP's Generators for Memory-Efficient Data Processing</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/417-implement-attribute-routing-in-modern-php-frameworks/">Implement Attribute Routing in Modern PHP Frameworks</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/418-use-phps-array-spread-operator-for-merging-arrays/">Use PHP's Array Spread Operator for Merging Arrays</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/419-implement-lazy-loading-for-performance-optimization/">Implement Lazy Loading for Performance Optimization</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/300-use-clearstatcache-to-clear-file-status-cache/" class="text">Use `clearstatcache()` to Clear File Status Cache</a>
+            </div>
         </div>
         
     </div>
@@ -201,9 +235,24 @@
         <span class="current">30</span>
         
         
-
+        
+        <a href="/pages/31/">31</a>
+        
+        
+        
+        <a href="/pages/32/">32</a>
+        
         
 
+        
+        
+        <span>...</span>
+        
+        <a href="/pages/42/">42</a>
+        
+
+        
+        <a href="/pages/31/">Next</a>
         
     </div>
 </div>

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/193-use-str_pad-for-padding-strings/">Use `str_pad()` for Padding Strings</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/121-use-anonymous-classes-for-lightweight-objects/" class="text">Use Anonymous Classes for Lightweight Objects</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/194-use-stripos-for-case-insensitive-substring-search/">Use `stripos()` for Case-Insensitive Substring Search</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/122-understand-phps-garbage-collection-mechanism/" class="text">Understand PHP's Garbage Collection Mechanism</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/195-use-strspn-and-strcspn-for-string-span-operations/">Use `strspn()` and `strcspn()` for String Span Operations</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/123-implement-proper-exception-hierarchies/" class="text">Implement Proper Exception Hierarchies</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/196-use-addcslashes-for-escaping-characters-in-a-string/">Use `addcslashes()` for Escaping Characters in a String</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/124-use-phps-built-in-functions-for-file-handling/" class="text">Use PHP's Built-in Functions for File Handling</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/197-use-addslashes-for-escaping-quotes-in-a-string/">Use `addslashes()` for Escaping Quotes in a String</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/125-utilize-phps-session-management-functions/" class="text">Utilize PHP's Session Management Functions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/198-use-str_rot13-for-simple-string-encryption/">Use `str_rot13()` for Simple String Encryption</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/126-use-password_hash-for-secure-password-storage/" class="text">Use `password_hash()` for Secure Password Storage</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/199-use-quoted_printable_encode-for-encoding-email-text/">Use `quoted_printable_encode()` for Encoding Email Text</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/127-optimize-database-queries-with-indexing/" class="text">Optimize Database Queries with Indexing</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/200-use-htmlentities-to-convert-characters-to-html-entities/">Use `htmlentities()` to Convert Characters to HTML Entities</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/128-leverage-phps-built-in-json-functions/" class="text">Leverage PHP's Built-in JSON Functions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/201-use-ucfirst-to-capitalize-the-first-letter-of-a-string/">Use `ucfirst()` to Capitalize the First Letter of a String</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/129-understand-and-use-regular-expressions/" class="text">Understand and Use Regular Expressions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/202-use-lcfirst-to-make-the-first-letter-of-a-string-lowercase/">Use `lcfirst()` to Make the First Letter of a String Lowercase</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/203-use-ucwords-to-capitalize-the-first-letter-of-each-word/">Use `ucwords()` to Capitalize the First Letter of Each Word</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/204-use-strtotime-to-convert-strings-to-timestamps/">Use `strtotime()` to Convert Strings to Timestamps</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/205-use-getdate-to-retrieve-datetime-information/">Use `getdate()` to Retrieve Date/Time Information</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/206-use-date_default_timezone_set-to-set-the-default-timezone/">Use `date_default_timezone_set()` to Set the Default Timezone</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/207-use-checkdate-to-validate-a-date/">Use `checkdate()` to Validate a Date</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/208-use-list-to-assign-variables-from-an-array/">Use `list()` to Assign Variables from an Array</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/130-use-filter_var-for-email-validation/" class="text">Use `filter_var()` for Email Validation</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

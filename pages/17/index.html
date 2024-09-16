@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/257-use-hex2bin-to-convert-hexadecimal-to-binary-data/">Use `hex2bin()` to Convert Hexadecimal to Binary Data</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/161-utilize-finfo_file-for-file-type-detection/" class="text">Utilize `finfo_file()` for File Type Detection</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/258-use-strrev-to-reverse-a-string/">Use `strrev()` to Reverse a String</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/162-implement-countable-interface-for-custom-collection-classes/" class="text">Implement `countable` Interface for Custom Collection Classes</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/259-use-soundex-to-generate-soundex-key/">Use `soundex()` to Generate Soundex Key</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/163-use-recursiveiteratoriterator-for-recursive-directory-traversal/" class="text">Use `RecursiveIteratorIterator` for Recursive Directory Traversal</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/260-use-levenshtein-to-calculate-levenshtein-distance/">Use `levenshtein()` to Calculate Levenshtein Distance</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/164-leverage-simplexml-for-easy-xml-parsing/" class="text">Leverage `SimpleXML` for Easy XML Parsing</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/261-use-similar_text-to-calculate-similarity-between-strings/">Use `similar_text()` to Calculate Similarity Between Strings</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/165-use-domdocument-for-advanced-xml-manipulation/" class="text">Use `DOMDocument` for Advanced XML Manipulation</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/262-use-parse_url-to-parse-a-url/">Use `parse_url()` to Parse a URL</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/166-use-localeconv-for-locale-specific-formatting/" class="text">Use `localeconv()` for Locale-specific Formatting</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/263-use-parse_str-to-parse-a-query-string/">Use `parse_str()` to Parse a Query String</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/167-implement-serializable-interface-for-custom-serialization/" class="text">Implement `Serializable` Interface for Custom Serialization</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/264-use-basename-to-get-the-filename-from-a-path/">Use `basename()` to Get the Filename from a Path</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/168-use-__set_state-for-exporting-objects/" class="text">Use `__set_state()` for Exporting Objects</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/265-use-dirname-to-get-the-directory-name-from-a-path/">Use `dirname()` to Get the Directory Name from a Path</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/169-use-usort-for-custom-array-sorting/" class="text">Use `usort()` for Custom Array Sorting</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/266-use-pathinfo-to-get-information-about-a-path/">Use `pathinfo()` to Get Information About a Path</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/267-use-realpath-to-get-the-absolute-path/">Use `realpath()` to Get the Absolute Path</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/268-use-glob-to-find-pathnames-matching-a-pattern/">Use `glob()` to Find Pathnames Matching a Pattern</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/269-use-is_file-to-check-if-a-path-is-a-file/">Use `is_file()` to Check if a Path is a File</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/270-use-is_dir-to-check-if-a-path-is-a-directory/">Use `is_dir()` to Check if a Path is a Directory</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/271-use-is_readable-to-check-if-a-path-is-readable/">Use `is_readable()` to Check if a Path is Readable</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/272-use-is_writable-to-check-if-a-path-is-writable/">Use `is_writable()` to Check if a Path is Writable</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/170-use-array_multisort-for-sorting-multidimensional-arrays/" class="text">Use `array_multisort()` for Sorting Multidimensional Arrays</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

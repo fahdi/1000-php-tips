@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/129-understand-and-use-regular-expressions/">Understand and Use Regular Expressions</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/81-prefer-ternary-operators-for-simple-conditional-assignments/" class="text">Prefer Ternary Operators for Simple Conditional Assignments</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/130-use-filter_var-for-email-validation/">Use `filter_var()` for Email Validation</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/82-avoid-nested-ternary-operators-for-better-readability/" class="text">Avoid Nested Ternary Operators for Better Readability</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/131-avoid-using-var_dump-in-production/">Avoid Using `var_dump()` in Production</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/83-use-null-coalescing-operator-as-a-shortcut-for-ternary-with-isset/" class="text">Use Null Coalescing Operator as a Shortcut for Ternary with `isset()`</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/132-use-phps-built-in-logging-functions/">Use PHP's Built-in Logging Functions</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/84-leverage-switch-statements-for-multiple-conditional-branches/" class="text">Leverage Switch Statements for Multiple Conditional Branches</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/133-utilize-output-buffering-for-improved-performance/">Utilize Output Buffering for Improved Performance</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/85-use-match-expressions-for-value-based-conditional-logic-in-php-8/" class="text">Use Match Expressions for Value-Based Conditional Logic in PHP 8</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/134-use-composer-autoloading-for-class-loading/">Use Composer Autoloading for Class Loading</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/86-avoid-overusing-else-if-ladders-for-better-code-clarity/" class="text">Avoid Overusing Else-If Ladders for Better Code Clarity</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/135-apply-dependency-injection-to-reduce-coupling/">Apply Dependency Injection to Reduce Coupling</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/87-use-early-returns-to-simplify-if-else-structures/" class="text">Use Early Returns to Simplify if-else Structures</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/136-use-phps-intl-extension-for-internationalization/">Use PHP's `intl` Extension for Internationalization</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/88-embrace-solid-principles-in-class-design/" class="text">Embrace SOLID Principles in Class Design</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/137-implement-rate-limiting-to-prevent-abuse/">Implement Rate Limiting to Prevent Abuse</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/89-apply-design-patterns-appropriately/" class="text">Apply Design Patterns Appropriately</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/138-use-phps-built-in-xml-parsing-functions/">Use PHP's Built-in XML Parsing Functions</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/139-optimize-array-operations-for-performance/">Optimize Array Operations for Performance</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/140-use-splfixedarray-for-memory-efficient-arrays/">Use `SplFixedArray` for Memory-Efficient Arrays</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/141-implement-pagination-for-large-data-sets/">Implement Pagination for Large Data Sets</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/142-use-transactions-for-database-integrity/">Use Transactions for Database Integrity</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/143-understand-and-implement-caching-strategies/">Understand and Implement Caching Strategies</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/144-use-phps-built-in-session-management-functions/">Use PHP's Built-in Session Management Functions</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/90-prefer-composition-over-inheritance/" class="text">Prefer Composition Over Inheritance</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         
