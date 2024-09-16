@@ -101,10 +101,10 @@
 </head>
 <body>
 <header>
-    <h1>{{ tip.summary }}</h1>
+    <h1>{{ tip.formatted_summary|safe }}</h1>
 </header>
 <div class="container">
-    <h2>{{ tip.summary }}</h2>
+    <h2>{{ tip.formatted_summary|safe }}</h2>
     <div id="tipContent">{{ tip.formatted_content | safe }}</div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
