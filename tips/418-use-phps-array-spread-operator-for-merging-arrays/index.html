@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use PHP's Array Spread Operator for Merging Arrays - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="PHP 74 introduced the array spread operator which provides a concise way to unpack arrays php fruits apple banana vegetables carrot tomato combined fruits ve...">
+    <meta name="description" content="PHP 74 introduced the array spread operator which provides a concise way to unpack arrays fruits apple banana vegetables carrot tomato combined fruits vegeta...">
     <link rel="canonical" href="https://1000phptips.com/tips/418-use-phps-array-spread-operator-for-merging-arrays/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,24 +105,25 @@
 </header>
 <div class="container">
     <h2>Use PHP's Array Spread Operator for Merging Arrays</h2>
-    <div id="tipContent">PHP 7.4 introduced the array spread operator (...), which provides a concise way to unpack arrays.<br>
-<pre><code class="language-php"><span class="line">$fruits = [&#x27;apple&#x27;, &#x27;banana&#x27;];</span>
-<span class="line">$vegetables = [&#x27;carrot&#x27;, &#x27;tomato&#x27;];</span>
-<span class="line"></span>
-<span class="line">$combined = [...$fruits, ...$vegetables, &#x27;kiwi&#x27;];</span>
-<span class="line"></span>
-<span class="line">print_r($combined);</span>
-<span class="line">// Outputs: Array ( [0] =&gt; apple [1] =&gt; banana [2] =&gt; carrot [3] =&gt; tomato [4] =&gt; kiwi )</span>
-<span class="line"></span>
-<span class="line">// It&#x27;s also useful for merging associative arrays</span>
-<span class="line">$defaults = [&#x27;color&#x27; =&gt; &#x27;red&#x27;, &#x27;size&#x27; =&gt; &#x27;medium&#x27;];</span>
-<span class="line">$userPreferences = [&#x27;size&#x27; =&gt; &#x27;large&#x27;];</span>
-<span class="line"></span>
-<span class="line">$finalPreferences = [...$defaults, ...$userPreferences];</span>
-<span class="line"></span>
-<span class="line">print_r($finalPreferences);</span>
-<span class="line">// Outputs: Array ( [color] =&gt; red [size] =&gt; large )</span></code></pre>
-<br>The spread operator provides a more readable alternative to <code>array_merge()</code> in many cases, especially when working with a mix of indexed and associative arrays.</div>
+    <div id="tipContent"><p>PHP 7.4 introduced the array spread operator (...), which provides a concise way to unpack arrays.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">$fruits = ['apple', 'banana'];</span>
+<span class="x">$vegetables = ['carrot', 'tomato'];</span>
+
+<span class="x">$combined = [...$fruits, ...$vegetables, 'kiwi'];</span>
+
+<span class="x">print_r($combined);</span>
+<span class="x">// Outputs: Array ( [0] =&gt; apple [1] =&gt; banana [2] =&gt; carrot [3] =&gt; tomato [4] =&gt; kiwi )</span>
+
+<span class="x">// It's also useful for merging associative arrays</span>
+<span class="x">$defaults = ['color' =&gt; 'red', 'size' =&gt; 'medium'];</span>
+<span class="x">$userPreferences = ['size' =&gt; 'large'];</span>
+
+<span class="x">$finalPreferences = [...$defaults, ...$userPreferences];</span>
+
+<span class="x">print_r($finalPreferences);</span>
+<span class="x">// Outputs: Array ( [color] =&gt; red [size] =&gt; large )</span>
+</code></pre></div>
+<p>The spread operator provides a more readable alternative to <code>array_merge()</code> in many cases, especially when working with a mix of indexed and associative arrays.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

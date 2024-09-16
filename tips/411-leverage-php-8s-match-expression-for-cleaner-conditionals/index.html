@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leverage PHP 8's Match Expression for Cleaner Conditionals - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="The match expression in PHP 8 provides a more powerful and expressive alternative to switch statements Its especially useful for simple conditional returns p...">
+    <meta name="description" content="The match expression in PHP 8 provides a more powerful and expressive alternative to switch statements Its especially useful for simple conditional returns s...">
     <link rel="canonical" href="https://1000phptips.com/tips/411-leverage-php-8s-match-expression-for-cleaner-conditionals/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,20 +105,20 @@
 </header>
 <div class="container">
     <h2>Leverage PHP 8's Match Expression for Cleaner Conditionals</h2>
-    <div id="tipContent">The <code>match</code> expression in PHP 8 provides a more powerful and expressive alternative to <code>switch</code> statements. It's especially useful for simple conditional returns.<br>
-<pre><code class="language-php"><span class="line">$statusCode = 404;</span>
-<span class="line"></span>
-<span class="line">$message = match ($statusCode) {</span>
-<span class="line">    200, 300 =&gt; &#x27;Success&#x27;,</span>
-<span class="line">    400 =&gt; &#x27;Bad request&#x27;,</span>
-<span class="line">    404 =&gt; &#x27;Not found&#x27;,</span>
-<span class="line">    500 =&gt; &#x27;Server error&#x27;,</span>
-<span class="line">    default =&gt; &#x27;Unknown status code&#x27;,</span>
-<span class="line">};</span>
-<span class="line"></span>
-<span class="line">echo $message; // Outputs: Not found</span></code></pre>
+    <div id="tipContent"><p>The <code>match</code> expression in PHP 8 provides a more powerful and expressive alternative to <code>switch</code> statements. It's especially useful for simple conditional returns.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">$statusCode = 404;</span>
 
-<code>match</code> expressions are more concise than <code>switch</code> statements, don't fall through, and return a value directly.</div>
+<span class="x">$message = match ($statusCode) {</span>
+<span class="x">    200, 300 =&gt; 'Success',</span>
+<span class="x">    400 =&gt; 'Bad request',</span>
+<span class="x">    404 =&gt; 'Not found',</span>
+<span class="x">    500 =&gt; 'Server error',</span>
+<span class="x">    default =&gt; 'Unknown status code',</span>
+<span class="x">};</span>
+
+<span class="x">echo $message; // Outputs: Not found</span>
+</code></pre></div>
+<p><code>match</code> expressions are more concise than <code>switch</code> statements, don't fall through, and return a value directly.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

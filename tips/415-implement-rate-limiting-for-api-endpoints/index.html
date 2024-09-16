@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implement Rate Limiting for API Endpoints - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Rate limiting is crucial for protecting your API from abuse and ensuring fair usage Heres a simple example using Redis php function checkRateLimituserId limi...">
+    <meta name="description" content="Rate limiting is crucial for protecting your API from abuse and ensuring fair usage Heres a simple example using Redis function checkRateLimituserId limit 10...">
     <link rel="canonical" href="https://1000phptips.com/tips/415-implement-rate-limiting-for-api-endpoints/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,33 +105,34 @@
 </header>
 <div class="container">
     <h2>Implement Rate Limiting for API Endpoints</h2>
-    <div id="tipContent">Rate limiting is crucial for protecting your API from abuse and ensuring fair usage. Here's a simple example using Redis:<br>
-<pre><code class="language-php"><span class="line">function checkRateLimit($userId, $limit = 100, $period = 3600) {</span>
-<span class="line">    $redis = new Redis();</span>
-<span class="line">    $redis-&gt;connect(&#x27;127.0.0.1&#x27;, 6379);</span>
-<span class="line">    </span>
-<span class="line">    $key = &quot;rate_limit:$userId&quot;;</span>
-<span class="line">    $current = $redis-&gt;get($key);</span>
-<span class="line">    </span>
-<span class="line">    if (!$current) {</span>
-<span class="line">        $redis-&gt;setex($key, $period, 1);</span>
-<span class="line">        return true;</span>
-<span class="line">    }</span>
-<span class="line">    </span>
-<span class="line">    if ($current &gt; $limit) {</span>
-<span class="line">        return false;</span>
-<span class="line">    }</span>
-<span class="line">    </span>
-<span class="line">    $redis-&gt;incr($key);</span>
-<span class="line">    return true;</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// Usage</span>
-<span class="line">if (!checkRateLimit(&#x27;user123&#x27;)) {</span>
-<span class="line">    header(&#x27;HTTP/1.1 429 Too Many Requests&#x27;);</span>
-<span class="line">    exit(&#x27;Rate limit exceeded. Please try again later.&#x27;);</span>
-<span class="line">}</span></code></pre>
-<br>This function checks if a user has exceeded their rate limit. Adjust the limit and period as needed for your application.</div>
+    <div id="tipContent"><p>Rate limiting is crucial for protecting your API from abuse and ensuring fair usage. Here's a simple example using Redis:</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">function checkRateLimit($userId, $limit = 100, $period = 3600) {</span>
+<span class="x">    $redis = new Redis();</span>
+<span class="x">    $redis-&gt;connect('127.0.0.1', 6379);</span>
+
+<span class="x">    $key = "rate_limit:$userId";</span>
+<span class="x">    $current = $redis-&gt;get($key);</span>
+
+<span class="x">    if (!$current) {</span>
+<span class="x">        $redis-&gt;setex($key, $period, 1);</span>
+<span class="x">        return true;</span>
+<span class="x">    }</span>
+
+<span class="x">    if ($current &gt; $limit) {</span>
+<span class="x">        return false;</span>
+<span class="x">    }</span>
+
+<span class="x">    $redis-&gt;incr($key);</span>
+<span class="x">    return true;</span>
+<span class="x">}</span>
+
+<span class="x">// Usage</span>
+<span class="x">if (!checkRateLimit('user123')) {</span>
+<span class="x">    header('HTTP/1.1 429 Too Many Requests');</span>
+<span class="x">    exit('Rate limit exceeded. Please try again later.');</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>This function checks if a user has exceeded their rate limit. Adjust the limit and period as needed for your application.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

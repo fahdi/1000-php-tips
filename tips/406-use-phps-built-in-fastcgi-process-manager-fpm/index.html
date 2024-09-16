@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use PHP's Built-in FastCGI Process Manager (FPM) - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="For production environments use PHPFPM to handle PHP requests more efficiently especially under high load nginx Nginx configuration example location php fast...">
+    <meta name="description" content="For production environments use PHPFPM to handle PHP requests more efficiently especially under high load Nginx configuration example location php fastcgi_pa...">
     <link rel="canonical" href="https://1000phptips.com/tips/406-use-phps-built-in-fastcgi-process-manager-fpm/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,8 +105,14 @@
 </header>
 <div class="container">
     <h2>Use PHP's Built-in FastCGI Process Manager (FPM)</h2>
-    <div id="tipContent">For production environments, use PHP-FPM to handle PHP requests more efficiently, especially under high load.<br><br>``<code>nginx<br># Nginx configuration example<br>location ~ \.php$ {<br>    fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;<br>    fastcgi_index index.php;<br>    include fastcgi_params;<br>}
-</code>``</div>
+    <div id="tipContent"><p>For production environments, use PHP-FPM to handle PHP requests more efficiently, especially under high load.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="c1"># Nginx configuration example</span>
+<span class="k">location</span><span class="w"> </span><span class="p">~</span><span class="w"> </span><span class="sr">\.php$</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">fastcgi_pass</span><span class="w"> </span><span class="s">unix:/var/run/php/php7.4-fpm.sock</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">fastcgi_index</span><span class="w"> </span><span class="s">index.php</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">include</span><span class="w"> </span><span class="s">fastcgi_params</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

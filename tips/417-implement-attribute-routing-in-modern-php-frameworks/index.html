@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implement Attribute Routing in Modern PHP Frameworks - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Many modern PHP frameworks support attribute routing which allows you to define routes directly in your controller methods using PHP 8 attributes php use App...">
+    <meta name="description" content="Many modern PHP frameworks support attribute routing which allows you to define routes directly in your controller methods using PHP 8 attributes use AppCont...">
     <link rel="canonical" href="https://1000phptips.com/tips/417-implement-attribute-routing-in-modern-php-frameworks/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,25 +105,26 @@
 </header>
 <div class="container">
     <h2>Implement Attribute Routing in Modern PHP Frameworks</h2>
-    <div id="tipContent">Many modern PHP frameworks support attribute routing, which allows you to define routes directly in your controller methods using PHP 8 attributes.<br>
-<pre><code class="language-php"><span class="line">use App\Controller\AbstractController;</span>
-<span class="line">use Symfony\Component\Routing\Annotation\Route;</span>
-<span class="line"></span>
-<span class="line">class ProductController extends AbstractController</span>
-<span class="line">{</span>
-<span class="line">    #[Route(&#x27;/products&#x27;, name: &#x27;product_list&#x27;, methods: [&#x27;GET&#x27;])]</span>
-<span class="line">    public function list(): Response</span>
-<span class="line">    {</span>
-<span class="line">        // Logic to list products</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    #[Route(&#x27;/products/{id}&#x27;, name: &#x27;product_show&#x27;, methods: [&#x27;GET&#x27;])]</span>
-<span class="line">    public function show(int $id): Response</span>
-<span class="line">    {</span>
-<span class="line">        // Logic to show a specific product</span>
-<span class="line">    }</span>
-<span class="line">}</span></code></pre>
-<br>This example uses Symfony's routing attributes, but similar concepts exist in other frameworks. Attribute routing can make your code more readable and maintainable by keeping route definitions close to the controller actions they correspond to.</div>
+    <div id="tipContent"><p>Many modern PHP frameworks support attribute routing, which allows you to define routes directly in your controller methods using PHP 8 attributes.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">use App\Controller\AbstractController;</span>
+<span class="x">use Symfony\Component\Routing\Annotation\Route;</span>
+
+<span class="x">class ProductController extends AbstractController</span>
+<span class="x">{</span>
+<span class="x">    #[Route('/products', name: 'product_list', methods: ['GET'])]</span>
+<span class="x">    public function list(): Response</span>
+<span class="x">    {</span>
+<span class="x">        // Logic to list products</span>
+<span class="x">    }</span>
+
+<span class="x">    #[Route('/products/{id}', name: 'product_show', methods: ['GET'])]</span>
+<span class="x">    public function show(int $id): Response</span>
+<span class="x">    {</span>
+<span class="x">        // Logic to show a specific product</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>This example uses Symfony's routing attributes, but similar concepts exist in other frameworks. Attribute routing can make your code more readable and maintainable by keeping route definitions close to the controller actions they correspond to.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

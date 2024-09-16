@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use PHP's Null Coalescing Assignment Operator (??=) - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="PHP 74 introduced the null coalescing assignment operator Its a shorthand way to assign a value to a variable if its null php config debug true Old way if is...">
+    <meta name="description" content="PHP 74 introduced the null coalescing assignment operator Its a shorthand way to assign a value to a variable if its null config debug true Old way if issetc...">
     <link rel="canonical" href="https://1000phptips.com/tips/414-use-phps-null-coalescing-assignment-operator-/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,22 +105,23 @@
 </header>
 <div class="container">
     <h2>Use PHP's Null Coalescing Assignment Operator (??=)</h2>
-    <div id="tipContent">PHP 7.4 introduced the null coalescing assignment operator (??=). It's a shorthand way to assign a value to a variable if it's null.<br>
-<pre><code class="language-php"><span class="line">$config = [</span>
-<span class="line">    &#x27;debug&#x27; =&gt; true,</span>
-<span class="line">];</span>
-<span class="line"></span>
-<span class="line">// Old way</span>
-<span class="line">if (!isset($config[&#x27;environment&#x27;])) {</span>
-<span class="line">    $config[&#x27;environment&#x27;] = &#x27;production&#x27;;</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// New way with ??=</span>
-<span class="line">$config[&#x27;environment&#x27;] ??= &#x27;production&#x27;;</span>
-<span class="line"></span>
-<span class="line">var_dump($config);</span>
-<span class="line">// Outputs: [&#x27;debug&#x27; =&gt; true, &#x27;environment&#x27; =&gt; &#x27;production&#x27;]</span></code></pre>
-<br>This operator simplifies code and makes it more readable, especially when dealing with configuration arrays or setting default values.</div>
+    <div id="tipContent"><p>PHP 7.4 introduced the null coalescing assignment operator (??=). It's a shorthand way to assign a value to a variable if it's null.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">$config = [</span>
+<span class="x">    'debug' =&gt; true,</span>
+<span class="x">];</span>
+
+<span class="x">// Old way</span>
+<span class="x">if (!isset($config['environment'])) {</span>
+<span class="x">    $config['environment'] = 'production';</span>
+<span class="x">}</span>
+
+<span class="x">// New way with ??=</span>
+<span class="x">$config['environment'] ??= 'production';</span>
+
+<span class="x">var_dump($config);</span>
+<span class="x">// Outputs: ['debug' =&gt; true, 'environment' =&gt; 'production']</span>
+</code></pre></div>
+<p>This operator simplifies code and makes it more readable, especially when dealing with configuration arrays or setting default values.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

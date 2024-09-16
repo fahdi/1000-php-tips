@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implement Fluent Interfaces for Expressive Code - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Create fluent interfaces to make your code more readable and expressive especially for configuration or query building php class QueryBuilder private table p...">
+    <meta name="description" content="Create fluent interfaces to make your code more readable and expressive especially for configuration or query building class QueryBuilder private table priva...">
     <link rel="canonical" href="https://1000phptips.com/tips/405-implement-fluent-interfaces-for-expressive-code/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,40 +105,41 @@
 </header>
 <div class="container">
     <h2>Implement Fluent Interfaces for Expressive Code</h2>
-    <div id="tipContent">Create fluent interfaces to make your code more readable and expressive, especially for configuration or query building.<br>
-<pre><code class="language-php"><span class="line">class QueryBuilder</span>
-<span class="line">{</span>
-<span class="line">    private $table;</span>
-<span class="line">    private $conditions = [];</span>
-<span class="line"></span>
-<span class="line">    public function from($table)</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;table = $table;</span>
-<span class="line">        return $this;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function where($condition)</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;conditions[] = $condition;</span>
-<span class="line">        return $this;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function build()</span>
-<span class="line">    {</span>
-<span class="line">        $query = &quot;SELECT * FROM {$this-&gt;table}&quot;;</span>
-<span class="line">        if (!empty($this-&gt;conditions)) {</span>
-<span class="line">            $query .= &quot; WHERE &quot; . implode(&#x27; AND &#x27;, $this-&gt;conditions);</span>
-<span class="line">        }</span>
-<span class="line">        return $query;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// Usage</span>
-<span class="line">$query = (new QueryBuilder())</span>
-<span class="line">    -&gt;from(&#x27;users&#x27;)</span>
-<span class="line">    -&gt;where(&#x27;age &gt; 18&#x27;)</span>
-<span class="line">    -&gt;where(&#x27;status = &quot;active&quot;&#x27;)</span>
-<span class="line">    -&gt;build();</span></code></pre></div>
+    <div id="tipContent"><p>Create fluent interfaces to make your code more readable and expressive, especially for configuration or query building.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">class QueryBuilder</span>
+<span class="x">{</span>
+<span class="x">    private $table;</span>
+<span class="x">    private $conditions = [];</span>
+
+<span class="x">    public function from($table)</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;table = $table;</span>
+<span class="x">        return $this;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function where($condition)</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;conditions[] = $condition;</span>
+<span class="x">        return $this;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function build()</span>
+<span class="x">    {</span>
+<span class="x">        $query = "SELECT * FROM {$this-&gt;table}";</span>
+<span class="x">        if (!empty($this-&gt;conditions)) {</span>
+<span class="x">            $query .= " WHERE " . implode(' AND ', $this-&gt;conditions);</span>
+<span class="x">        }</span>
+<span class="x">        return $query;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">// Usage</span>
+<span class="x">$query = (new QueryBuilder())</span>
+<span class="x">    -&gt;from('users')</span>
+<span class="x">    -&gt;where('age &gt; 18')</span>
+<span class="x">    -&gt;where('status = "active"')</span>
+<span class="x">    -&gt;build();</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

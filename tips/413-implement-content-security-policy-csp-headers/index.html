@@ -105,9 +105,10 @@
 </header>
 <div class="container">
     <h2>Implement Content Security Policy (CSP) Headers</h2>
-    <div id="tipContent">Content Security Policy is an added layer of security that helps detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks.<br>
-<pre><code class="language-php"><span class="line">header(&quot;Content-Security-Policy: default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;;&quot;);</span></code></pre>
-<br>This example CSP header restricts resources to be loaded only from the same origin, with some exceptions for inline scripts and styles. Adjust the policy based on your specific needs and security requirements.</div>
+    <div id="tipContent"><p>Content Security Policy is an added layer of security that helps detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';");</span>
+</code></pre></div>
+<p>This example CSP header restricts resources to be loaded only from the same origin, with some exceptions for inline scripts and styles. Adjust the policy based on your specific needs and security requirements.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

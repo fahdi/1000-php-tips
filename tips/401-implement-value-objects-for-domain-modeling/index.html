@@ -105,24 +105,25 @@
 </header>
 <div class="container">
     <h2>Implement Value Objects for Domain Modeling</h2>
-    <div id="tipContent">Use Value Objects to represent domain concepts that are defined by their attributes rather than an identity. This enhances code readability and ensures data integrity.<br>
-<pre><code class="language-php"><span class="line">final class Email</span>
-<span class="line">{</span>
-<span class="line">    private $email;</span>
-<span class="line"></span>
-<span class="line">    public function __construct(string $email)</span>
-<span class="line">    {</span>
-<span class="line">        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {</span>
-<span class="line">            throw new InvalidArgumentException(&#x27;Invalid email&#x27;);</span>
-<span class="line">        }</span>
-<span class="line">        $this-&gt;email = $email;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function __toString(): string</span>
-<span class="line">    {</span>
-<span class="line">        return $this-&gt;email;</span>
-<span class="line">    }</span>
-<span class="line">}</span></code></pre></div>
+    <div id="tipContent"><p>Use Value Objects to represent domain concepts that are defined by their attributes rather than an identity. This enhances code readability and ensures data integrity.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">final class Email</span>
+<span class="x">{</span>
+<span class="x">    private $email;</span>
+
+<span class="x">    public function __construct(string $email)</span>
+<span class="x">    {</span>
+<span class="x">        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {</span>
+<span class="x">            throw new InvalidArgumentException('Invalid email');</span>
+<span class="x">        }</span>
+<span class="x">        $this-&gt;email = $email;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function __toString(): string</span>
+<span class="x">    {</span>
+<span class="x">        return $this-&gt;email;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

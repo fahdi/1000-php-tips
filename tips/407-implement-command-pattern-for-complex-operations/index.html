@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implement Command Pattern for Complex Operations - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Use the Command pattern to encapsulate requests as objects allowing for parameterization of clients with queues requests and operations php interface Command...">
+    <meta name="description" content="Use the Command pattern to encapsulate requests as objects allowing for parameterization of clients with queues requests and operations interface CommandInte...">
     <link rel="canonical" href="https://1000phptips.com/tips/407-implement-command-pattern-for-complex-operations/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,51 +105,52 @@
 </header>
 <div class="container">
     <h2>Implement Command Pattern for Complex Operations</h2>
-    <div id="tipContent">Use the Command pattern to encapsulate requests as objects, allowing for parameterization of clients with queues, requests, and operations.<br>
-<pre><code class="language-php"><span class="line">interface CommandInterface</span>
-<span class="line">{</span>
-<span class="line">    public function execute();</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">class SendEmailCommand implements CommandInterface</span>
-<span class="line">{</span>
-<span class="line">    private $recipient;</span>
-<span class="line">    private $subject;</span>
-<span class="line">    private $body;</span>
-<span class="line"></span>
-<span class="line">    public function __construct($recipient, $subject, $body)</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;recipient = $recipient;</span>
-<span class="line">        $this-&gt;subject = $subject;</span>
-<span class="line">        $this-&gt;body = $body;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function execute()</span>
-<span class="line">    {</span>
-<span class="line">        // Logic to send email</span>
-<span class="line">        echo &quot;Sending email to {$this-&gt;recipient} with subject &#x27;{$this-&gt;subject}&#x27;&quot;;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">class CommandInvoker</span>
-<span class="line">{</span>
-<span class="line">    private $command;</span>
-<span class="line"></span>
-<span class="line">    public function setCommand(CommandInterface $command)</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;command = $command;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function executeCommand()</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;command-&gt;execute();</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// Usage</span>
-<span class="line">$invoker = new CommandInvoker();</span>
-<span class="line">$invoker-&gt;setCommand(new SendEmailCommand(&#x27;user@example.com&#x27;, &#x27;Hello&#x27;, &#x27;This is a test email&#x27;));</span>
-<span class="line">$invoker-&gt;executeCommand();</span></code></pre></div>
+    <div id="tipContent"><p>Use the Command pattern to encapsulate requests as objects, allowing for parameterization of clients with queues, requests, and operations.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">interface CommandInterface</span>
+<span class="x">{</span>
+<span class="x">    public function execute();</span>
+<span class="x">}</span>
+
+<span class="x">class SendEmailCommand implements CommandInterface</span>
+<span class="x">{</span>
+<span class="x">    private $recipient;</span>
+<span class="x">    private $subject;</span>
+<span class="x">    private $body;</span>
+
+<span class="x">    public function __construct($recipient, $subject, $body)</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;recipient = $recipient;</span>
+<span class="x">        $this-&gt;subject = $subject;</span>
+<span class="x">        $this-&gt;body = $body;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function execute()</span>
+<span class="x">    {</span>
+<span class="x">        // Logic to send email</span>
+<span class="x">        echo "Sending email to {$this-&gt;recipient} with subject '{$this-&gt;subject}'";</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">class CommandInvoker</span>
+<span class="x">{</span>
+<span class="x">    private $command;</span>
+
+<span class="x">    public function setCommand(CommandInterface $command)</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;command = $command;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function executeCommand()</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;command-&gt;execute();</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">// Usage</span>
+<span class="x">$invoker = new CommandInvoker();</span>
+<span class="x">$invoker-&gt;setCommand(new SendEmailCommand('user@example.com', 'Hello', 'This is a test email'));</span>
+<span class="x">$invoker-&gt;executeCommand();</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

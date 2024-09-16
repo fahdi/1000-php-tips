@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implement Circuit Breakers for Resilient External Service Calls - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Use the Circuit Breaker pattern to handle failures in external service calls gracefully This prevents cascading failures and improves system resilience php u...">
+    <meta name="description" content="Use the Circuit Breaker pattern to handle failures in external service calls gracefully This prevents cascading failures and improves system resilience use G...">
     <link rel="canonical" href="https://1000phptips.com/tips/403-implement-circuit-breakers-for-resilient-external-service-calls/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,68 +105,69 @@
 </header>
 <div class="container">
     <h2>Implement Circuit Breakers for Resilient External Service Calls</h2>
-    <div id="tipContent">Use the Circuit Breaker pattern to handle failures in external service calls gracefully. This prevents cascading failures and improves system resilience.<br>
-<pre><code class="language-php"><span class="line">use GuzzleHttp\Client;</span>
-<span class="line">use GuzzleHttp\Exception\RequestException;</span>
-<span class="line"></span>
-<span class="line">class CircuitBreaker</span>
-<span class="line">{</span>
-<span class="line">    private $failureThreshold = 3;</span>
-<span class="line">    private $resetTimeout = 30;</span>
-<span class="line">    private $lastFailureTime;</span>
-<span class="line">    private $failureCount = 0;</span>
-<span class="line"></span>
-<span class="line">    public function call(callable $function)</span>
-<span class="line">    {</span>
-<span class="line">        if ($this-&gt;isOpen()) {</span>
-<span class="line">            throw new Exception(&#x27;Circuit is open&#x27;);</span>
-<span class="line">        }</span>
-<span class="line"></span>
-<span class="line">        try {</span>
-<span class="line">            $result = $function();</span>
-<span class="line">            $this-&gt;reset();</span>
-<span class="line">            return $result;</span>
-<span class="line">        } catch (Exception $e) {</span>
-<span class="line">            $this-&gt;recordFailure();</span>
-<span class="line">            throw $e;</span>
-<span class="line">        }</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    private function isOpen()</span>
-<span class="line">    {</span>
-<span class="line">        if ($this-&gt;failureCount &gt;= $this-&gt;failureThreshold) {</span>
-<span class="line">            $timeSinceLastFailure = time() - $this-&gt;lastFailureTime;</span>
-<span class="line">            if ($timeSinceLastFailure &lt;= $this-&gt;resetTimeout) {</span>
-<span class="line">                return true;</span>
-<span class="line">            }</span>
-<span class="line">            $this-&gt;reset();</span>
-<span class="line">        }</span>
-<span class="line">        return false;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    private function recordFailure()</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;failureCount++;</span>
-<span class="line">        $this-&gt;lastFailureTime = time();</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    private function reset()</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;failureCount = 0;</span>
-<span class="line">        $this-&gt;lastFailureTime = null;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// Usage</span>
-<span class="line">$circuitBreaker = new CircuitBreaker();</span>
-<span class="line">try {</span>
-<span class="line">    $result = $circuitBreaker-&gt;call(function() {</span>
-<span class="line">        $client = new Client();</span>
-<span class="line">        return $client-&gt;get(&#x27;http://api.example.com&#x27;);</span>
-<span class="line">    });</span>
-<span class="line">} catch (Exception $e) {</span>
-<span class="line">    // Handle the exception</span>
-<span class="line">}</span></code></pre></div>
+    <div id="tipContent"><p>Use the Circuit Breaker pattern to handle failures in external service calls gracefully. This prevents cascading failures and improves system resilience.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">use GuzzleHttp\Client;</span>
+<span class="x">use GuzzleHttp\Exception\RequestException;</span>
+
+<span class="x">class CircuitBreaker</span>
+<span class="x">{</span>
+<span class="x">    private $failureThreshold = 3;</span>
+<span class="x">    private $resetTimeout = 30;</span>
+<span class="x">    private $lastFailureTime;</span>
+<span class="x">    private $failureCount = 0;</span>
+
+<span class="x">    public function call(callable $function)</span>
+<span class="x">    {</span>
+<span class="x">        if ($this-&gt;isOpen()) {</span>
+<span class="x">            throw new Exception('Circuit is open');</span>
+<span class="x">        }</span>
+
+<span class="x">        try {</span>
+<span class="x">            $result = $function();</span>
+<span class="x">            $this-&gt;reset();</span>
+<span class="x">            return $result;</span>
+<span class="x">        } catch (Exception $e) {</span>
+<span class="x">            $this-&gt;recordFailure();</span>
+<span class="x">            throw $e;</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+
+<span class="x">    private function isOpen()</span>
+<span class="x">    {</span>
+<span class="x">        if ($this-&gt;failureCount &gt;= $this-&gt;failureThreshold) {</span>
+<span class="x">            $timeSinceLastFailure = time() - $this-&gt;lastFailureTime;</span>
+<span class="x">            if ($timeSinceLastFailure &lt;= $this-&gt;resetTimeout) {</span>
+<span class="x">                return true;</span>
+<span class="x">            }</span>
+<span class="x">            $this-&gt;reset();</span>
+<span class="x">        }</span>
+<span class="x">        return false;</span>
+<span class="x">    }</span>
+
+<span class="x">    private function recordFailure()</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;failureCount++;</span>
+<span class="x">        $this-&gt;lastFailureTime = time();</span>
+<span class="x">    }</span>
+
+<span class="x">    private function reset()</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;failureCount = 0;</span>
+<span class="x">        $this-&gt;lastFailureTime = null;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">// Usage</span>
+<span class="x">$circuitBreaker = new CircuitBreaker();</span>
+<span class="x">try {</span>
+<span class="x">    $result = $circuitBreaker-&gt;call(function() {</span>
+<span class="x">        $client = new Client();</span>
+<span class="x">        return $client-&gt;get('http://api.example.com');</span>
+<span class="x">    });</span>
+<span class="x">} catch (Exception $e) {</span>
+<span class="x">    // Handle the exception</span>
+<span class="x">}</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use PHP's Stream Wrappers for Custom Protocols - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Implement custom stream wrappers to handle special file systems or protocols in a transparent way to the rest of your application php class CustomWrapper pri...">
+    <meta name="description" content="Implement custom stream wrappers to handle special file systems or protocols in a transparent way to the rest of your application class CustomWrapper private...">
     <link rel="canonical" href="https://1000phptips.com/tips/408-use-phps-stream-wrappers-for-custom-protocols/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,38 +105,39 @@
 </header>
 <div class="container">
     <h2>Use PHP's Stream Wrappers for Custom Protocols</h2>
-    <div id="tipContent">Implement custom stream wrappers to handle special file systems or protocols in a transparent way to the rest of your application.<br>
-<pre><code class="language-php"><span class="line">class CustomWrapper</span>
-<span class="line">{</span>
-<span class="line">    private $position;</span>
-<span class="line">    private $data;</span>
-<span class="line"></span>
-<span class="line">    public function stream_open($path, $mode, $options, &amp;$opened_path)</span>
-<span class="line">    {</span>
-<span class="line">        $url = parse_url($path);</span>
-<span class="line">        $this-&gt;data = &quot;This is data from {$url[&#x27;host&#x27;]}&quot;;</span>
-<span class="line">        $this-&gt;position = 0;</span>
-<span class="line">        return true;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function stream_read($count)</span>
-<span class="line">    {</span>
-<span class="line">        $ret = substr($this-&gt;data, $this-&gt;position, $count);</span>
-<span class="line">        $this-&gt;position += strlen($ret);</span>
-<span class="line">        return $ret;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function stream_eof()</span>
-<span class="line">    {</span>
-<span class="line">        return $this-&gt;position &gt;= strlen($this-&gt;data);</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">stream_wrapper_register(&quot;custom&quot;, CustomWrapper::class);</span>
-<span class="line"></span>
-<span class="line">// Usage</span>
-<span class="line">$contents = file_get_contents(&quot;custom://example.com&quot;);</span>
-<span class="line">echo $contents; // Outputs: This is data from example.com</span></code></pre></div>
+    <div id="tipContent"><p>Implement custom stream wrappers to handle special file systems or protocols in a transparent way to the rest of your application.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">class CustomWrapper</span>
+<span class="x">{</span>
+<span class="x">    private $position;</span>
+<span class="x">    private $data;</span>
+
+<span class="x">    public function stream_open($path, $mode, $options, &amp;$opened_path)</span>
+<span class="x">    {</span>
+<span class="x">        $url = parse_url($path);</span>
+<span class="x">        $this-&gt;data = "This is data from {$url['host']}";</span>
+<span class="x">        $this-&gt;position = 0;</span>
+<span class="x">        return true;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function stream_read($count)</span>
+<span class="x">    {</span>
+<span class="x">        $ret = substr($this-&gt;data, $this-&gt;position, $count);</span>
+<span class="x">        $this-&gt;position += strlen($ret);</span>
+<span class="x">        return $ret;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function stream_eof()</span>
+<span class="x">    {</span>
+<span class="x">        return $this-&gt;position &gt;= strlen($this-&gt;data);</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">stream_wrapper_register("custom", CustomWrapper::class);</span>
+
+<span class="x">// Usage</span>
+<span class="x">$contents = file_get_contents("custom://example.com");</span>
+<span class="x">echo $contents; // Outputs: This is data from example.com</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

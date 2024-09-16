@@ -5,6 +5,8 @@ from jinja2 import Environment, FileSystemLoader
 import re
 import html
 from datetime import datetime
+import markdown
+from bs4 import BeautifulSoup
 
 TIPS_PER_PAGE = 10
 MAX_VISIBLE_PAGES = 5
@@ -18,7 +20,7 @@ def slugify(text):
 
 def generate_meta_description(content, max_length=160):
     # Remove HTML tags
-    text = re.sub('<[^<]+?>', '', content)
+    text = BeautifulSoup(content, 'html.parser').get_text()
 
     # Remove special characters and extra spaces
     text = re.sub(r'[^\w\s]', '', text)
@@ -30,29 +32,37 @@ def generate_meta_description(content, max_length=160):
 
     return text
 
-
 def format_content(content):
-    def replace_code_block(match):
-        code = html.escape(match.group(1).strip())
-        lines = code.split('\n')
-        formatted_lines = [f'<span class="line">{line}</span>' for line in lines]
-        formatted_code = '\n'.join(formatted_lines)
-        return f'<pre><code class="language-php">{formatted_code}</code></pre>'
+    # Convert Markdown to HTML
+    html_content = markdown.markdown(content, extensions=['fenced_code', 'codehilite'])
 
-    # Replace ```php...``` blocks
-    content = re.sub(r'```php(.*?)```', replace_code_block, content, flags=re.DOTALL)
+    # Parse the HTML
+    soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Replace inline `code`
-    content = re.sub(r'`([^`]+)`', lambda m: f'<code>{html.escape(m.group(1))}</code>', content)
+    # Find all code blocks and add line numbers
+    for pre in soup.find_all('pre'):
+        code = pre.find('code')
+        if code and code.string:
+            lines = code.string.split('\n')
+            formatted_lines = [f'<span class="line">{line}</span>' for line in lines]
+            code.clear()
+            code.extend(BeautifulSoup('\n'.join(formatted_lines), 'html.parser'))
+        if code:
+            if 'class' in code.attrs:
+                code['class'].append('language-php')
+            else:
+                code['class'] = ['language-php']
 
-    # Replace newlines with <br> tags, but not within <pre> blocks
-    content = re.sub(r'(?<!>)\n(?!<)(?![^<]*</pre>)', '<br>', content)
-
-    return content
+    return str(soup)
 
 def format_summary(summary):
-    return re.sub(r'`([^`]+)`', lambda m: f'<code>{html.escape(m.group(1))}</code>', summary)
+    # Convert Markdown to HTML for summary
+    html_summary = markdown.markdown(summary)
 
+    # Remove paragraph tags that Markdown might have added
+    html_summary = re.sub(r'^<p>(.*)</p>$', r'\1', html_summary)
+
+    return html_summary
 
 def get_pagination_range(current_page, total_pages):
     if total_pages <= MAX_VISIBLE_PAGES:
@@ -96,7 +106,7 @@ for tip in tips:
     tip['formatted_summary'] = format_summary(tip['summary'])
 
     # Generate meta description
-    tip['meta_description'] = generate_meta_description(tip['content'])
+    tip['meta_description'] = generate_meta_description(tip['formatted_content'])
 
     # Generate the HTML content
     output = tip_template.render(
@@ -198,7 +208,6 @@ with open('sitemap.xml', 'w') as f:
     f.write(sitemap_content)
 
 print("Generated sitemap.xml")
-
 
 # Generate robots.txt
 robots_content = f"""User-agent: *

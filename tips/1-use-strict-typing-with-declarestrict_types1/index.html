@@ -105,16 +105,21 @@
 </header>
 <div class="container">
     <h2>Use strict typing with `declare(strict_types=1);`</h2>
-    <div id="tipContent">Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring <code>strict_types=1</code>, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.<br><br>**Advantages:**<br>- **Error Prevention:** Catches type-related errors early in development.<br>- **Code Predictability:** Ensures functions receive and return the expected types.<br><br>**Example:**
-<pre><code class="language-php"><span class="line">&lt;?php</span>
-<span class="line">declare(strict_types=1);</span>
-<span class="line"></span>
-<span class="line">function addNumbers(int $a, int $b): int {</span>
-<span class="line">    return $a + $b;</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">echo addNumbers(5, 10); // Outputs: 15</span>
-<span class="line">?&gt;</span></code></pre></div>
+    <div id="tipContent"><p>Enforcing strict typing in PHP helps catch type-related errors during development, resulting in more reliable and predictable code. By declaring <code>strict_types=1</code>, PHP will perform strict type checking for function arguments and return types in the file where the declaration is placed.</p>
+<p><strong>Advantages:</strong>
+- <strong>Error Prevention:</strong> Catches type-related errors early in development.
+- <strong>Code Predictability:</strong> Ensures functions receive and return the expected types.</p>
+<p><strong>Example:</strong></p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="cp">&lt;?php</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="nf">addNumbers</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span><span class="o">:</span> <span class="nx">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="nx">addNumbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// Outputs: 15</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

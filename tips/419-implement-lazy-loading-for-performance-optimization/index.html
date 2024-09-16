@@ -105,34 +105,35 @@
 </header>
 <div class="container">
     <h2>Implement Lazy Loading for Performance Optimization</h2>
-    <div id="tipContent">Lazy loading is a design pattern that defers the initialization of an object until it's needed. This can significantly improve performance, especially in applications with complex object graphs.<br>
-<pre><code class="language-php"><span class="line">class ExpensiveResource</span>
-<span class="line">{</span>
-<span class="line">    private $data;</span>
-<span class="line"></span>
-<span class="line">    public function getData()</span>
-<span class="line">    {</span>
-<span class="line">        if ($this-&gt;data === null) {</span>
-<span class="line">            $this-&gt;data = $this-&gt;loadExpensiveData();</span>
-<span class="line">        }</span>
-<span class="line">        return $this-&gt;data;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    private function loadExpensiveData()</span>
-<span class="line">    {</span>
-<span class="line">        // Simulate expensive operation</span>
-<span class="line">        sleep(2);</span>
-<span class="line">        return &quot;Expensive data loaded&quot;;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">$resource = new ExpensiveResource();</span>
-<span class="line">// Data is not loaded yet</span>
-<span class="line"></span>
-<span class="line">echo $resource-&gt;getData(); // Now the data is loaded</span>
-<span class="line"></span>
-<span class="line">echo $resource-&gt;getData(); // Data is returned from cache, no expensive operation</span></code></pre>
-<br>This pattern is especially useful in scenarios where you have expensive-to-create objects that might not always be used in a given request cycle.</div>
+    <div id="tipContent"><p>Lazy loading is a design pattern that defers the initialization of an object until it's needed. This can significantly improve performance, especially in applications with complex object graphs.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">class ExpensiveResource</span>
+<span class="x">{</span>
+<span class="x">    private $data;</span>
+
+<span class="x">    public function getData()</span>
+<span class="x">    {</span>
+<span class="x">        if ($this-&gt;data === null) {</span>
+<span class="x">            $this-&gt;data = $this-&gt;loadExpensiveData();</span>
+<span class="x">        }</span>
+<span class="x">        return $this-&gt;data;</span>
+<span class="x">    }</span>
+
+<span class="x">    private function loadExpensiveData()</span>
+<span class="x">    {</span>
+<span class="x">        // Simulate expensive operation</span>
+<span class="x">        sleep(2);</span>
+<span class="x">        return "Expensive data loaded";</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">$resource = new ExpensiveResource();</span>
+<span class="x">// Data is not loaded yet</span>
+
+<span class="x">echo $resource-&gt;getData(); // Now the data is loaded</span>
+
+<span class="x">echo $resource-&gt;getData(); // Data is returned from cache, no expensive operation</span>
+</code></pre></div>
+<p>This pattern is especially useful in scenarios where you have expensive-to-create objects that might not always be used in a given request cycle.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

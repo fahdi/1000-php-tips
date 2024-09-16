@@ -105,26 +105,27 @@
 </header>
 <div class="container">
     <h2>Use PHP 8's Named Arguments for Clearer Function Calls</h2>
-    <div id="tipContent">PHP 8 introduced named arguments, allowing you to specify which parameter you're passing a value to. This improves code readability, especially for functions with many parameters.<br>
-<pre><code class="language-php"><span class="line">function createUser($name, $email, $age, $country = &#x27;USA&#x27;) {</span>
-<span class="line">    // User creation logic</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// Using named arguments</span>
-<span class="line">createUser(</span>
-<span class="line">    name: &#x27;John Doe&#x27;,</span>
-<span class="line">    email: &#x27;john@example.com&#x27;,</span>
-<span class="line">    age: 30,</span>
-<span class="line">    country: &#x27;Canada&#x27;</span>
-<span class="line">);</span>
-<span class="line"></span>
-<span class="line">// You can even skip optional parameters or reorder them</span>
-<span class="line">createUser(</span>
-<span class="line">    age: 25,</span>
-<span class="line">    name: &#x27;Jane Doe&#x27;,</span>
-<span class="line">    email: &#x27;jane@example.com&#x27;</span>
-<span class="line">);</span></code></pre>
-<br>Named arguments make your code more self-documenting and less prone to errors when dealing with functions that have many parameters.</div>
+    <div id="tipContent"><p>PHP 8 introduced named arguments, allowing you to specify which parameter you're passing a value to. This improves code readability, especially for functions with many parameters.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">function createUser($name, $email, $age, $country = 'USA') {</span>
+<span class="x">    // User creation logic</span>
+<span class="x">}</span>
+
+<span class="x">// Using named arguments</span>
+<span class="x">createUser(</span>
+<span class="x">    name: 'John Doe',</span>
+<span class="x">    email: 'john@example.com',</span>
+<span class="x">    age: 30,</span>
+<span class="x">    country: 'Canada'</span>
+<span class="x">);</span>
+
+<span class="x">// You can even skip optional parameters or reorder them</span>
+<span class="x">createUser(</span>
+<span class="x">    age: 25,</span>
+<span class="x">    name: 'Jane Doe',</span>
+<span class="x">    email: 'jane@example.com'</span>
+<span class="x">);</span>
+</code></pre></div>
+<p>Named arguments make your code more self-documenting and less prone to errors when dealing with functions that have many parameters.</p></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>

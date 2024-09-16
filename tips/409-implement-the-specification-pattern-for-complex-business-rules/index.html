@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Implement the Specification Pattern for Complex Business Rules - 1000 PHP Tips - Quick tips and Courses for PHP Developers</title>
-    <meta name="description" content="Use the Specification pattern to encapsulate business rules and make them composable php interface SpecificationInterface public function isSatisfiedBycandid...">
+    <meta name="description" content="Use the Specification pattern to encapsulate business rules and make them composable interface SpecificationInterface public function isSatisfiedBycandidate ...">
     <link rel="canonical" href="https://1000phptips.com/tips/409-implement-the-specification-pattern-for-complex-business-rules/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRYCRN2JW5"></script>
     <script>
@@ -105,63 +105,64 @@
 </header>
 <div class="container">
     <h2>Implement the Specification Pattern for Complex Business Rules</h2>
-    <div id="tipContent">Use the Specification pattern to encapsulate business rules and make them composable.<br>
-<pre><code class="language-php"><span class="line">interface SpecificationInterface</span>
-<span class="line">{</span>
-<span class="line">    public function isSatisfiedBy($candidate): bool;</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">class UserIsAdultSpecification implements SpecificationInterface</span>
-<span class="line">{</span>
-<span class="line">    public function isSatisfiedBy($user): bool</span>
-<span class="line">    {</span>
-<span class="line">        return $user-&gt;age &gt;= 18;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">class UserHasValidEmailSpecification implements SpecificationInterface</span>
-<span class="line">{</span>
-<span class="line">    public function isSatisfiedBy($user): bool</span>
-<span class="line">    {</span>
-<span class="line">        return filter_var($user-&gt;email, FILTER_VALIDATE_EMAIL) !== false;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">class AndSpecification implements SpecificationInterface</span>
-<span class="line">{</span>
-<span class="line">    private $specs;</span>
-<span class="line"></span>
-<span class="line">    public function __construct(SpecificationInterface ...$specs)</span>
-<span class="line">    {</span>
-<span class="line">        $this-&gt;specs = $specs;</span>
-<span class="line">    }</span>
-<span class="line"></span>
-<span class="line">    public function isSatisfiedBy($candidate): bool</span>
-<span class="line">    {</span>
-<span class="line">        foreach ($this-&gt;specs as $spec) {</span>
-<span class="line">            if (!$spec-&gt;isSatisfiedBy($candidate)) {</span>
-<span class="line">                return false;</span>
-<span class="line">            }</span>
-<span class="line">        }</span>
-<span class="line">        return true;</span>
-<span class="line">    }</span>
-<span class="line">}</span>
-<span class="line"></span>
-<span class="line">// Usage</span>
-<span class="line">$validUserSpec = new AndSpecification(</span>
-<span class="line">    new UserIsAdultSpecification(),</span>
-<span class="line">    new UserHasValidEmailSpecification()</span>
-<span class="line">);</span>
-<span class="line"></span>
-<span class="line">$user = new stdClass();</span>
-<span class="line">$user-&gt;age = 25;</span>
-<span class="line">$user-&gt;email = &#x27;user@example.com&#x27;;</span>
-<span class="line"></span>
-<span class="line">if ($validUserSpec-&gt;isSatisfiedBy($user)) {</span>
-<span class="line">    echo &quot;User is valid&quot;;</span>
-<span class="line">} else {</span>
-<span class="line">    echo &quot;User is not valid&quot;;</span>
-<span class="line">}</span></code></pre></div>
+    <div id="tipContent"><p>Use the Specification pattern to encapsulate business rules and make them composable.</p>
+<div class="codehilite"><pre><span></span><code class="language-php"><span class="x">interface SpecificationInterface</span>
+<span class="x">{</span>
+<span class="x">    public function isSatisfiedBy($candidate): bool;</span>
+<span class="x">}</span>
+
+<span class="x">class UserIsAdultSpecification implements SpecificationInterface</span>
+<span class="x">{</span>
+<span class="x">    public function isSatisfiedBy($user): bool</span>
+<span class="x">    {</span>
+<span class="x">        return $user-&gt;age &gt;= 18;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">class UserHasValidEmailSpecification implements SpecificationInterface</span>
+<span class="x">{</span>
+<span class="x">    public function isSatisfiedBy($user): bool</span>
+<span class="x">    {</span>
+<span class="x">        return filter_var($user-&gt;email, FILTER_VALIDATE_EMAIL) !== false;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">class AndSpecification implements SpecificationInterface</span>
+<span class="x">{</span>
+<span class="x">    private $specs;</span>
+
+<span class="x">    public function __construct(SpecificationInterface ...$specs)</span>
+<span class="x">    {</span>
+<span class="x">        $this-&gt;specs = $specs;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function isSatisfiedBy($candidate): bool</span>
+<span class="x">    {</span>
+<span class="x">        foreach ($this-&gt;specs as $spec) {</span>
+<span class="x">            if (!$spec-&gt;isSatisfiedBy($candidate)) {</span>
+<span class="x">                return false;</span>
+<span class="x">            }</span>
+<span class="x">        }</span>
+<span class="x">        return true;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+
+<span class="x">// Usage</span>
+<span class="x">$validUserSpec = new AndSpecification(</span>
+<span class="x">    new UserIsAdultSpecification(),</span>
+<span class="x">    new UserHasValidEmailSpecification()</span>
+<span class="x">);</span>
+
+<span class="x">$user = new stdClass();</span>
+<span class="x">$user-&gt;age = 25;</span>
+<span class="x">$user-&gt;email = 'user@example.com';</span>
+
+<span class="x">if ($validUserSpec-&gt;isSatisfiedBy($user)) {</span>
+<span class="x">    echo "User is valid";</span>
+<span class="x">} else {</span>
+<span class="x">    echo "User is not valid";</span>
+<span class="x">}</span>
+</code></pre></div></div>
     <a href="/" class="back-link">← Back to Tips List</a>
 </div>
 <footer>
