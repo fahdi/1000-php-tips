@@ -6,7 +6,7 @@ import re
 import html
 from datetime import datetime
 
-TIPS_PER_PAGE = 16
+TIPS_PER_PAGE = 10
 MAX_VISIBLE_PAGES = 5
 BASE_URL = 'https://1000phptips.com'
 SITE_NAME = '1000 PHP Tips - Quick tips and Courses for PHP Developers'
@@ -100,7 +100,7 @@ for tip in tips:
     )
 
     # Write the HTML file
-    with open(f'{tip_dir}/index.html', 'w') as f:
+    with open(f'{tip_dir}/index.html', 'w', encoding='utf-8') as f:
         f.write(output)
 
     # Update the tip with its permalink

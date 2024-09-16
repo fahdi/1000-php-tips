@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/385-use-date_add-to-add-an-interval-to-a-date/">Use `date_add()` to Add an Interval to a Date</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/241-use-get_headers-to-retrieve-http-headers/" class="text">Use `get_headers()` to Retrieve HTTP Headers</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/386-use-date_sub-to-subtract-an-interval-from-a-date/">Use `date_sub()` to Subtract an Interval from a Date</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/242-use-header-to-send-http-headers/" class="text">Use `header()` to Send HTTP Headers</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/387-use-date_modify-to-modify-a-date/">Use `date_modify()` to Modify a Date</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/243-use-header_remove-to-remove-http-headers/" class="text">Use `header_remove()` to Remove HTTP Headers</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/388-use-date_time_set-to-set-the-time-of-a-date/">Use `date_time_set()` to Set the Time of a Date</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/244-use-setcookie-to-set-cookies/" class="text">Use `setcookie()` to Set Cookies</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/389-use-date_date_set-to-set-the-date/">Use `date_date_set()` to Set the Date</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/245-use-filter_input-to-retrieve-and-filter-external-variables/" class="text">Use `filter_input()` to Retrieve and Filter External Variables</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/390-use-date_isodate_set-to-set-the-date-according-to-iso-8601/">Use `date_isodate_set()` to Set the Date According to ISO 8601</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/246-use-filter_var_array-for-multiple-input-filtering/" class="text">Use `filter_var_array()` for Multiple Input Filtering</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/391-use-date_create_from_format-to-create-a-date-from-a-custom-format/">Use `date_create_from_format()` to Create a Date from a Custom Format</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/247-use-parse_ini_string-to-parse-configuration-from-a-string/" class="text">Use `parse_ini_string()` to Parse Configuration from a String</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/392-use-date_interval_create_from_date_string-to-create-an-interval-from-a-string/">Use `date_interval_create_from_date_string()` to Create an Interval from a String</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/248-use-parse_ini_file-to-parse-configuration-files/" class="text">Use `parse_ini_file()` to Parse Configuration Files</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/393-use-date_interval_format-to-format-an-interval/">Use `date_interval_format()` to Format an Interval</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/249-use-get_magic_quotes_gpc-to-check-magic-quotes-status/" class="text">Use `get_magic_quotes_gpc()` to Check Magic Quotes Status</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/394-use-date_sun_info-to-get-sun-information/">Use `date_sun_info()` to Get Sun Information</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/395-use-date_sunrise-to-get-sunrise-time/">Use `date_sunrise()` to Get Sunrise Time</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/396-use-date_sunset-to-get-sunset-time/">Use `date_sunset()` to Get Sunset Time</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/397-use-gmdate-to-format-a-gmt-date/">Use `gmdate()` to Format a GMT Date</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/398-use-idate-for-integer-date-formatting/">Use `idate()` for Integer Date Formatting</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/399-use-strptime-to-parse-a-datetime-string/">Use `strptime()` to Parse a Date/Time String</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/400-use-dependency-injection-containers/">Use Dependency Injection Containers</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/250-use-get_magic_quotes_runtime-to-check-magic-quotes-runtime-status/" class="text">Use `get_magic_quotes_runtime()` to Check Magic Quotes Runtime Status</a>
+            </div>
         </div>
         
     </div>
@@ -228,6 +244,11 @@
         
         
 
+        
+        
+        <span>...</span>
+        
+        <a href="/pages/42/">42</a>
         
 
         

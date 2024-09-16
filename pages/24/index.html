@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/369-use-proc_terminate-to-terminate-a-process/">Use `proc_terminate()` to Terminate a Process</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/231-use-defined-to-check-if-a-constant-is-defined/" class="text">Use `defined()` to Check if a Constant is Defined</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/370-use-proc_get_status-to-retrieve-process-status/">Use `proc_get_status()` to Retrieve Process Status</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/232-use-define-to-create-constants/" class="text">Use `define()` to Create Constants</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/371-use-proc_close-to-close-a-process-handle/">Use `proc_close()` to Close a Process Handle</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/233-use-constant-to-retrieve-constant-values/" class="text">Use `constant()` to Retrieve Constant Values</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/372-use-popen-to-open-a-pipe-to-a-process/">Use `popen()` to Open a Pipe to a Process</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/234-use-get_defined_constants-to-list-all-defined-constants/" class="text">Use `get_defined_constants()` to List All Defined Constants</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/373-use-pclose-to-close-a-pipe/">Use `pclose()` to Close a Pipe</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/235-use-highlight_string-to-highlight-php-code/" class="text">Use `highlight_string()` to Highlight PHP Code</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/374-use-system-to-execute-a-command-and-output-the-result/">Use `system()` to Execute a Command and Output the Result</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/236-use-highlight_file-to-highlight-php-files/" class="text">Use `highlight_file()` to Highlight PHP Files</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/375-use-exec-to-execute-a-command-and-return-the-output/">Use `exec()` to Execute a Command and Return the Output</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/237-use-nl2br-to-convert-newlines-to-html-line-breaks/" class="text">Use `nl2br()` to Convert Newlines to HTML Line Breaks</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/376-use-shell_exec-to-execute-a-command-via-shell-and-return-the-output/">Use `shell_exec()` to Execute a Command via Shell and Return the Output</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/238-use-wordwrap-to-wrap-long-lines/" class="text">Use `wordwrap()` to Wrap Long Lines</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/377-use-escapeshellarg-to-escape-a-string-for-shell/">Use `escapeshellarg()` to Escape a String for Shell</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/239-use-parse_str-to-parse-query-strings/" class="text">Use `parse_str()` to Parse Query Strings</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/378-use-escapeshellcmd-to-escape-a-command-for-shell/">Use `escapeshellcmd()` to Escape a Command for Shell</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/379-use-getenv-to-retrieve-environment-variables/">Use `getenv()` to Retrieve Environment Variables</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/380-use-putenv-to-set-environment-variables/">Use `putenv()` to Set Environment Variables</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/381-use-getopt-to-parse-command-line-arguments/">Use `getopt()` to Parse Command-Line Arguments</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/382-use-date_parse-to-parse-a-date-string/">Use `date_parse()` to Parse a Date String</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/383-use-date_parse_from_format-to-parse-a-date-with-a-specific-format/">Use `date_parse_from_format()` to Parse a Date with a Specific Format</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/384-use-date_diff-to-calculate-the-difference-between-dates/">Use `date_diff()` to Calculate the Difference Between Dates</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/240-use-http_response_code-to-set-http-response-codes/" class="text">Use `http_response_code()` to Set HTTP Response Codes</a>
+            </div>
         </div>
         
     </div>
@@ -230,7 +246,9 @@
 
         
         
-        <a href="/pages/27/">27</a>
+        <span>...</span>
+        
+        <a href="/pages/42/">42</a>
         
 
         

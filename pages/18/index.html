@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/273-use-is_executable-to-check-if-a-path-is-executable/">Use `is_executable()` to Check if a Path is Executable</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/171-use-stream_context_create-for-custom-stream-contexts/" class="text">Use `stream_context_create()` for Custom Stream Contexts</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/274-use-file_get_contents-to-read-a-file-into-a-string/">Use `file_get_contents()` to Read a File into a String</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/172-utilize-error_get_last-for-error-handling/" class="text">Utilize `error_get_last()` for Error Handling</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/275-use-file_put_contents-to-write-a-string-to-a-file/">Use `file_put_contents()` to Write a String to a File</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/173-use-parse_url-for-url-parsing/" class="text">Use `parse_url()` for URL Parsing</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/276-use-fopen-to-open-a-file/">Use `fopen()` to Open a File</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/174-use-http_build_query-for-building-query-strings/" class="text">Use `http_build_query()` for Building Query Strings</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/277-use-fclose-to-close-a-file/">Use `fclose()` to Close a File</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/175-use-stream_get_contents-for-stream-handling/" class="text">Use `stream_get_contents()` for Stream Handling</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/278-use-fread-to-read-from-a-file/">Use `fread()` to Read from a File</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/176-use-stream_wrapper_register-for-custom-stream-wrappers/" class="text">Use `stream_wrapper_register()` for Custom Stream Wrappers</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/279-use-fwrite-to-write-to-a-file/">Use `fwrite()` to Write to a File</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/177-use-sys_get_temp_dir-for-temporary-files/" class="text">Use `sys_get_temp_dir()` for Temporary Files</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/280-use-feof-to-check-for-end-of-file/">Use `feof()` to Check for End-of-File</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/178-implement-traversable-interface-for-custom-iterators/" class="text">Implement `Traversable` Interface for Custom Iterators</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/281-use-fgets-to-read-a-line-from-a-file/">Use `fgets()` to Read a Line from a File</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/179-use-fnmatch-for-filename-matching/" class="text">Use `fnmatch()` for Filename Matching</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/282-use-fputs-to-write-a-line-to-a-file/">Use `fputs()` to Write a Line to a File</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/283-use-fflush-to-flush-output-to-a-file/">Use `fflush()` to Flush Output to a File</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/284-use-fseek-to-set-the-file-position/">Use `fseek()` to Set the File Position</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/285-use-ftell-to-get-the-current-file-position/">Use `ftell()` to Get the Current File Position</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/286-use-rewind-to-rewind-the-file-pointer/">Use `rewind()` to Rewind the File Pointer</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/287-use-flock-to-manage-file-locks/">Use `flock()` to Manage File Locks</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/288-use-readfile-to-output-a-file/">Use `readfile()` to Output a File</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/180-use-hash_equals-for-secure-string-comparison/" class="text">Use `hash_equals()` for Secure String Comparison</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/49-use-array_diff-to-find-the-values-in-the-first-array-that-are-not-present-in-the-other-arrays/">Use `array_diff()` to find the values in the first array that are not present in the other arrays</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/31-use-array_rand-to-randomly-pick-one-or-more-keys-from-an-array/" class="text">Use `array_rand()` to randomly pick one or more keys from an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/50-use-array_chunk-to-split-an-array-into-chunks-of-a-specified-size/">Use `array_chunk()` to split an array into chunks of a specified size</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/32-use-array_sum-to-calculate-the-sum-of-values-in-an-array/" class="text">Use `array_sum()` to calculate the sum of values in an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/51-use-array_count_values-to-count-the-number-of-occurrences-of-each-value-in-an-array/">Use `array_count_values()` to count the number of occurrences of each value in an array</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/33-use-array_product-to-calculate-the-product-of-values-in-an-array/" class="text">Use `array_product()` to calculate the product of values in an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/52-use-array_rand-to-randomly-pick-one-or-more-keys-from-an-array/">Use `array_rand()` to randomly pick one or more keys from an array</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/34-use-array_column-to-extract-a-single-column-from-a-multi-dimensional-array/" class="text">Use `array_column()` to extract a single column from a multi-dimensional array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/53-use-array_sum-to-calculate-the-sum-of-values-in-an-array/">Use `array_sum()` to calculate the sum of values in an array</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/35-use-array_merge_recursive-to-merge-arrays-recursively/" class="text">Use `array_merge_recursive()` to merge arrays recursively</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/54-use-array_product-to-calculate-the-product-of-values-in-an-array/">Use `array_product()` to calculate the product of values in an array</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/36-use-array_key_first-to-get-the-first-key-of-an-array/" class="text">Use `array_key_first()` to get the first key of an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/55-use-array_column-to-extract-a-single-column-from-a-multi-dimensional-array/">Use `array_column()` to extract a single column from a multi-dimensional array</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/37-use-array_key_last-to-get-the-last-key-of-an-array/" class="text">Use `array_key_last()` to get the last key of an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/56-use-array_merge_recursive-to-merge-arrays-recursively/">Use `array_merge_recursive()` to merge arrays recursively</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/38-use-array_walk-to-apply-a-user-defined-function-to-each-element-of-an-array/" class="text">Use `array_walk()` to apply a user-defined function to each element of an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/57-use-array_key_first-to-get-the-first-key-of-an-array/">Use `array_key_first()` to get the first key of an array</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/39-use-array_reduce-to-reduce-an-array-to-a-single-value-using-a-callback-function/" class="text">Use `array_reduce()` to reduce an array to a single value using a callback function</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/58-use-array_key_last-to-get-the-last-key-of-an-array/">Use `array_key_last()` to get the last key of an array</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/59-use-array_walk-to-apply-a-user-defined-function-to-each-element-of-an-array/">Use `array_walk()` to apply a user-defined function to each element of an array</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/60-use-array_reduce-to-reduce-an-array-to-a-single-value-using-a-callback-function/">Use `array_reduce()` to reduce an array to a single value using a callback function</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/61-use-array_map-with-null-as-the-callback-to-remove-elements-from-an-array/">Use `array_map()` with `null` as the callback to remove elements from an array</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/62-use-array_filter-with-null-as-the-callback-to-remove-empty-elements-from-an-array/">Use `array_filter()` with `null` as the callback to remove empty elements from an array</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/63-use-array_slice-to-extract-a-portion-of-an-array/">Use `array_slice()` to extract a portion of an array</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/64-use-array_search-to-find-the-key-associated-with-a-specific-value-in-an-array/">Use `array_search()` to find the key associated with a specific value in an array</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/40-use-array_map-with-null-as-the-callback-to-remove-elements-from-an-array/" class="text">Use `array_map()` with `null` as the callback to remove elements from an array</a>
+            </div>
         </div>
         
     </div>
@@ -230,7 +246,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

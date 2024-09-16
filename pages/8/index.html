@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/113-explore-the-use-of-decorators-for-dynamic-functionality/">Explore the Use of Decorators for Dynamic Functionality</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/71-use-filter_var-to-validate-and-sanitize-user-input/" class="text">Use `filter_var()` to validate and sanitize user input</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/114-master-object-serialization-and-deserialization/">Master Object Serialization and Deserialization</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/72-use-trim-to-remove-leading-and-trailing-whitespace-from-a-string/" class="text">Use `trim()` to remove leading and trailing whitespace from a string</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/115-implement-advanced-type-hinting-and-return-types/">Implement Advanced Type Hinting and Return Types</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/73-escape-output-using-htmlspecialchars-to-prevent-cross-site-scripting-xss-attacks/" class="text">Escape output using `htmlspecialchars()` to prevent cross-site scripting (XSS) attacks</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/116-use-object-oriented-approaches-in-database-interactions/">Use Object-Oriented Approaches in Database Interactions</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/74-use-foreach-instead-of-for-loop-when-iterating-over-an-array/" class="text">Use `foreach` instead of `for` loop when iterating over an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/117-integrate-design-patterns-for-state-management/">Integrate Design Patterns for State Management</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/75-avoid-using-eval-as-it-can-be-a-security-risk/" class="text">Avoid using `eval()` as it can be a security risk</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/118-advanced-object-inheritance-with-traits/">Advanced Object Inheritance with Traits</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/76-prevent-sql-injection-by-using-prepared-statements-with-placeholders/" class="text">Prevent SQL injection by using prepared statements with placeholders</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/119-optimize-object-creation-with-lazy-loading/">Optimize Object Creation with Lazy Loading</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/77-use-strict-typing-with-declarestrict_types1/" class="text">Use strict typing with `declare(strict_types=1);`</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/120-leverage-advanced-reflection-for-meta-programming/">Leverage Advanced Reflection for Meta-programming</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/78-utilize-composer-for-dependency-management/" class="text">Utilize Composer for Dependency Management</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/121-use-anonymous-classes-for-lightweight-objects/">Use Anonymous Classes for Lightweight Objects</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/79-implement-psr-standards-for-coding-style-and-structure/" class="text">Implement PSR Standards for Coding Style and Structure</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/122-understand-phps-garbage-collection-mechanism/">Understand PHP's Garbage Collection Mechanism</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/123-implement-proper-exception-hierarchies/">Implement Proper Exception Hierarchies</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/124-use-phps-built-in-functions-for-file-handling/">Use PHP's Built-in Functions for File Handling</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/125-utilize-phps-session-management-functions/">Utilize PHP's Session Management Functions</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/126-use-password_hash-for-secure-password-storage/">Use `password_hash()` for Secure Password Storage</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/127-optimize-database-queries-with-indexing/">Optimize Database Queries with Indexing</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/128-leverage-phps-built-in-json-functions/">Leverage PHP's Built-in JSON Functions</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/80-use-namespaces-to-organize-code-and-avoid-name-conflicts/" class="text">Use Namespaces to Organize Code and Avoid Name Conflicts</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

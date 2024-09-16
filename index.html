@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/1-use-strict-typing-with-declarestrict_types1/">Use strict typing with `declare(strict_types=1);`</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/1-use-strict-typing-with-declarestrict_types1/" class="text">Use strict typing with `declare(strict_types=1);`</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/2-prevent-sql-injection-by-using-prepared-statements-with-placeholders/">Prevent SQL injection by using prepared statements with placeholders</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/2-prevent-sql-injection-by-using-prepared-statements-with-placeholders/" class="text">Prevent SQL injection by using prepared statements with placeholders</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/3-avoid-using-eval-as-it-can-be-a-security-risk/">Avoid using `eval()` as it can be a security risk</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/3-avoid-using-eval-as-it-can-be-a-security-risk/" class="text">Avoid using `eval()` as it can be a security risk</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/4-use-foreach-instead-of-for-loop-when-iterating-over-an-array/">Use `foreach` instead of `for` loop when iterating over an array</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/4-use-foreach-instead-of-for-loop-when-iterating-over-an-array/" class="text">Use `foreach` instead of `for` loop when iterating over an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/5-escape-output-using-htmlspecialchars-to-prevent-cross-site-scripting-xss-attacks/">Escape output using `htmlspecialchars()` to prevent cross-site scripting (XSS) attacks</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/5-escape-output-using-htmlspecialchars-to-prevent-cross-site-scripting-xss-attacks/" class="text">Escape output using `htmlspecialchars()` to prevent cross-site scripting (XSS) attacks</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/6-use-trim-to-remove-leading-and-trailing-whitespace-from-a-string/">Use `trim()` to remove leading and trailing whitespace from a string</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/6-use-trim-to-remove-leading-and-trailing-whitespace-from-a-string/" class="text">Use `trim()` to remove leading and trailing whitespace from a string</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/7-use-filter_var-to-validate-and-sanitize-user-input/">Use `filter_var()` to validate and sanitize user input</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/7-use-filter_var-to-validate-and-sanitize-user-input/" class="text">Use `filter_var()` to validate and sanitize user input</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/8-use-array_map-to-apply-a-callback-function-to-every-element-of-an-array/">Use `array_map()` to apply a callback function to every element of an array</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/8-use-array_map-to-apply-a-callback-function-to-every-element-of-an-array/" class="text">Use `array_map()` to apply a callback function to every element of an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/9-utilize-array_key_exists-to-check-if-a-key-exists-in-an-array/">Utilize `array_key_exists()` to check if a key exists in an array</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/9-utilize-array_key_exists-to-check-if-a-key-exists-in-an-array/" class="text">Utilize `array_key_exists()` to check if a key exists in an array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/10-use-str_replace-to-replace-occurrences-of-a-substring-in-a-string/">Use `str_replace()` to replace occurrences of a substring in a string</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/11-use-sprintf-for-string-formatting-and-interpolation/">Use `sprintf()` for string formatting and interpolation</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/12-avoid-using-the-global-keyword-prefer-dependency-injection/">Avoid using the `global` keyword; prefer dependency injection</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/13-use-date-or-datetime-for-handling-dates-and-times/">Use `date()` or `DateTime` for handling dates and times</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/14-use-array_merge-to-merge-multiple-arrays-into-one/">Use `array_merge()` to merge multiple arrays into one</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/15-use-array_filter-to-filter-an-array-based-on-a-callback-function/">Use `array_filter()` to filter an array based on a callback function</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/16-use-array_slice-to-extract-a-portion-of-an-array/">Use `array_slice()` to extract a portion of an array</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/10-use-str_replace-to-replace-occurrences-of-a-substring-in-a-string/" class="text">Use `str_replace()` to replace occurrences of a substring in a string</a>
+            </div>
         </div>
         
     </div>
@@ -225,7 +241,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

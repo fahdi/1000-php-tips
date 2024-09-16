@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/353-use-stream_filter_append-to-add-a-stream-filter/">Use `stream_filter_append()` to Add a Stream Filter</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/221-use-memory_get_usage-to-check-memory-usage/" class="text">Use `memory_get_usage()` to Check Memory Usage</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/354-use-stream_filter_remove-to-remove-a-stream-filter/">Use `stream_filter_remove()` to Remove a Stream Filter</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/222-use-memory_get_peak_usage-to-check-peak-memory-usage/" class="text">Use `memory_get_peak_usage()` to Check Peak Memory Usage</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/355-use-stream_get_meta_data-to-retrieve-stream-metadata/">Use `stream_get_meta_data()` to Retrieve Stream Metadata</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/223-use-version_compare-to-compare-php-versions/" class="text">Use `version_compare()` to Compare PHP Versions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/356-use-stream_get_wrappers-to-list-registered-stream-wrappers/">Use `stream_get_wrappers()` to List Registered Stream Wrappers</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/224-use-php_uname-to-get-system-information/" class="text">Use `php_uname()` to Get System Information</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/357-use-stream_register_wrapper-to-register-a-custom-stream-wrapper/">Use `stream_register_wrapper()` to Register a Custom Stream Wrapper</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/225-use-phpinfo-to-get-php-configuration-information/" class="text">Use `phpinfo()` to Get PHP Configuration Information</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/358-use-stream_wrapper_unregister-to-unregister-a-stream-wrapper/">Use `stream_wrapper_unregister()` to Unregister a Stream Wrapper</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/226-use-str_contains-to-check-if-a-string-contains-a-substring/" class="text">Use `str_contains()` to Check if a String Contains a Substring</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/359-use-stream_wrapper_restore-to-restore-a-stream-wrapper/">Use `stream_wrapper_restore()` to Restore a Stream Wrapper</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/227-use-str_starts_with-to-check-if-a-string-starts-with-a-substring/" class="text">Use `str_starts_with()` to Check if a String Starts with a Substring</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/360-use-stream_socket_client-to-open-a-network-connection/">Use `stream_socket_client()` to Open a Network Connection</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/228-use-str_ends_with-to-check-if-a-string-ends-with-a-substring/" class="text">Use `str_ends_with()` to Check if a String Ends with a Substring</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/361-use-stream_socket_accept-to-accept-a-connection/">Use `stream_socket_accept()` to Accept a Connection</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/229-use-ini_get-to-retrieve-configuration-options/" class="text">Use `ini_get()` to Retrieve Configuration Options</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/362-use-stream_socket_enable_crypto-to-enable-encryption-on-a-stream/">Use `stream_socket_enable_crypto()` to Enable Encryption on a Stream</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/363-use-stream_socket_shutdown-to-shutdown-a-socket-connection/">Use `stream_socket_shutdown()` to Shutdown a Socket Connection</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/364-use-stream_get_transports-to-list-available-socket-transports/">Use `stream_get_transports()` to List Available Socket Transports</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/365-use-stream_set_blocking-to-set-blocking-mode/">Use `stream_set_blocking()` to Set Blocking Mode</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/366-use-stream_set_timeout-to-set-stream-timeout/">Use `stream_set_timeout()` to Set Stream Timeout</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/367-use-stream_socket_pair-to-create-a-pair-of-connected-sockets/">Use `stream_socket_pair()` to Create a Pair of Connected Sockets</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/368-use-proc_open-to-execute-a-command-in-a-subprocess/">Use `proc_open()` to Execute a Command in a Subprocess</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/230-use-ini_set-to-set-configuration-options/" class="text">Use `ini_set()` to Set Configuration Options</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

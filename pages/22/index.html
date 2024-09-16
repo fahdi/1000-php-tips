@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/337-use-openssl_sign-for-digital-signatures/">Use `openssl_sign()` for Digital Signatures</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/211-use-is_array-to-check-if-a-variable-is-an-array/" class="text">Use `is_array()` to Check if a Variable is an Array</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/338-use-openssl_verify-to-verify-digital-signatures/">Use `openssl_verify()` to Verify Digital Signatures</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/212-use-is_string-to-check-if-a-variable-is-a-string/" class="text">Use `is_string()` to Check if a Variable is a String</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/339-use-openssl_pkey_new-to-generate-a-new-private-key/">Use `openssl_pkey_new()` to Generate a New Private Key</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/213-use-is_int-to-check-if-a-variable-is-an-integer/" class="text">Use `is_int()` to Check if a Variable is an Integer</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/340-use-openssl_pkey_export-to-export-a-private-key/">Use `openssl_pkey_export()` to Export a Private Key</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/214-use-is_float-to-check-if-a-variable-is-a-float/" class="text">Use `is_float()` to Check if a Variable is a Float</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/341-use-openssl_pkey_get_public-to-get-a-public-key/">Use `openssl_pkey_get_public()` to Get a Public Key</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/215-use-is_null-to-check-if-a-variable-is-null/" class="text">Use `is_null()` to Check if a Variable is Null</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/342-use-openssl_seal-to-encrypt-data-with-multiple-public-keys/">Use `openssl_seal()` to Encrypt Data with Multiple Public Keys</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/216-use-is_resource-to-check-if-a-variable-is-a-resource/" class="text">Use `is_resource()` to Check if a Variable is a Resource</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/343-use-openssl_open-to-decrypt-sealed-data/">Use `openssl_open()` to Decrypt Sealed Data</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/217-use-is_callable-to-check-if-a-variable-is-callable/" class="text">Use `is_callable()` to Check if a Variable is Callable</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/344-use-openssl_x509_parse-to-parse-a-certificate/">Use `openssl_x509_parse()` to Parse a Certificate</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/218-use-is_countable-to-check-if-a-variable-is-countable/" class="text">Use `is_countable()` to Check if a Variable is Countable</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/345-use-openssl_x509_checkpurpose-to-check-certificate-purpose/">Use `openssl_x509_checkpurpose()` to Check Certificate Purpose</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/219-use-debug_backtrace-for-debugging/" class="text">Use `debug_backtrace()` for Debugging</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/346-use-openssl_csr_new-to-generate-a-certificate-signing-request/">Use `openssl_csr_new()` to Generate a Certificate Signing Request</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/347-use-openssl_csr_sign-to-sign-a-csr/">Use `openssl_csr_sign()` to Sign a CSR</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/348-use-openssl_pkcs12_export-to-export-a-pkcs12-file/">Use `openssl_pkcs12_export()` to Export a PKCS#12 File</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/349-use-openssl_pkcs12_read-to-read-a-pkcs12-file/">Use `openssl_pkcs12_read()` to Read a PKCS#12 File</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/350-use-stream_context_create-for-custom-stream-contexts/">Use `stream_context_create()` for Custom Stream Contexts</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/351-use-stream_context_set_option-to-set-stream-context-options/">Use `stream_context_set_option()` to Set Stream Context Options</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/352-use-stream_context_get_options-to-retrieve-stream-context-options/">Use `stream_context_get_options()` to Retrieve Stream Context Options</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/220-use-debug_print_backtrace-to-print-a-backtrace/" class="text">Use `debug_print_backtrace()` to Print a Backtrace</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         

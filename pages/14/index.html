@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +20,7 @@
             --php-light-blue: #8892be;
             --php-dark-blue: #4f5b93;
             --php-green: #99cc99;
-            --text-color: #333;
+            --text-color: #3e475c;
             --background-color: #f4f7f9;
             --card-background: #ffffff;
         }
@@ -67,26 +65,38 @@
         }
 
         .tip-card {
-            background-color: var(--card-background);
+            display: flex;
+            width: 100%;
+            height: 80px;
+            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--php-light-blue);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            border-left-color: var(--php-green);
+       .tip-card  .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        min-width: 80px;
+        background-color: #5c6bc0;
+        color: white;
+        font-size: 32px;
+        font-weight: bold;
+    }
+      .tip-card  .content {
+            flex-grow: 1;
+            padding: 15px;
+            display: flex;
+            align-items: center;
         }
-        .tip-card a {
-            color: var(--php-dark-blue);
-            text-decoration: none;
+       .tip-card .text {
+            margin: 0;
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .tip-card a:hover {
-            color: var(--php-green);
+            line-height: 1.2;
+            color: var(--text-color);
+            text-decoration: none;
         }
         .pagination {
             display: flex;
@@ -130,67 +140,73 @@
     <div class="tips-grid">
         
         <div class="tip-card">
-            <a href="/tips/209-use-compact-to-create-an-array-from-variables/">Use `compact()` to Create an Array from Variables</a>
+            <div class="number">01</div>
+            <div class="content">
+                <a href="/tips/131-avoid-using-var_dump-in-production/" class="text">Avoid Using `var_dump()` in Production</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/210-use-extract-to-import-variables-from-an-array/">Use `extract()` to Import Variables from an Array</a>
+            <div class="number">02</div>
+            <div class="content">
+                <a href="/tips/132-use-phps-built-in-logging-functions/" class="text">Use PHP's Built-in Logging Functions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/211-use-is_array-to-check-if-a-variable-is-an-array/">Use `is_array()` to Check if a Variable is an Array</a>
+            <div class="number">03</div>
+            <div class="content">
+                <a href="/tips/133-utilize-output-buffering-for-improved-performance/" class="text">Utilize Output Buffering for Improved Performance</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/212-use-is_string-to-check-if-a-variable-is-a-string/">Use `is_string()` to Check if a Variable is a String</a>
+            <div class="number">04</div>
+            <div class="content">
+                <a href="/tips/134-use-composer-autoloading-for-class-loading/" class="text">Use Composer Autoloading for Class Loading</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/213-use-is_int-to-check-if-a-variable-is-an-integer/">Use `is_int()` to Check if a Variable is an Integer</a>
+            <div class="number">05</div>
+            <div class="content">
+                <a href="/tips/135-apply-dependency-injection-to-reduce-coupling/" class="text">Apply Dependency Injection to Reduce Coupling</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/214-use-is_float-to-check-if-a-variable-is-a-float/">Use `is_float()` to Check if a Variable is a Float</a>
+            <div class="number">06</div>
+            <div class="content">
+                <a href="/tips/136-use-phps-intl-extension-for-internationalization/" class="text">Use PHP's `intl` Extension for Internationalization</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/215-use-is_null-to-check-if-a-variable-is-null/">Use `is_null()` to Check if a Variable is Null</a>
+            <div class="number">07</div>
+            <div class="content">
+                <a href="/tips/137-implement-rate-limiting-to-prevent-abuse/" class="text">Implement Rate Limiting to Prevent Abuse</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/216-use-is_resource-to-check-if-a-variable-is-a-resource/">Use `is_resource()` to Check if a Variable is a Resource</a>
+            <div class="number">08</div>
+            <div class="content">
+                <a href="/tips/138-use-phps-built-in-xml-parsing-functions/" class="text">Use PHP's Built-in XML Parsing Functions</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/217-use-is_callable-to-check-if-a-variable-is-callable/">Use `is_callable()` to Check if a Variable is Callable</a>
+            <div class="number">09</div>
+            <div class="content">
+                <a href="/tips/139-optimize-array-operations-for-performance/" class="text">Optimize Array Operations for Performance</a>
+            </div>
         </div>
         
         <div class="tip-card">
-            <a href="/tips/218-use-is_countable-to-check-if-a-variable-is-countable/">Use `is_countable()` to Check if a Variable is Countable</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/219-use-debug_backtrace-for-debugging/">Use `debug_backtrace()` for Debugging</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/220-use-debug_print_backtrace-to-print-a-backtrace/">Use `debug_print_backtrace()` to Print a Backtrace</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/221-use-memory_get_usage-to-check-memory-usage/">Use `memory_get_usage()` to Check Memory Usage</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/222-use-memory_get_peak_usage-to-check-peak-memory-usage/">Use `memory_get_peak_usage()` to Check Peak Memory Usage</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/223-use-version_compare-to-compare-php-versions/">Use `version_compare()` to Compare PHP Versions</a>
-        </div>
-        
-        <div class="tip-card">
-            <a href="/tips/224-use-php_uname-to-get-system-information/">Use `php_uname()` to Get System Information</a>
+            <div class="number">10</div>
+            <div class="content">
+                <a href="/tips/140-use-splfixedarray-for-memory-efficient-arrays/" class="text">Use `SplFixedArray` for Memory-Efficient Arrays</a>
+            </div>
         </div>
         
     </div>
@@ -232,7 +248,7 @@
         
         <span>...</span>
         
-        <a href="/pages/27/">27</a>
+        <a href="/pages/42/">42</a>
         
 
         
