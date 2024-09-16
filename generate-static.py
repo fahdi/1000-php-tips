@@ -6,7 +6,7 @@ import re
 import html
 from datetime import datetime
 
-TIPS_PER_PAGE = 15
+TIPS_PER_PAGE = 16
 MAX_VISIBLE_PAGES = 5
 BASE_URL = 'https://1000phptips.com'
 SITE_NAME = '1000 PHP Tips - Quick tips and Courses for PHP Developers'
