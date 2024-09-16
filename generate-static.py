@@ -9,11 +9,27 @@ from datetime import datetime
 TIPS_PER_PAGE = 15
 MAX_VISIBLE_PAGES = 5
 BASE_URL = 'https://1000phptips.com'
+SITE_NAME = '1000 PHP Tips - Quick tips and Courses for PHP Developers'
 
 def slugify(text):
     slug = re.sub(r'[^\w\s-]', '', text.lower())
     slug = re.sub(r'\s+', '-', slug)
     return slug
+
+def generate_meta_description(content, max_length=160):
+    # Remove HTML tags
+    text = re.sub('<[^<]+?>', '', content)
+
+    # Remove special characters and extra spaces
+    text = re.sub(r'[^\w\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+
+    # Truncate to the specified max_length
+    if len(text) > max_length:
+        text = text[:max_length-3] + '...'
+
+    return text
+
 
 def format_content(content):
     def replace_code_block(match):
@@ -63,6 +79,7 @@ os.makedirs('pages', exist_ok=True)
 sitemap_entries = []
 
 # Generate individual tip pages
+tip_pages_generated = 0
 for tip in tips:
     slug = slugify(tip['summary'])
     tip_dir = f'tips/{tip["id"]}-{slug}'
@@ -71,8 +88,16 @@ for tip in tips:
     # Format the content
     tip['formatted_content'] = format_content(tip['content'])
 
+    # Generate meta description
+    tip['meta_description'] = generate_meta_description(tip['content'])
+
     # Generate the HTML content
-    output = tip_template.render(tip=tip)
+    output = tip_template.render(
+        tip=tip,
+        site_name=SITE_NAME,
+        canonical_url=f"{BASE_URL}/tips/{tip['id']}-{slug}/",
+        page_title=f"{tip['summary']} - {SITE_NAME}"  # Specific title for tip pages
+    )
 
     # Write the HTML file
     with open(f'{tip_dir}/index.html', 'w') as f:
@@ -89,6 +114,10 @@ for tip in tips:
         'priority': '0.8'
     })
 
+    tip_pages_generated += 1
+
+print(f"Generated {tip_pages_generated} individual tip pages.")
+
 # Generate paginated index pages
 total_pages = math.ceil(len(tips) / TIPS_PER_PAGE)
 
@@ -97,13 +126,23 @@ for page in range(1, total_pages + 1):
     end_index = start_index + TIPS_PER_PAGE
     page_tips = tips[start_index:end_index]
 
+    # Determine the appropriate title for the page
+    if page == 1:
+        page_title = SITE_NAME  # Home page title
+    else:
+        page_title = f"Page {page} - {SITE_NAME}"  # Paginated pages title
+
     output = index_template.render(
         tips=page_tips,
         current_page=page,
         total_pages=total_pages,
         has_prev=page > 1,
         has_next=page < total_pages,
-        pagination_range=get_pagination_range(page, total_pages)
+        pagination_range=get_pagination_range(page, total_pages),
+        site_name=SITE_NAME,
+        canonical_url=f"{BASE_URL}/{'pages/' + str(page) + '/' if page > 1 else ''}",
+        meta_description=f"Page {page} of 1000 PHP Tips - Discover essential PHP programming tips and best practices.",
+        page_title=page_title
     )
 
     if page == 1:
@@ -152,3 +191,18 @@ with open('sitemap.xml', 'w') as f:
     f.write(sitemap_content)
 
 print("Generated sitemap.xml")
+
+
+# Generate robots.txt
+robots_content = f"""User-agent: *
+Allow: /
+Sitemap: {BASE_URL}/sitemap.xml
+"""
+
+with open('robots.txt', 'w') as f:
+    f.write(robots_content)
+
+print("Generated robots.txt")
+
+print(f"Total pages generated: {tip_pages_generated + total_pages}")
+print("Generation complete!")

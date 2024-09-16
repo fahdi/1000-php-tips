@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://1000phptips.com/sitemap.xml
