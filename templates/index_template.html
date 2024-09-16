@@ -64,6 +64,12 @@
             margin-top: 2rem;
         }
 
+        @media (max-width: 730px) {
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .tip-card {
             display: flex;
             width: 100%;
@@ -73,24 +79,24 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-       .tip-card  .number {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80px;
-        min-width: 80px;
-        background-color: #5c6bc0;
-        color: white;
-        font-size: 32px;
-        font-weight: bold;
-    }
-      .tip-card  .content {
+        .tip-card .number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            min-width: 80px;
+            background-color: #5c6bc0;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .tip-card .content {
             flex-grow: 1;
             padding: 15px;
             display: flex;
             align-items: center;
         }
-       .tip-card .text {
+        .tip-card .text {
             margin: 0;
             font-size: 16px;
             font-weight: bold;
