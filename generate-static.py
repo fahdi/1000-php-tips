@@ -4,9 +4,11 @@ import math
 from jinja2 import Environment, FileSystemLoader
 import re
 import html
+from datetime import datetime
 
-TIPS_PER_PAGE = 14
-MAX_VISIBLE_PAGES = 3
+TIPS_PER_PAGE = 15
+MAX_VISIBLE_PAGES = 5
+BASE_URL = 'https://1000phptips.com'
 
 def slugify(text):
     slug = re.sub(r'[^\w\s-]', '', text.lower())
@@ -57,6 +59,9 @@ index_template = env.get_template('index_template.html')
 os.makedirs('tips', exist_ok=True)
 os.makedirs('pages', exist_ok=True)
 
+# Prepare sitemap entries
+sitemap_entries = []
+
 # Generate individual tip pages
 for tip in tips:
     slug = slugify(tip['summary'])
@@ -75,6 +80,14 @@ for tip in tips:
 
     # Update the tip with its permalink
     tip['permalink'] = f'/tips/{tip["id"]}-{slug}/'
+
+    # Add entry to sitemap
+    sitemap_entries.append({
+        'loc': f"{BASE_URL}{tip['permalink']}",
+        'lastmod': datetime.now().strftime('%Y-%m-%d'),
+        'changefreq': 'monthly',
+        'priority': '0.8'
+    })
 
 # Generate paginated index pages
 total_pages = math.ceil(len(tips) / TIPS_PER_PAGE)
@@ -96,10 +109,24 @@ for page in range(1, total_pages + 1):
     if page == 1:
         with open('index.html', 'w') as f:
             f.write(output)
+        # Add homepage to sitemap
+        sitemap_entries.append({
+            'loc': BASE_URL,
+            'lastmod': datetime.now().strftime('%Y-%m-%d'),
+            'changefreq': 'daily',
+            'priority': '1.0'
+        })
     else:
         os.makedirs(f'pages/{page}', exist_ok=True)
         with open(f'pages/{page}/index.html', 'w') as f:
             f.write(output)
+        # Add paginated pages to sitemap
+        sitemap_entries.append({
+            'loc': f"{BASE_URL}/pages/{page}/",
+            'lastmod': datetime.now().strftime('%Y-%m-%d'),
+            'changefreq': 'weekly',
+            'priority': '0.7'
+        })
 
 print(f"Generated {total_pages} paginated index pages.")
 
@@ -108,3 +135,20 @@ with open('tips.json', 'w') as f:
     json.dump(tips, f, indent=2)
 
 print("Updated tips.json with permalinks.")
+
+# Generate sitemap.xml
+sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+for entry in sitemap_entries:
+    sitemap_content += '  <url>\n'
+    for key, value in entry.items():
+        sitemap_content += f'    <{key}>{value}</{key}>\n'
+    sitemap_content += '  </url>\n'
+
+sitemap_content += '</urlset>'
+
+with open('sitemap.xml', 'w') as f:
+    f.write(sitemap_content)
+
+print("Generated sitemap.xml")
