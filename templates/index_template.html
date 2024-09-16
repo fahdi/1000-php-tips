@@ -103,7 +103,20 @@
             line-height: 1.2;
             color: var(--text-color);
             text-decoration: none;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
         }
+
+        .tip-card .text code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
         .pagination {
             display: flex;
             justify-content: center;
@@ -148,7 +161,7 @@
         <div class="tip-card">
             <div class="number">{{ "%02d"|format(loop.index) }}</div>
             <div class="content">
-                <a href="{{ tip.permalink }}" class="text">{{ tip.summary }}</a>
+                <a href="{{ tip.permalink }}" class="text">{{ tip.formatted_summary|safe }}</a>
             </div>
         </div>
         {% endfor %}

@@ -50,6 +50,10 @@ def format_content(content):
 
     return content
 
+def format_summary(summary):
+    return re.sub(r'`([^`]+)`', lambda m: f'<code>{html.escape(m.group(1))}</code>', summary)
+
+
 def get_pagination_range(current_page, total_pages):
     if total_pages <= MAX_VISIBLE_PAGES:
         return range(1, total_pages + 1)
@@ -88,6 +92,9 @@ for tip in tips:
     # Format the content
     tip['formatted_content'] = format_content(tip['content'])
 
+    # Format the summary
+    tip['formatted_summary'] = format_summary(tip['summary'])
+
     # Generate meta description
     tip['meta_description'] = generate_meta_description(tip['content'])
 
@@ -100,7 +107,7 @@ for tip in tips:
     )
 
     # Write the HTML file
-    with open(f'{tip_dir}/index.html', 'w', encoding='utf-8') as f:
+    with open(f'{tip_dir}/index.html', 'w') as f:
         f.write(output)
 
     # Update the tip with its permalink
